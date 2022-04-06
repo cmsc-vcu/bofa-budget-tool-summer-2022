@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
 import {
   StyleSheet,
   Text,
@@ -15,18 +14,23 @@ import {
   Image,
   ImageBackground
 } from 'react-native';
-import { render } from 'react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod';
 import FinancialHubGradientText from './src/screens/financialHubpractice';
 
 const HelloWorldApp = () => {
+  // I want to return a view
   return (
+    // This view is given a style of the container
+    // All the children within this view will have the styles.container applied to them
     <View style={styles.container}>
+      {/* This view will handle the header*/}
       <View>
         <ImageBackground source={require('./src/res/images/topRightVector.png')}>  
           <Image source={require('./src/res/images/Vector.png')}/> 
         </ImageBackground>
       </View>
+      {/* This text is imported from another file and will handle the middle text*/}
       <FinancialHubGradientText style={styles.title}/>  
+      {/* This view will handle the footer*/}
       <View>
         <ImageBackground source={require('./src/res/images/bottomleftVector.png')} style={styles.bottom}>  
           <Image source={require('./src/res/images/bottomrightVector.png')}/> 
@@ -38,7 +42,9 @@ const HelloWorldApp = () => {
 
 const styles = StyleSheet.create({
   // This refers to all of the children in the container
-  // The view of the top, middle text, and bottom view are all space inbetween each other
+  // space-between means spacing the children within the view between each other
+  // This means that the first view, the financialhubgradienttext, and the second view
+  // are spaced between each other
   container: {
     flex: 1,
     justifyContent:'space-between'
@@ -56,34 +62,5 @@ const styles = StyleSheet.create({
     paddingLeft: 30
   }
 });
-
-  // <MaskedView
-  //     style={{ flex: 1, flexDirection: 'column', height: '100%' }}
-  //     maskElement={
-  //       <View
-  //         style={{
-  //           // Transparent background because mask is based off alpha channel.
-  //           backgroundColor: 'transparent',
-  //           flex: 1,
-  //           justifyContent: 'center',
-  //           alignItems: 'center',
-  //         }}
-  //       >
-  //         <Text
-  //           style={{
-  //             fontSize: 60,
-  //             color: 'black',
-  //             fontWeight: 'bold',
-  //           }}
-  //         >
-  //           Financial {"\n"} Hub
-  //         </Text>
-  //       </View>
-  //     }
-  //   >
-  //   {/* Shows behind the mask, you can put anything here, such as an image */}
-  //   <View style={{ flex: 1, height: '100%', backgroundColor: '#85BB4E'}} />
-  //   <View style={{ flex: 1, height: '100%', backgroundColor: '#F5DD90' }} />
-  // </MaskedView>
 
 export default HelloWorldApp;
