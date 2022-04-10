@@ -11,7 +11,7 @@ import MaskedView from '@react-native-masked-view/masked-view';
 const FinancialHubGradientText = (props) => {
     return (
         // Put what needs to be masked, which is the linear gradient
-        <MaskedView maskElement={<Text style={[props.style, {backgroundColor: 'transparent'}]}>Financial {'\n'} Hub</Text>}>
+        <MaskedView maskElement={<Text style={[props.style, {backgroundColor: 'transparent'}]}>{props.text}</Text>}>
             {/* What is the linear gradient being applied onto? the text
             I specify where the gradient will start and end*/}
             <LinearGradient
