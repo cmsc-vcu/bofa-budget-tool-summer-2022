@@ -8,6 +8,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import figmaColors from '../res/figmaColors'
 import MaskedView from '@react-native-masked-view/masked-view';
 
+{/* This is the gradient text. This is still a work in progress component */}
+{/* Function: Given a text, create a gradient over the text from primaryGreen to primaryTeal from top to bottom.
+    Currently, the gradient does not change color fast enough to show a significant difference in color. */}
 const FinancialHubGradientText = (props) => {
     return (
         // Put what needs to be masked, which is the linear gradient

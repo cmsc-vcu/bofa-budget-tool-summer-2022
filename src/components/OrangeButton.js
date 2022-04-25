@@ -1,32 +1,34 @@
 import {
-    Button,
     Pressable,
     StyleSheet,
     Text,
     View
-
 } from 'react-native';
 import React from 'react';
 import { useNavigation } from "@react-navigation/native";
 import figmaColors from '../res/figmaColors';
 
+
+{/* This is the OrangeButton component where it will be reused */}
+{/* Function: Create a Pressable element given the navigation page where the User wants to go.
+    In addition, text that are passed into the OrangeButton will be used as the text for the button.
+*/}
 function OrangeButton (props) {
     const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
             <Pressable
-            onPress={() => navigation.navigate(props.navigatepage)}
-            style={styles.buttonstyle}
+                onPress={() => navigation.navigate(props.navigatepage)}
+                style={styles.buttonstyle}
             >
-            <Text style={styles.textstyle}> {props.text} </Text>
+                <Text style={styles.textstyle}>
+                    {props.text}
+                </Text>
             </Pressable>
         </View>
     )
 }
-// title={props.text}
-//         style={style.buttonstyle}
-//         onPress={() => navigation.navigate(props.navigatepage)}
 
 const styles = StyleSheet.create({
     container: {

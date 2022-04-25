@@ -4,7 +4,6 @@ import React, {
     useCallback
 } from "react";
 import {
-    Button,
     Text,
     StyleSheet,
     View,
@@ -13,7 +12,7 @@ import {
 import figmaColors from "../res/figmaColors";
 import OrangeButton from "../components/OrangeButton";
 import { useNavigation } from "@react-navigation/native";
-import Carousel, { Pa } from 'react-native-snap-carousel';
+import Carousel from 'react-native-snap-carousel';
 import { Pagination } from "react-native-snap-carousel";
 
 
@@ -85,13 +84,7 @@ function CardIntro (props) {
                     dotsLength={cardItems.length}
                     carouselRef={ref}
                     activeDotIndex={activeIndex}
-                    dotStyle={{
-                        width:20,
-                        height:20,
-                        borderRadius: 10,
-                        marginHorizontal: 8,
-                        backgroundColor: figmaColors.primaryGreen
-                    }}
+                    dotStyle={styles.activeDotStyle}
                     inactiveDotStyle={styles.inactiveDotStyle}
                     inactiveDotOpacity={0.5}
                     inactiveDotScale={1}
@@ -149,6 +142,13 @@ const styles = StyleSheet.create({
         color: figmaColors.primaryOffWhite,
         lineHeight: 28,
         paddingBottom: 35
+    },
+    activeDotStyle: {
+        width:20,
+        height:20,
+        borderRadius: 10,
+        marginHorizontal: 8,
+        backgroundColor: figmaColors.primaryGreen
     },
     inactiveDotStyle: {
         borderColor: figmaColors.primaryGreen,

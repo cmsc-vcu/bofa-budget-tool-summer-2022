@@ -7,14 +7,6 @@
  */
 
  import React from 'react';
- import {
-   Button,
-   StyleSheet,
-   Text,
-   View,
-   Image,
-   ImageBackground
- } from 'react-native';
  import { NavigationContainer } from '@react-navigation/native';
  import { createNativeStackNavigator } from '@react-navigation/native-stack';
  import FirstPageMiddle from './src/screens/FirstPageMiddle';
@@ -39,7 +31,11 @@
  
      // This will start the navigation of the onboarding process
      <NavigationContainer>
-         {/* We added screenOptions to not show the header*/}
+         {/* We added screenOptions to not show the header
+         OnboardingHome displays the FirstPageMiddle.js
+         This is how the navigation/flow will work for now
+         If we want to specify which screen to show, then simply pass the name
+         */}
          <Stack.Navigator initialRouteName='OnboardingHome' screenOptions={{headerShown: false}}>
            <Stack.Screen name='OnboardingHome' component={FirstPageMiddle} />
            <Stack.Screen name='CardIntro' component={CardIntro} />

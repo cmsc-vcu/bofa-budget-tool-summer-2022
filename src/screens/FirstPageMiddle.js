@@ -7,7 +7,6 @@ import {
     Image
 } from 'react-native'
 import OrangeButton from "../components/OrangeButton";
-import { useNavigation } from "@react-navigation/native";
 
 const FirstPageMiddle = () => {
     return (
@@ -16,6 +15,9 @@ const FirstPageMiddle = () => {
         <View style={newStyle.topcontainer}>
             {/* This view will handle the header*/}
             <View>
+                {/* ImageBackground will only show if there are things within it
+                For Example, if a text element is only 10px tall and width is the width of the screen
+                the ImageBackground will only be displayed 10px tall and the width of the elements within it. */}
                 <ImageBackground source={require('../res/images/topRightVector.png')}>  
                     <Image source={require('../res/images/Vector.png')}/> 
                 </ImageBackground>
@@ -24,6 +26,8 @@ const FirstPageMiddle = () => {
             <View style={newStyle.midcontainer}>
                 <FinancialHubGradientText text={'Financial\nHub'} style={[newStyle.title]}/>
                 <FinancialHubGradientText text={'Did finances just become\neasier? I\'d say so'} style={newStyle.subtitle}/> 
+                {/* The OrangeButton component is found within the src/components folder 
+                The text of the button is given, and we want to navigate to the 'CardIntro' screen*/}
                 <OrangeButton
                 text={'START YOUR JOURNEY!'}
                 navigatepage='CardIntro'
@@ -67,6 +71,7 @@ const newStyle = StyleSheet.create({
     bottomcontainer: {
         paddingLeft: 30,
     },
+    /* This is the style for any header text */
     title: {
         textAlign: "center",
         fontFamily: "Roboto",
@@ -75,6 +80,7 @@ const newStyle = StyleSheet.create({
         fontWeight: '800',
         alignItems: 'center'
     },
+    /* This is the style for any subheader text */
     subtitle: {
         textAlign: 'center',
         fontFamily: 'Roboto',
