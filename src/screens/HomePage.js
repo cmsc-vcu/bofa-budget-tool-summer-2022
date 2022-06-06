@@ -10,7 +10,7 @@ import OrangeButton from "../components/OrangeButton";
 
 
 // This page is for the Terms & Conditions page with the Privacy Policy
-const TermsConditions = () => {
+const HomePage = () => {
     return (
         <View style={style.topcontainer}>
         {/* This view will handle the header*/}
@@ -55,15 +55,15 @@ const style = StyleSheet.create({
     },
 
     home: {
-        fontFamily: "Roboto",
+        fontFamily: 'Roboto',
         fontSize: 24,
-        fontStyle: "normal",
+        fontStyle: 'normal',
         fontWeight: '800',
         lineHeight: 28,
-        position: "absolute",
+        position: 'absolute',
         left: 20,
         top: 45,
-        color: "#2E2E2E"
+        color: '#2E2E2E'
     },
 
     settings: {
@@ -94,4 +94,4 @@ const style = StyleSheet.create({
     }
 })
 
-export default TermsConditions;
+export default HomePage;

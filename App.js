@@ -12,6 +12,8 @@
  import FirstPageMiddle from './src/screens/FirstPageMiddle';
  import CardIntro from './src/screens/CardIntro';
  import TermsConditions from './src/screens/TermsConditions';
+import PrivacyPolicy from './src/screens/PrivacyPolicy';
+import threetopics from './src/screens/threetopics';
 
  
  
@@ -40,6 +42,8 @@
            <Stack.Screen name='OnboardingHome' component={FirstPageMiddle} />
            <Stack.Screen name='CardIntro' component={CardIntro} />
            <Stack.Screen name='TermsConditions' component={TermsConditions} />
+           <Stack.Screen name='PrivacyPolicy' component={PrivacyPolicy} />
+           <Stack.Screen name='threetopics' component={threetopics} />
          </Stack.Navigator>
        </NavigationContainer>
    )
