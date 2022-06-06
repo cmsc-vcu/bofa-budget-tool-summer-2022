@@ -21,7 +21,6 @@ const TermsConditions = () => {
                     text={'Username button'}
                     navigatepage='UsernameScreen'/>
             </View>
-        </View>
 
     )
 }
