@@ -40,6 +40,9 @@ const TermsConditions = () => {
                         navigatepage='PrivacyPolicy'
                     />
 
+                <OrangeButton
+                    text={'Username button'}
+                    navigatepage='threetopics'/>
             </View>
         </View>
 
