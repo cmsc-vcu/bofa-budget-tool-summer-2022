@@ -21,8 +21,4 @@ const UsernameScreen = () => {
     )
 }
 
-const style = StyleSheet.create({
-
-})
-
 export default UsernameScreen;

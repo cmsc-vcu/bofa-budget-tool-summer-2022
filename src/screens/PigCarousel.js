@@ -14,9 +14,6 @@ const PigCarousel = () => {
     return (
         <View>
             <Text>Hello World from PigCarousel</Text>
-            {/* <OrangeButton
-                text={'Create Profile'}
-                navigatepage='threetopics'/> */}
         </View>
     )
 }
