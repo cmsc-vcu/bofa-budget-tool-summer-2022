@@ -43,7 +43,9 @@ import threetopics from './src/screens/threetopics';
            <Stack.Screen name='CardIntro' component={CardIntro} />
            <Stack.Screen name='TermsConditions' component={TermsConditions} />
            <Stack.Screen name='PrivacyPolicy' component={PrivacyPolicy} />
+           {/* <Stack.Screen name='UsernameScreen' component={UsernameScreen} /> */}
            <Stack.Screen name='threetopics' component={threetopics} />
+           {/* <Stack.Screen name='PigCarousel' component={PigCarousel} /> */}
          </Stack.Navigator>
        </NavigationContainer>
    )

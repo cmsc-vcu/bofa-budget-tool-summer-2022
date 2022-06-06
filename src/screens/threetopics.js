@@ -11,9 +11,9 @@ const threetopics = (props) => {
             <Text>
                 What are you{"\n"}interested in{"\n"}learning?
             </Text>
-            <ImageBackground source={require('../res/images/Vector_bottom.png')}>  
+            {/* <ImageBackground source={require('../res/images/Vector_bottom.png')}>  
                 
-            </ImageBackground>
+            </ImageBackground> */}
         </View>
     )
 };
