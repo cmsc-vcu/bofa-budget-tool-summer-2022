@@ -9,7 +9,7 @@ import React from 'react';
 import OrangeButton from "../components/OrangeButton";
 
 
-// This page is for the Terms & Conditions page with the Privacy Policy
+// This page is for the Terms & Conditions with the Privacy Policy
 const TermsConditions = () => {
     return (
         <View style={style.topcontainer}>
@@ -31,10 +31,15 @@ const TermsConditions = () => {
                         <Image src="svg/Settings.png"></Image>
                     </Button> */}
 
+                
+            </View>
+
+            <View style={style.midcontainer}>
                 <OrangeButton
-                    text={'Accept & Continue'}
-                    navigatepage='PrivacyPolicy'
-                />
+                        text={'Accept & Continue'}
+                        navigatepage='PrivacyPolicy'
+                    />
+
             </View>
         </View>
 
@@ -44,7 +49,7 @@ const TermsConditions = () => {
 const style = StyleSheet.create({
 
     topcontainer: {
-        top: -10
+        top: -10,
     },
 
     topvector: {
@@ -78,10 +83,14 @@ const style = StyleSheet.create({
         top: -45,
     },
 
+    midcontainer: {
+        top: 250
+    },
+
     subheaderone: {
         position: 'absolute',
         width: 316,
-        height: 18,
+        height: 30,
         left: 31,
         top: 116,
         fontWeight: '400',
