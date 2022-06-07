@@ -9,6 +9,13 @@ import React from 'react';
 import figmaColors from '../res/figmaColors';
 import LinearGradient from 'react-native-linear-gradient';
 import OrangeButton from "../components/OrangeButton";
+import Carousel from 'react-native-snap-carousel/src/carousel/Carousel';
+
+const pigImages = [
+    {
+
+    }
+]
 
 
 // This page is for the Terms & Conditions page with the Privacy Policy
