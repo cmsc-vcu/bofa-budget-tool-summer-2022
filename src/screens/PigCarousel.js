@@ -71,6 +71,7 @@ function PigCarousel (props) {
             style={styles.container}>
             
             <View style={styles.header}>
+                <Image source={require('../res/images/onboardingProgress4.png')}/>
                 <Text style={styles.title}>Choose Your Piggy!</Text>
                 <Text style={styles.subtitle}>You can change your pig later</Text>
             </View>
@@ -112,24 +113,26 @@ const styles = StyleSheet.create({
     // This is the main container that controls the WHOLE screen
     container: {
         flex: 1,
-        paddingTop: 30
+        paddingTop: 30,
     },
     // Be care of adding left and bottom attributes when pulling from figma
     // This acts as the card container
     subcontainer: {
-        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-around',
-        borderRadius: 30,
-        height: 400,
         backgroundColor: '#FFFFFF',
+        borderRadius: 30,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        height: 380,
+        marginBottom: 10,
         shadowColor: '#000000',
         shadowOffset: {width: 0, height: 2},
-        shadowRadius: 4,
-        shadowOpacity: 1,
-        elevation: 5,
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 6
     },
     header: {
+        alignItems: 'center',
         paddingBottom: 30
     },
     // This refers to the main title of the Pig Carousel
@@ -160,7 +163,7 @@ const styles = StyleSheet.create({
         height: 15,
         borderRadius: 10,
         marginHorizontal: 3,
-        marginBottom: 25, // This will push/add margins between the dots and other elements
+        marginBottom: 15, // This will push/add margins between the dots and other elements
         backgroundColor: figmaColors.primaryOffWhite
     },
     inactiveDotStyle: {
