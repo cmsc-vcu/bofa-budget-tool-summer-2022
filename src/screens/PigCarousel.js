@@ -98,7 +98,7 @@ function PigCarousel (props) {
             </View>
             <OrangeButton
                 text='confirm'
-                navigatepage='HomePage'
+                navigatepage='PigConfirmation'
             />
 
         </LinearGradient>
