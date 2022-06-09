@@ -27,6 +27,11 @@ const TermsConditions = () => {
                 navigatepage='UsernameScreen'
             />
 
+            <OrangeButton
+                text={'privacy policy'}
+                navigatepage='PrivacyPolicy'
+            />
+
         </View>
 
 

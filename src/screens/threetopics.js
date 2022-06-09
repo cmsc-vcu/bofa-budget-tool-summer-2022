@@ -1,15 +1,17 @@
 import {
     Text,
     StyleSheet,
-    View
+    View,
+    Image
 } from 'react-native';
 import React from 'react';
 import OrangeButton from "../components/OrangeButton";
 
-const threetopics = (props) => {
+const ThreeTopics = (props) => {
     return (
-        <View style={styles.container}>
-            <Text>
+        <View style={style.container}>
+            <Image source={require('../res/images/onboardingProgressThree.png')} style={style.progress}/>
+            <Text style={style.header}>
                 What are you{"\n"}interested in{"\n"}learning?
             </Text>
             <OrangeButton
@@ -22,19 +24,30 @@ const threetopics = (props) => {
     )
 };
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
     container: {
         flex: 1,
 
     },
-    title: {
+
+    progress: {
+        position: 'absolute',
+        left: 12,
+        top: 25
+    },
+
+    header: {
         fontFamily: "Roboto",
         fontStyle: 'normal',
-
+        fontSize: 40,
+        fontWeight: '800',
+        left: 15,
+        top: 50
     },
+
     subtitle: {
 
     }
 });
 
-export default threetopics;
+export default ThreeTopics;
