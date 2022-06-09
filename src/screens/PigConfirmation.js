@@ -16,15 +16,15 @@ function PigConfirmation (props) {
     // 
     const { pigValue } = props.route.params; // DON'T FORGET TO ADD ROUTE 
     const pigs = {
-        pig1: '../res/images/piggy_cycle1.png',
-        pig2: '../res/images/piggy_2.png',
-        pig3: '../res/images/piggy_3.png',
-        pig4: '../res/images/piggy_4.png',
-        pig5: '../res/images/piggy_5.png',
-        pig6: '../res/images/piggy_6.png'
+        1: '../res/images/piggy_cycle1.png',
+        2: '../res/images/piggy_2.png',
+        3: '../res/images/piggy_3.png',
+        4: '../res/images/piggy_4.png',
+        5: '../res/images/piggy_5.png',
+        6: '../res/images/piggy_6.png'
     }
 
-    var pigImage = pigs[pigValue];
+    var pigImage = pigs[pigValue - 1];
 
     return (
         <View style={styles.container}>
@@ -35,7 +35,9 @@ function PigConfirmation (props) {
                         </View>
                     </ImageBackground>
             </ImageBackground>
-            <Text>pigValue: {JSON.stringify(pigValue)}</Text>
+            <Text>You're all set!</Text>
+            <Text>{pigImage}</Text>
+            {/* <Image source={require('../res/images/piggy_6.png')}/> */}
             <OrangeButton
                 text='confirm'
                 navigatepage='HomePage'
