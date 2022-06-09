@@ -19,7 +19,9 @@ function OrangeButton (props) {
     return (
         <View style={styles.container}>
             <Pressable
-                onPress={() => navigation.navigate(props.navigatepage)}
+                onPress={() => { navigation.navigate(props.navigatepage, {
+                    pigValue: props.pigValue,
+                })} }
                 style={styles.buttonstyle}
             >
                 <Text style={styles.textstyle}>
