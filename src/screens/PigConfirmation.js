@@ -10,21 +10,22 @@ import React,
         useRef,
         useState} from 'react';
 import OrangeButton from "../components/OrangeButton";
+import figmaColors from '../res/figmaColors';
 
 
 function PigConfirmation (props) {
     // 
     const { pigValue } = props.route.params; // DON'T FORGET TO ADD ROUTE 
     const pigs = {
-        1: '../res/images/piggy_cycle1.png',
-        2: '../res/images/piggy_2.png',
-        3: '../res/images/piggy_3.png',
-        4: '../res/images/piggy_4.png',
-        5: '../res/images/piggy_5.png',
-        6: '../res/images/piggy_6.png'
+        0: require('../res/images/piggy_cycle1.png'),
+        1: require('../res/images/piggy_2.png'),
+        2: require('../res/images/piggy_3.png'),
+        3: require('../res/images/piggy_4.png'),
+        4: require('../res/images/piggy_5.png'),
+        5: require('../res/images/piggy_6.png')
     }
 
-    var pigImage = pigs[pigValue - 1];
+    var pigImage = pigs[pigValue];
 
     return (
         <View style={styles.container}>
@@ -35,9 +36,9 @@ function PigConfirmation (props) {
                         </View>
                     </ImageBackground>
             </ImageBackground>
-            <Text>You're all set!</Text>
-            <Text>{pigImage}</Text>
-            {/* <Image source={require('../res/images/piggy_6.png')}/> */}
+            <Text style={styles.title}>You're all set!</Text>
+            <Text style={styles.subtitle}>Are you ready to play?</Text>
+            <Image style={styles.imageSize} source={pigImage}/>
             <OrangeButton
                 text='confirm'
                 navigatepage='HomePage'
@@ -57,9 +58,28 @@ const styles = StyleSheet.create({
     },
     topBar: {
         alignItems: 'center',
-        paddingTop: 20,
+        paddingTop: 40,
         width: 400,
         height: 154
+    },
+    imageSize: {
+        width: 200,
+        height: 200,
+        resizeMode: 'contain'
+    },
+    title: {
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontSize: 40,
+        fontWeight: '800',
+        color: figmaColors.primaryOrange,
+        textAlign: 'center'
+    },
+    subtitle: {
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: '400',
+        fontSize: 18,
     }
 })
 
