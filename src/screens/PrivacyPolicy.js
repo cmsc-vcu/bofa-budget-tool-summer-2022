@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
     const navigation = useNavigation();
     return (
         <View>
-            <View style={style.topContainer}>
+            <View style={{backgroundColor: '#FFFEF6'}}>
                 <Image source={require('../res/images/privacyPolicyVector.png')} style={style.vector}/> 
                 <Image source={require('../res/images/onboardingProgressOne.png')} style={style.progress}/>
                 <TouchableOpacity onPress={() => navigation.navigate('TermsConditions')} style={style.arrow}>
@@ -107,7 +107,6 @@ const style = StyleSheet.create({
         position: 'absolute',
         left: 12,
         top: 25
-
     },
 
     midContainer: {
@@ -115,8 +114,9 @@ const style = StyleSheet.create({
     },
 
     scroll: {
-        width: 330,
+
         height: 340,
+        width: 345,
         left: 15,
         top: -115
     },
@@ -129,7 +129,7 @@ const style = StyleSheet.create({
     statement: {
         fontSize: 18,
         fontFamily: 'Roboto',
-        width: 330,
+        width: 320,
         color: '#2E2E2E',
         left: 15,
         

@@ -18,6 +18,7 @@ import UsernameScreen from './src/screens/UsernameScreen';
 import PigCarousel from './src/screens/PigCarousel';
 import PigConfirmation from './src/screens/PigConfirmation';
 import HomePage from './src/screens/HomePage';
+import ThreeTopics from './src/screens/threetopics';
 
  
  
@@ -50,7 +51,7 @@ import HomePage from './src/screens/HomePage';
            <Stack.Screen name='TermsConditions' component={TermsConditions} />
            <Stack.Screen name='PrivacyPolicy' component={PrivacyPolicy} />
            <Stack.Screen name='UsernameScreen' component={UsernameScreen} />
-           <Stack.Screen name='threetopics' component={threetopics} />
+           <Stack.Screen name='threetopics' component={ThreeTopics} />
            <Stack.Screen name='PigCarousel' component={PigCarousel} />
            <Stack.Screen name='PigConfirmation' component={PigConfirmation} />
            <Stack.Screen name='HomePage' component={HomePage} />
