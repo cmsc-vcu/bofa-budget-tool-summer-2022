@@ -12,6 +12,7 @@ import { RadioButton } from 'react-native-paper';
 
 
 // This page is for the Terms & Conditions with the Privacy Policy
+// TESTING PULL FOR ANEESH
 const TermsConditions = () => {
     const [checked, setChecked] = useState('first');
     
