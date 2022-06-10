@@ -47,6 +47,15 @@ function PigConfirmation (props) {
                 text='No, Go Back'
                 navigatepage='PigCarousel'
             />
+
+            <ImageBackground source={require('../res/images/pigConfirmationBR.png')}>
+                <ImageBackground source={require('../res/images/pigConfirmationBL.png')}>
+                    <View>
+                        
+                    </View>
+                </ImageBackground>
+            </ImageBackground>
+            
         </View>
     );
 }
