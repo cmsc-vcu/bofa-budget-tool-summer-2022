@@ -86,22 +86,20 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     box: {
-        width: 362,
-        height: 212,
+        width: 352,
+        height: 202,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: figmaColors.primaryOffWhite,
         borderRadius: 20,
         elevation: 5,
-        marginHorizontal: 26,
-        marginVertical: 45
+        marginHorizontal: 20
         
     },
     subbox: {
         width: '80%',
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 40,
         marginHorizontal: 30
         
     },
