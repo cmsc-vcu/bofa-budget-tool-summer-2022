@@ -60,7 +60,7 @@ const UsernameScreen = () => {
                     <OrangeButton 
                         style={{backgroundColor: 'rgba(0, 119, 35, 0.7)'}}
                         text='create profile'
-                        navigatepage='threetopics'
+                        navigatepage='ThreeTopics'
                     />
                 </View>
             </View>
