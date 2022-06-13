@@ -10,6 +10,7 @@ import React,
         useRef,
         useState} from 'react';
 import OrangeButton from "../components/OrangeButton";
+import GrayButton from '../components/GrayButton';
 import figmaColors from '../res/figmaColors';
 
 
@@ -36,25 +37,31 @@ function PigConfirmation (props) {
                         </View>
                     </ImageBackground>
             </ImageBackground>
-            <Text style={styles.title}>You're all set!</Text>
-            <Text style={styles.subtitle}>Are you ready to play?</Text>
-            <Image style={styles.imageSize} source={pigImage}/>
-            <OrangeButton
-                text='confirm'
-                navigatepage='HomePage'
-            />
-            <OrangeButton
-                text='No, Go Back'
-                navigatepage='PigCarousel'
-            />
 
-            <ImageBackground source={require('../res/images/pigConfirmationBR.png')}>
+            <View style={styles.midContainer}>
+                <Text style={styles.title}>You're all set!</Text>
+                <Text style={styles.subtitle}>Are you ready to play?</Text>
+                <Image style={styles.imageSize} source={pigImage}/>
+            </View>
+
+            <View style={styles.bottomContainer}>
                 <ImageBackground source={require('../res/images/pigConfirmationBL.png')}>
-                    <View>
-                        
-                    </View>
+                    <ImageBackground source={require('../res/images/pigConfirmationBR.png')}>
+                        <View style={styles.bottomBar}>
+                            <OrangeButton
+                                text='confirm'
+                                navigatepage='HomePage'
+                            />
+                            <View style={styles.spaceBetweenButtons}/>{/* This will act as padding until Kevin finds out how to add padding between the two buttons */}
+                            <GrayButton
+                                text='No, Go Back'
+                                navigatepage='PigCarousel'
+                            />
+                        </View>
+                    </ImageBackground>
                 </ImageBackground>
-            </ImageBackground>
+            </View>
+            
             
         </View>
     );
@@ -65,11 +72,26 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center'
     },
+    midContainer: {
+        paddingTop: 40,
+        alignItems: 'center'
+    },
+    bottomContainer: {
+        paddingTop: 50, // This will push the two background images at the bottom downward to match the figma more
+        alignContent: 'flex-end'
+    },
     topBar: {
         alignItems: 'center',
-        paddingTop: 40,
+        paddingTop: 35,
         width: 400,
         height: 154
+    },
+    bottomBar: {
+        alignItems: 'center',
+        alignContent: 'stretch',
+        width: 400,
+        paddingTop: 75,
+        height: 319
     },
     imageSize: {
         width: 200,
@@ -89,6 +111,9 @@ const styles = StyleSheet.create({
         fontStyle: 'normal',
         fontWeight: '400',
         fontSize: 18,
+    },
+    spaceBetweenButtons: {
+        height: 15
     }
 })
 
