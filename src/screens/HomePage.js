@@ -2,49 +2,82 @@ import {
     Text,
     StyleSheet,
     View,
-    Image,
-    Button
+    Image
 } from 'react-native';
 import React from 'react';
-import OrangeButton from "../components/OrangeButton";
+import LinearGradient from 'react-native-linear-gradient';
+import figmaColors from '../res/figmaColors';
 
 
 // This page is for the Terms & Conditions page with the Privacy Policy
 const HomePage = () => {
     return (
-        <View style={style.topcontainer}>
-        {/* This view will handle the header*/}
-            <View>
-                    
-                <Image source={require('../res/images/HPtopvector.png')} style={style.topvector}/> 
-                <Image source={require('../res/images/Settings.png')} style={style.settings}/>
-                <Text style={[style.home]}>
-                    Home
-                </Text>
-                    
-                <Text style={[style.subheaderone]}>
-                    Daily Financial Tips
-                </Text>
-                    {/* <Button
-                    button = "settingsButton" 
-                    style={style.settings}>
-                        <Image src="svg/Settings.png"></Image>
-                    </Button> */}
+        <LinearGradient
+            colors={[figmaColors.primaryGreen, figmaColors.primaryTeal]}
+            style={style.container}>
 
-                <OrangeButton
-                    text={'Accept & Continue'}
-                    navigatepage='PrivacyPolicy'
-                />
+            <View style={style.topcontainer}>
+            {/* This view will handle the header*/}
+                
+                        
+                    <Image source={require('../res/images/HPtopvector.png')} style={style.topvector}/> 
+                    <Image source={require('../res/images/Settings.png')} style={style.settings}/>
+                    <Text style={[style.home]}>
+                        Home
+                    </Text>
+                        
+                    <View style={style.pigtop}>
+                        <Text style={style.pigheader}>
+                            Welcome back, Abbie!
+                        </Text>
+                        <Text style={style.rank}>
+                            Rank/Total XP:
+                        </Text>
+                    </View>
+
+                    <Image source={require('../res/images/tempHpPig.png')} style={style.pig}/>
+
+                    <View style={style.pigsubheader}>
+                        <Text style={style.pigheader}>
+                            LEVEL 1
+                        </Text>
+                        <Text style={style.xp}>
+                            200/250
+                        </Text>
+                    </View>
+
+                    <Image source={require('../res/images/pigLine.png')} style={style.pigline}/>
+                    <Text style={style.pigtext}>
+                        Your financial journey:
+                    </Text>
+
+                    {/* <View style={style.rightbutton}>
+                        <StyleButton
+                            text={'continue'}
+                        />
+                    </View> */}
+                    
+
+                    {/* <Text style={[style.subheaderone]}>
+                        Daily Financial Tips
+                    </Text> */}
+ 
+                
             </View>
-        </View>
+        </LinearGradient>
 
     )
 }
 
 const style = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingTop: 30,
+    },
 
     topcontainer: {
-        top: -10
+        position: 'absolute',
+
     },
 
     topvector: {
@@ -78,19 +111,101 @@ const style = StyleSheet.create({
         top: -45,
     },
 
+    pigtop: {
+        position: 'absolute',
+        left: 75,
+        top: 120,
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        lineHeight: 28,        
+    },
+
+    pigheader: {
+        fontWeight: '800',
+        fontSize: 24,
+        color: '#FFFEF6',
+        textShadowColor: 'rgba(0, 0, 0, 0.25)',
+        textShadowOffset: {width: 1, height: 1},
+        textShadowRadius: 4
+    },
+
+
+    rank: {
+        fontWeight: '700',
+        fontSize: 18,
+        textAlign: 'center',
+        color: '#FFFEF6',
+        textShadowColor: 'rgba(0, 0, 0, 0.25)',
+        textShadowOffset: {width: 1, height: 1},
+        textShadowRadius: 4
+    },
+
+    pig: {
+        top: 70,
+        left: 95,
+        width: 198,
+        height: 199
+        // filter: drop-shadow(0, 0, 5, rgba(8, 88, 64, 0.5)),
+    },
+
+    pigsubheader: {
+        position: 'absolute',
+        left: 150,
+        top: 400,
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        lineHeight: 28,        
+    },
+
+    xp: {
+        fontWeight: '400',
+        fontSize: 14,
+        textAlign: 'center',
+        color: '#FFFEF6'
+    },
+
+    pigline: {
+        position: 'absolute',
+        width: 81,
+
+        left: 155,
+        top: 465,
+        // border: 3px solid #FFFEF6
+    },
+
+    pigtext: {
+        position: 'absolute',
+        width: 301,
+        height: 24,
+        left: 45,
+        top: 485,
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: '700',
+        fontSize: 18,
+        lineHeight: 21,
+        display: 'flex',
+        textAlign: 'center',
+        color: '#FFFEF6'
+    },
+
+    rightbutton: {
+        position: 'absolute',
+        width: 17,
+        height: 46,
+        left: 223,
+        top: 529
+
+    },
+
     subheaderone: {
         position: 'absolute',
         width: 316,
-        height: 18,
+        height: 25,
         left: 31,
         top: 116,
         fontWeight: '400',
         fontSize: 24
-    },
-
-    continuebutton: {
-        position: 'absolute',
-        top: 100
     }
 })
 

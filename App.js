@@ -13,7 +13,6 @@ import FirstPageMiddle from './src/screens/FirstPageMiddle';
 import CardIntro from './src/screens/CardIntro';
 import TermsConditions from './src/screens/TermsConditions';
 import PrivacyPolicy from './src/screens/PrivacyPolicy';
-import threetopics from './src/screens/ThreeTopics';
 import UsernameScreen from './src/screens/UsernameScreen';
 import PigCarousel from './src/screens/PigCarousel';
 import PigConfirmation from './src/screens/PigConfirmation';
