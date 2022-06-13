@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import React from 'react';
 import { useNavigation } from "@react-navigation/native";
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 // This page is for the Terms & Conditions page with the Privacy Policy
 
