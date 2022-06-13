@@ -13,7 +13,7 @@ import figmaColors from '../res/figmaColors';
 {/* Function: Create a Pressable element given the navigation page where the User wants to go.
     In addition, text that are passed into the OrangeButton will be used as the text for the button.
 */}
-function OrangeButton (props) {
+function GrayButton (props) {
     const navigation = useNavigation();
 
     return (
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     buttonstyle: {
         justifyContent: 'center',
         textAlign: 'center',
-        backgroundColor: '#EB7723',
+        backgroundColor: figmaColors.primaryGray,
         alignItems: 'center',
         borderRadius: 20,
         width: 306,
@@ -61,4 +61,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default OrangeButton;
+export default GrayButton;

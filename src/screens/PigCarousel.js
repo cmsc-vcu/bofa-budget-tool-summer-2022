@@ -74,6 +74,7 @@ function PigCarousel (props) {
                 <Image source={require('../res/images/onboardingProgress4.png')}/>
                 <Text style={styles.title}>Choose Your Piggy!</Text>
                 <Text style={styles.subtitle}>You can change your pig later</Text>
+                {/* <Text> {activeIndex} </Text> THIS is to test what the activeIndex value is which is the slide number on the carousel*/ }
             </View>
 
             <View>
@@ -96,9 +97,11 @@ function PigCarousel (props) {
                     inactiveDotScale={1}
                 />
             </View>
+            {/* <Text> {activeIndex} </Text> */}
             <OrangeButton
                 text='confirm'
                 navigatepage='PigConfirmation'
+                pigValue={activeIndex}
             />
 
         </LinearGradient>
