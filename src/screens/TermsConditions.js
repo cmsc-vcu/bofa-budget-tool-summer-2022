@@ -6,7 +6,7 @@ import {
     Button,
     ImageBackground
 } from 'react-native';
-import React, { useState } from 'react';
+import React , { useState } from 'react';
 import OrangeButton from "../components/OrangeButton";
 import { RadioButton } from 'react-native-paper';
 
@@ -34,17 +34,39 @@ const TermsConditions = () => {
                 text={'privacy policy'}
                 navigatepage='PrivacyPolicy'
             />
-
-            <RadioButton
+            
+            <View style={{ flexDirection: 'row', alignContent: 'center' }}>
+                <View style={{ flex: 4, alignSelf: 'center' }}>
+                  <Text>Agree All  </Text> 
+                  <Text>Loren epsum </Text>
+                </View>
+                <View style={{ flex: 1 }}>
+                  <RadioButton
+                    value="first"
+                    status={checked === 'first' ? 'checked' : 'unchecked'}
+                    onPress={() => setChecked('first')}
+                  />
+                  <RadioButton
+                    value="second"
+                    status={ checked === 'second' ? 'checked' : 'unchecked' }
+                    onPress={() => setChecked('second')}
+                    
+                />
+                </View>
+            </View>
+            {/*<RadioButton
                 value='first'
                 status={ checked === 'first' ? 'checked' : 'unchecked'}
                 onPress={() => setChecked('first')}
+                
+                
+
             />
             <RadioButton
                 value="second"
                 status={ checked === 'second' ? 'checked' : 'unchecked' }
                 onPress={() => setChecked('second')}
-            />
+            />*/}
 
         </View>
 
@@ -57,6 +79,22 @@ const style = StyleSheet.create({
 
     topcontainer: {
         top: -10
+    },
+    textcontainer: {
+        flexDirection: "row",
+        alignItems: 'center',
+        flex: 4
+    },
+    radioButtonContainer: {
+        flex: 1
+    },
+    subtitle: {
+        textAlign: 'center',
+        fontFamily: 'Roboto',
+        fontSize: 24,
+        fontStyle: 'normal',
+        textAlign: 'center',
+        fontWeight: '400'
     }
 })
 
