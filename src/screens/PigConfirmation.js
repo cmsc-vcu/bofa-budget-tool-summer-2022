@@ -15,8 +15,11 @@ import figmaColors from '../res/figmaColors';
 
 
 function PigConfirmation (props) {
-    // 
-    const { pigValue } = props.route.params; // DON'T FORGET TO ADD ROUTE 
+
+    // a constant to hold the value of the pig that the users chose from the carousel
+    const { pigValue } = props.route.params; // DON'T FORGET TO ADD ROUTE; IT WON'T WORK WITHOUT ROUTE
+
+    // This is an associative list of the pig avatars with numbers as keys to the value
     const pigs = {
         0: require('../res/images/piggy_cycle1.png'),
         1: require('../res/images/piggy_2.png'),
@@ -26,9 +29,11 @@ function PigConfirmation (props) {
         5: require('../res/images/piggy_6.png')
     }
 
+    // create a variable to grab the correct pig with the require that the users chose
     var pigImage = pigs[pigValue];
 
     return (
+        
         <View style={styles.container}>
             <ImageBackground source={require('../res/images/pigConfirmationTR.png')}> 
                     <ImageBackground source={require('../res/images/pigConfirmationTL.png')}>
@@ -38,21 +43,30 @@ function PigConfirmation (props) {
                     </ImageBackground>
             </ImageBackground>
 
+
+            {/* This is takes care of the title, subtitle, and the pig image that the user choses */}
+            {/* The pig image changes based on what value (what pig) the user picks on the pig carousel */}
             <View style={styles.midContainer}>
                 <Text style={styles.title}>You're all set!</Text>
                 <Text style={styles.subtitle}>Are you ready to play?</Text>
                 <Image style={styles.imageSize} source={pigImage}/>
             </View>
 
+
+            {/* This is the bottom portion of the screen, which contains the two image backgrounds */}
             <View style={styles.bottomContainer}>
                 <ImageBackground source={require('../res/images/pigConfirmationBL.png')}>
                     <ImageBackground source={require('../res/images/pigConfirmationBR.png')}>
                         <View style={styles.bottomBar}>
+
+                            {/* These are the two buttons */}
+                            {/* Orange button takes users to the homepage when the user is certain about the pig they chose */}
                             <OrangeButton
                                 text='confirm'
                                 navigatepage='HomePage'
                             />
                             <View style={styles.spaceBetweenButtons}/>{/* This will act as padding until Kevin finds out how to add padding between the two buttons */}
+                            {/* Gray button takes users back to the pig carousel when the user wants to change their pig */}
                             <GrayButton
                                 text='No, Go Back'
                                 navigatepage='PigCarousel'
@@ -73,7 +87,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     midContainer: {
-        paddingTop: 40,
+        paddingTop: 40, // This pushes the middle portion of the screen towards the bottom because it adds padding to the top
         alignItems: 'center'
     },
     bottomContainer: {
