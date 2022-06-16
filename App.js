@@ -18,6 +18,7 @@ import PigCarousel from './src/screens/PigCarousel';
 import PigConfirmation from './src/screens/PigConfirmation';
 import HomePage from './src/screens/HomePage';
 import ThreeTopics from './src/screens/ThreeTopics';
+import DailyFinancialTip from './src/screens/DailyFinancialTip';
 
  
  
@@ -54,6 +55,7 @@ import ThreeTopics from './src/screens/ThreeTopics';
            <Stack.Screen name='PigCarousel' component={PigCarousel} />
            <Stack.Screen name='PigConfirmation' component={PigConfirmation} />
            <Stack.Screen name='HomePage' component={HomePage} />
+           <Stack.Screen name='DailyFinancialTip' component={DailyFinancialTip} />
          </Stack.Navigator>
        </NavigationContainer>
    )

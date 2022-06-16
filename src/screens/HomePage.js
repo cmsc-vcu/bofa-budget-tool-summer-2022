@@ -7,6 +7,7 @@ import {
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import figmaColors from '../res/figmaColors';
+import Orangebutton from '../components/OrangeButton';
 
 
 // This page is for the Terms & Conditions page with the Privacy Policy
@@ -50,6 +51,14 @@ const HomePage = () => {
                     <Text style={style.pigtext}>
                         Your financial journey:
                     </Text>
+
+
+                    <View>
+                        <Orangebutton
+                            text='Daily Financial Tip'
+                            navigatepage='DailyFinancialTip'
+                        />
+                    </View>
 
                     {/* <View style={style.rightbutton}>
                         <StyleButton
