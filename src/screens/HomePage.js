@@ -105,6 +105,16 @@ const HomePage = () => {
                     <Text>
                         he
                     </Text>
+                    
+                    <Orangebutton
+                        navigatepage='DailyFinancialTip'
+                        style={style.tips}
+                        text='tips'/>
+                    
+                    <Orangebutton
+                        navigatepage='FinancialLiteracyCategories'
+                        style={style.categories}
+                        text='categories'/>
 
                 </ScrollView>
 
@@ -136,7 +146,7 @@ const style = StyleSheet.create({
         height: 90,
         left: 0,
         top: -10
-        
+
     },
 
     home: {

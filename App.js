@@ -19,6 +19,7 @@ import PigConfirmation from './src/screens/PigConfirmation';
 import HomePage from './src/screens/HomePage';
 import ThreeTopics from './src/screens/ThreeTopics';
 import DailyFinancialTip from './src/screens/DailyFinancialTip';
+import FinancialLiteracyCategories from './src/screens/FinancialLiteracyCategories';
 
  
  
@@ -56,6 +57,7 @@ import DailyFinancialTip from './src/screens/DailyFinancialTip';
            <Stack.Screen name='PigConfirmation' component={PigConfirmation} />
            <Stack.Screen name='HomePage' component={HomePage} />
            <Stack.Screen name='DailyFinancialTip' component={DailyFinancialTip} />
+           <Stack.Screen name='FinancialLiteracyCategories' component={FinancialLiteracyCategories} />
          </Stack.Navigator>
        </NavigationContainer>
    )
