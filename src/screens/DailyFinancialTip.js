@@ -7,7 +7,7 @@ import {
     ScrollView,
     ImageBackground,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import figmaColors from '../res/figmaColors';
 import { useNavigation } from '@react-navigation/native';
 
@@ -20,8 +20,19 @@ import { useNavigation } from '@react-navigation/native';
 // Window are the dimensions with the menubar
 // Screen will be bigger than Window
 
+// Create two constants to hold the image
+// Create a 
+const inactiveBookmark = require('../res/images/inactiveBookmark.png');
+const activeBookmark = require('../res/images/activeBookmark.png');
+const bookmarks = { inactiveBookmark, activeBookmark };
+
 const DailyFinancialTip = () => {
     const navigation = useNavigation();
+
+    
+
+    const [inactive, setActive] = useState(bookmarks.inactiveBookmark);
+
     return (
         <ImageBackground source={require('../res/images/dailyFinancialTipBackground.png')} style={styles.container}>
             <View>
@@ -37,8 +48,17 @@ const DailyFinancialTip = () => {
                     </View>
                     
                     <View style={styles.bookmarkContainer}>
-                        <TouchableOpacity onPress={() => navigation.navigate('HomePage')}>
-                            <Image source={require('../res/images/inactiveBookmark.png')} />
+                        <TouchableOpacity onPress={() => {
+                            if(inactive === bookmarks.inactiveBookmark)
+                            {
+                                setActive(bookmarks.activeBookmark)
+                            }
+                            else
+                            {
+                                setActive(bookmarks.inactiveBookmark)
+                            }
+                        }}>
+                            <Image source={ inactive } />
                         </TouchableOpacity>
                     </View>
                 </View>
