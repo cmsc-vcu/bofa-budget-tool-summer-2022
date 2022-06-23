@@ -6,7 +6,6 @@ import {
     TouchableOpacity,
     ScrollView,
     ImageBackground,
-    Dimensions
 } from 'react-native';
 import React from 'react';
 import figmaColors from '../res/figmaColors';
@@ -20,8 +19,6 @@ import { useNavigation } from '@react-navigation/native';
 // Screen are the dimensions without the menubar
 // Window are the dimensions with the menubar
 // Screen will be bigger than Window
-const screen = Dimensions.get('screen');
-const window = Dimensions.get('window');
 
 const DailyFinancialTip = () => {
     const navigation = useNavigation();
@@ -30,7 +27,7 @@ const DailyFinancialTip = () => {
             <View>
                 {/* This will be the top portion of the screen with the back button and bookmark button */}
                 <View style={styles.topContainer}>
-                    <View >
+                    <View>
                         <TouchableOpacity onPress={() => navigation.navigate('HomePage')}>
                             <View style={styles.backButtonContainer}>
                                 <Image source={require('../res/images/financialTipBackArrow.png')} />
@@ -39,12 +36,10 @@ const DailyFinancialTip = () => {
                         </TouchableOpacity>
                     </View>
                     
-                    <View>
-                    <TouchableOpacity onPress={() => navigation.navigate('HomePage')}>
-                        <View style={styles.backButtonContainer}>
+                    <View style={styles.bookmarkContainer}>
+                        <TouchableOpacity onPress={() => navigation.navigate('HomePage')}>
                             <Image source={require('../res/images/inactiveBookmark.png')} />
-                        </View>
-                    </TouchableOpacity>
+                        </TouchableOpacity>
                     </View>
                 </View>
 
@@ -54,7 +49,7 @@ const DailyFinancialTip = () => {
                     <ScrollView>
                         <Text style={styles.subtext}>
                         With oil prices reaching their highest level since 2014 after Russia attacked Ukraine on Thursday,
-                         the effect could potentially be felt in higher gas prices that may come as the U.S. is already experiencing its highest level of inflation in 40 years. {'\n'}
+                        the effect could potentially be felt in higher gas prices that may come as the U.S. is already experiencing its highest level of inflation in 40 years. {'\n'} {'\n'}
                         Rhule shared five tips for how to save money in multiple areas: {'\n'} {'\n'}
                         Check to see if your credit card has any deals on gas, as some cards will give you double points or cash back for gas purchases.
                         </Text>
@@ -81,15 +76,18 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     topContainer: {
-        flexDirection: ''
+        height: '10%',
+        flexDirection: 'row',
+        alignItems: 'center', // center of the container, which has a height of 10% of the viewing port
     },
     textContainer: {
         height: '80%',
-        width: 350,
+        width: '85%',
         borderRadius: 20,
         backgroundColor: figmaColors.primaryOffWhite,
     },
     botContainer: {
+        height: '10%',
         alignItems: 'flex-end'
     },
     backButtonContainer: {
@@ -97,7 +95,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     bookmarkContainer: {
-        alignItems: 'flex-end'
+        paddingLeft: 225
     },
     title: {
         fontFamily: 'Roboto',
@@ -106,13 +104,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         textAlign: 'center',
         color: figmaColors.primaryOffBlack,
-        padding: 25
+        padding: 20
     },
     subtext: {
         fontFamily: 'Roboto',
-        fontWeight: '700',
+        fontWeight: '400',
         fontSize: 18,
-        padding: 20,
+        padding: 30,
         color: figmaColors.primaryOffBlack
     },
     whiteTextStyle: {
