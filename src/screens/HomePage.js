@@ -2,7 +2,8 @@ import {
     Text,
     StyleSheet,
     View,
-    Image
+    Image,
+    ScrollView
 } from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
@@ -13,87 +14,129 @@ import Orangebutton from '../components/OrangeButton';
 // This page is for the Terms & Conditions page with the Privacy Policy
 const HomePage = () => {
     return (
-        <LinearGradient
-            colors={[figmaColors.primaryGreen, figmaColors.primaryTeal]}
-            style={style.container}>
+        // Whole page view
+        <View> 
 
-            <View style={style.topcontainer}>
-            {/* This view will handle the header*/}
-                
-                        
+            <ScrollView style={style.scrollcontainer}>
+                <View>
+                    <LinearGradient
+                        colors={[figmaColors.primaryGreen, figmaColors.primaryTeal]}
+                        style={style.gradient}>
+                            
+                        <View style={style.pigtop}>
+                                <Text style={style.pigheader}>
+                                    Welcome back, Abbie!
+                                </Text>
+                                <Text style={style.rank}>
+                                    Rank/Total XP:
+                                </Text>
+                            </View>
+
+                            <Image source={require('../res/images/tempHpPig.png')} style={style.pig}/>
+
+                            <View style={style.pigsubheader}>
+                                <Text style={style.pigheader}>
+                                    LEVEL 1
+                                </Text>
+                                <Text style={style.xp}>
+                                    200/250
+                                </Text>
+                            </View>
+
+                            <Image source={require('../res/images/pigLine.png')} style={style.pigline}/>
+                            <Text style={style.pigtext}>
+                                Your financial journey:
+                            </Text>
+
+
+                            {/* <View>
+                                <Orangebutton
+                                    text='Daily Financial Tip'
+                                    navigatepage='DailyFinancialTip'
+                                />
+                            </View>
+
+                                <View style={style.rightbutton}>
+                                    <StyleButton
+                                        text={'continue'}
+                                    />
+                                </View>
+                                
+
+                                <Text style={[style.subheaderone]}>
+                                    Daily Financial Tips
+                                </Text> */}
+                            </LinearGradient>
+
+                    </View>
+                    <Text>
+                        he
+                    </Text>
+                    <Text>
+                        he
+                    </Text>
+                    <Text>
+                        he
+                    </Text>
+                    <Text>
+                        he
+                    </Text>
+                    <Text>
+                        he
+                    </Text>
+                    <Text>
+                        he
+                    </Text>
+                    <Text>
+                        he
+                    </Text>
+                    <Text>
+                        he
+                    </Text>
+                    <Text>
+                        he
+                    </Text>
+                    <Text>
+                        he
+                    </Text>
+                    <Text>
+                        he
+                    </Text>
+                    <Text>
+                        he
+                    </Text>
+
+                </ScrollView>
+
+                <View style={style.topcontainer}> 
                     <Image source={require('../res/images/HPtopvector.png')} style={style.topvector}/> 
                     <Image source={require('../res/images/Settings.png')} style={style.settings}/>
                     <Text style={[style.home]}>
                         Home
                     </Text>
-                        
-                    <View style={style.pigtop}>
-                        <Text style={style.pigheader}>
-                            Welcome back, Abbie!
-                        </Text>
-                        <Text style={style.rank}>
-                            Rank/Total XP:
-                        </Text>
-                    </View>
-
-                    <Image source={require('../res/images/tempHpPig.png')} style={style.pig}/>
-
-                    <View style={style.pigsubheader}>
-                        <Text style={style.pigheader}>
-                            LEVEL 1
-                        </Text>
-                        <Text style={style.xp}>
-                            200/250
-                        </Text>
-                    </View>
-
-                    <Image source={require('../res/images/pigLine.png')} style={style.pigline}/>
-                    <Text style={style.pigtext}>
-                        Your financial journey:
-                    </Text>
-
-
-                    <View>
-                        <Orangebutton
-                            text='Daily Financial Tip'
-                            navigatepage='DailyFinancialTip'
-                        />
-                    </View>
-
-                    {/* <View style={style.rightbutton}>
-                        <StyleButton
-                            text={'continue'}
-                        />
-                    </View> */}
-                    
-
-                    {/* <Text style={[style.subheaderone]}>
-                        Daily Financial Tips
-                    </Text> */}
- 
-                
-            </View>
-        </LinearGradient>
+                </View>
+        </View>
 
     )
 }
 
+
 const style = StyleSheet.create({
-    container: {
+    gradient: {
         flex: 1,
-        paddingTop: 30,
+        height: 600
     },
 
     topcontainer: {
-        position: 'absolute',
-
+        position: 'absolute'
     },
 
     topvector: {
-        width: 390,
+        width: 393,
         height: 90,
         left: 0,
-        top: 0
+        top: -10
+        
     },
 
     home: {
@@ -104,7 +147,7 @@ const style = StyleSheet.create({
         lineHeight: 28,
         position: 'absolute',
         left: 20,
-        top: 45,
+        top: 35,
         color: '#2E2E2E'
     },
 
@@ -115,9 +158,19 @@ const style = StyleSheet.create({
         fontStyle: 'normal',
         textAlign: 'center',
         fontWeight: '400',
+        left: 350,
+        top: -55,
+    },
+
+    scrollcontainer: {
         
-        left: 340,
-        top: -45,
+    },
+
+    midcontainer: {
+        flex: 1,
+        height: 100,
+        width: "100%",
+        
     },
 
     pigtop: {
@@ -150,7 +203,7 @@ const style = StyleSheet.create({
     },
 
     pig: {
-        top: 70,
+        top: 185,
         left: 95,
         width: 198,
         height: 199

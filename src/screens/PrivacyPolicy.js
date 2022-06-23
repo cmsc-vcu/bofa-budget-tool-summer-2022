@@ -86,10 +86,8 @@ const style = StyleSheet.create({
         width: 309,
         height: 28,
         left: 29,
-        top: -220,
+        top: -218,
         color: '#FFFEF6'
-
-
     },
 
     vector: {
@@ -114,29 +112,31 @@ const style = StyleSheet.create({
 
     scroll: {
 
-        height: 340,
+        height: 390,
         width: 345,
         left: 15,
-        top: -115
+        top: -108
     },
 
     borderone: {
         left: 15,
-        top: -125
+        top: -132
     },
 
     statement: {
-        fontSize: 18,
+        fontSize: 16,
         fontFamily: 'Roboto',
         width: 320,
         color: '#2E2E2E',
-        left: 15,
+        left: 22,
+        lineHeight: 26
         
     },
 
     bordertwo: {
         left: 15,
-        bottom: 105
+        bottom: 80
+
     }
 
 })
