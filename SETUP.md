@@ -4,11 +4,14 @@ REACT-NATIVE has prepared a very good guide for getting started:
 
 <https://reactnative.dev/docs/environment-setup>
 
-You can visit these instructions.  Some notes - we're using the react-native CLI, we're NOT using EXPO.
+The instructions on the link above work. Some notes - we're using the react-native CLI, we're NOT using EXPO.
+
+I found the instructions at the URL above a bit confusing, expecially since I wanted to use virtual machine (VM) for my development
+environment.  The instructions below document what I learned to get everything working.
 
 ## Running in a virtual machine
 
-Most of these instructions apply when you're running the development environment on your bare metal operating system.  The HyperV instructions are useful if you choose to layre on a VM (virtual machine) and develop from inside the VM.  This is handy if you don't want to pollute your main machine with all the development tools.
+Most of these instructions apply when you're running the development environment on your bare metal operating system.  The HyperV instructions are useful if you choose to layer on a VM (virtual machine) and develop from inside the VM.  This is handy if you don't want to pollute your main machine with all the development tools.
 
 ## Install Hyper-V
 
@@ -68,6 +71,7 @@ To install one of these extensions:
 
     git config --global user.email "jdleonard@vcu.edu"
     git config --global user.name "John Leonard"
+    git config --global core.editor "code --wait"
 
 ## Fix odd npm error
 
