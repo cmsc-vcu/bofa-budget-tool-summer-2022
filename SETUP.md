@@ -1,5 +1,13 @@
 # Setting up a new development VM
 
+REACT-NATIVE has prepared a very good guide for getting started:
+
+<https://reactnative.dev/docs/environment-setup>
+
+You can visit these instructions.  Some notes - we're using the react-native CLI, we're NOT using EXPO.
+
+## Running in a virtual machine
+
 Most of these instructions apply when you're running the development environment on your bare metal operating system.  The HyperV instructions are useful if you choose to layre on a VM (virtual machine) and develop from inside the VM.  This is handy if you don't want to pollute your main machine with all the development tools.
 
 ## Install Hyper-V
