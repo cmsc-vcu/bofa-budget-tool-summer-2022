@@ -10,3 +10,8 @@ This repo contains the working code for the FinLit app.
     Projects\bofaReactNative> npm install --save react-native-vector-icons
     Projects\bofaReactNative> npx react-native start
     Projects\bofaReactNative> npx react-native run-android
+
+## Helpful documentation
+
+- [Getting set for development](./SETUP.md)
+- [Frequently asked questions](./FAQ.md)
