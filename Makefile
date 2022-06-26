@@ -2,7 +2,7 @@
 # Make is VERY powerful.  See:  http://www.gnu.org/software/make/manual/
 
 
-.PHONY: help-make
+.PHONY: help-make clean test
 .DEFAULT: help-make
 
 help-make:
@@ -11,5 +11,14 @@ help-make:
 all:
 	@echo a target for making all the files
 
-clean:
-	@echo a target for cleaning caches and downloaded files
+clean-android:
+	@echo Deleting ANDROID build files and stuff
+	-cd android & gradlew clean & cd ..
+	-rmdir /S /Q node_modules
+	-del yarn.lock package-lock.json
+
+fresh-android: clean-android
+	@echo Reinstalling node modules, cleaning cache and starting watcher
+	-npm install
+	-npm start -- --reset-cache
+
