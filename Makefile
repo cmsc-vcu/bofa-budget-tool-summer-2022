@@ -1,4 +1,6 @@
 # Project makefile, useful for storing commands for the command line.
+# Make is VERY powerful.  See:  http://www.gnu.org/software/make/manual/
+
 
 .PHONY: help-make
 .DEFAULT: help-make
