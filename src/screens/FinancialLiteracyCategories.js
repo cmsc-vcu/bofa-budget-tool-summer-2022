@@ -77,7 +77,7 @@ const FinancialLiteracyCategories = () =>
 
                 {/* Career Snapshot */}
                 <View style={styles.careerSnapshotContainer}>
-                    <Text>View Career Snapshot</Text>
+                    <Text style={styles.careerSnapshotTextStyle} >View Career Snapshot</Text>
                 </View>
 
                 
@@ -87,6 +87,8 @@ const FinancialLiteracyCategories = () =>
                         navigatepage='FinancialLiteracyModules'
                         text='Modules'/>
                 </View>
+
+                <CategoriesCards></CategoriesCards>
             </ScrollView>
         </View>
         
@@ -214,6 +216,13 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         shadowOpacity: 1,
         elevation: 4,
+    },
+    careerSnapshotTextStyle: {
+        color: '#000000',
+        fontStyle: 'normal',
+        fontWeight: '800',
+        fontSize: 20,
+        lineHeight: 23,
     }
 })
 
