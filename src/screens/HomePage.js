@@ -71,7 +71,9 @@ const HomePage = () => {
                         <Text style={style.subheaderthree}>
                             REWARDS
                         </Text>
-                        <Text style={style.rewardspage}>
+                        <Text 
+                        style={style.rewardspage}
+                        onPress={() => navigation.navigate('Rewards')}>
                             View More
                         </Text>
                         <View>
@@ -85,13 +87,15 @@ const HomePage = () => {
                         <Text style={style.subheaderfour}>
                             CONNECT
                         </Text>
-                        <Text style={style.connectpage}>
+                        <Text 
+                        style={style.connectpage}
+                        onPress={() => navigation.navigate('Connect')}>
                             View More
                         </Text>
                         <View style={style.connect}>
                             <TouchableOpacity 
                             style={style.connecttouchable}
-                            onPress={() => navigation.navigate('DailyFinancialTip')}>
+                            onPress={() => navigation.navigate('Connect')}>
                                 <Image source={require('../res/images/friendIcon.png')} style={style.friendicon}/>
                                 <Text style={style.connecttext}>
                                     Add Friend
