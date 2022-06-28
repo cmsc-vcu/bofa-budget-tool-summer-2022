@@ -52,7 +52,9 @@ const FinancialLiteracyCategories = () =>
 
 
                 {/* PERSONA CARD */}
-                <View style={styles.personaCard}>
+
+
+                {/* <View style={styles.personaCard}>
                     <View style={styles.personaImageContainer}>
                         <Image source={require('../res/images/defaultPersonaImage.png')} style={styles.personaImage}>
 
@@ -61,24 +63,26 @@ const FinancialLiteracyCategories = () =>
                     
                     <View style={styles.personaTextContainer}>
                         <Text style={styles.personaName}>
-                            {/* Persona Name goes Here */}
+                            
                             Emilio Johnson
                         </Text>
                         <Text style={styles.personaJob}>
-                            {/* Persona Job Title goes Here */}
+                            
                             Graphic Designer
                         </Text>
                         <Text style={styles.personaResidence}>
-                            {/* Persona Residence goes Here */}
+                            
                             Richmond, VA
                         </Text>
                     </View>
-                </View>
+                </View> */}
+
+                
 
                 {/* Career Snapshot */}
-                <View style={styles.careerSnapshotContainer}>
+                {/* <View style={styles.careerSnapshotContainer}>
                     <Text style={styles.careerSnapshotTextStyle} >View Career Snapshot</Text>
-                </View>
+                </View> */}
 
                 
 
