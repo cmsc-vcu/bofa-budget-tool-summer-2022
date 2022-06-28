@@ -2,26 +2,52 @@ import {
     StyleSheet, 
     View,
     Text,
-    ImageBackground
+    ImageBackground,
+    TouchableOpacity,
+    Image
 } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import figmaColors from '../res/figmaColors';
+import BulletPoints from './BulletPoints';
 
 
 const CategoriesCards = (props) =>
 {
     return(
         <View style={styles.container}>
-            <View style={styles.header}>
-                <ImageBackground source={require('../res/images/categoriesCardCurve.png')} style={styles.curvedImage}>
+            <View style={{flex: 1}}>
+                <ImageBackground source={require('../res/images/categoriesCardCurve.png')} resizeMode= 'stretch' style={styles.curvedImage}>
+
+                <View style={styles.headerContainer}>
+
+                    <Text style={styles.title}>
+                        Spending
+                    </Text>
+                    <TouchableOpacity>
+                        <Image source={require('../res/images/forwardArrow.png')} style={styles.nextArrowImage}>
+
+                        </Image>
+                    </TouchableOpacity>
+
+
+                </View>
+                    
+                </ImageBackground>
+
+                <View style={styles.modulesContainer}>
                     <View>
+                        <BulletPoints>
+                            
+                        </BulletPoints>
                         <Text>
-                            Spending
+                            hello
                         </Text>
                     </View>
-                </ImageBackground>
+                    
+                </View>
             </View>
+            
         </View>
     );
 }
@@ -35,25 +61,33 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         alignContent:'center',
     },
-    title: {
-
+    headerContainer: {
+        width: '100%',
+        height: '100%',
+        margin: 15,
+        flexDirection: 'row',
     },
-    modules: {
-
+    title: {
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontSize: 40,
+        fontWeight: '800',
+        color: figmaColors.primaryOffWhite
+    },
+    modulesContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     curvedImage: {
+        position: 'absolute',
         width: '100%',
-        height: '10%'
+        height: '65%'
     },
     nextArrowImage: {
-        width: '10%',
-        height: '10%'
+        marginLeft: '50%',
+        marginTop: '10%',
     },
-    header: {
-        width: '100%',
-        height: '40%',
-    }
-
 })
 
 export default CategoriesCards;
