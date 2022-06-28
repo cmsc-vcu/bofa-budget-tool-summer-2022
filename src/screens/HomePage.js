@@ -4,7 +4,8 @@ import {
     View,
     Image,
     ScrollView,
-    TouchableOpacity
+    TouchableOpacity,
+    TouchableHighlight
 } from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
@@ -12,8 +13,6 @@ import figmaColors from '../res/figmaColors';
 import { useNavigation } from "@react-navigation/native";
 import OrangeButton from "../components/OrangeButton";
 
-
-// This page is for the Terms & Conditions page with the Privacy Policy
 const HomePage = () => {
     const navigation = useNavigation();
     return (
@@ -117,11 +116,19 @@ const HomePage = () => {
                 </View>
 
                 <View style={style.bottomcontainer}> 
-                    <View style={style.test}>
-                    <Image source={require('../res/images/homeIcon.png')} style={style.homeicon}/>
-                    <Image source={require('../res/images/learnIcon.png')} style={style.learnicon}/>
-                    <Image source={require('../res/images/rewardsIcon.png')} style={style.rewardsicon}/>
-                    <Image source={require('../res/images/connectIcon.png')} style={style.connecticon}/>
+                    <View style={style.navbar}>
+                        <TouchableHighlight>
+                            <Image source={require('../res/images/homeIcon.png')} style={style.homeicon}/>
+                        </TouchableHighlight>
+                        <TouchableHighlight onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
+                            <Image source={require('../res/images/learnIcon.png')} style={style.learnicon}/>
+                        </TouchableHighlight>
+                        <TouchableHighlight onPress={() => navigation.navigate('Rewards')}>
+                            <Image source={require('../res/images/rewardsIcon.png')} style={style.rewardsicon}/>
+                        </TouchableHighlight>
+                        <TouchableHighlight onPress={() => navigation.navigate('Connect')}>
+                            <Image source={require('../res/images/connectIcon.png')} style={style.connecticon}/>
+                        </TouchableHighlight>
                     </View>
                 </View>
 
@@ -452,7 +459,7 @@ const style = StyleSheet.create({
         
     },
 
-    test: {
+    navbar: {
         width: 382,
         height: 63,
         backgroundColor: '#FFFEF6',
@@ -466,19 +473,23 @@ const style = StyleSheet.create({
     },
 
     homeicon: {
-        
+        left: 10,
+        tintColor: '#4CB998'
     },
 
     learnicon: {
-        
+        left: 100,
+        top: -25,
     },
 
     rewardsicon: {
-        
+        left: 175,
+        top: -50
     },
 
     connecticon: {
-        
+        left: 250,
+        top: -75
     },
 
 })
