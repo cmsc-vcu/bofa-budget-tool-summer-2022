@@ -38,9 +38,11 @@ const HomePage = () => {
                         </Text>
                     </View>
                     <View style={style.module}>
-                        <Text style={style.moduletext}>
-                            MODULE
-                        </Text>
+                        <TouchableOpacity onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
+                            <Text style={style.moduletext}>
+                                MODULE
+                            </Text>
+                        </TouchableOpacity>
                     </View>
                 </LinearGradient>
 
@@ -102,10 +104,9 @@ const HomePage = () => {
                                 </Text>
                             </TouchableOpacity>
                         </View>
-                    
-            
                     </View>
                 </ScrollView>
+
 
                 <View style={style.topcontainer}> 
                     <Image source={require('../res/images/HPtopvector.png')} style={style.topvector}/> 
@@ -114,6 +115,17 @@ const HomePage = () => {
                         Home
                     </Text>
                 </View>
+
+                <View style={style.bottomcontainer}> 
+                    <View style={style.test}>
+                    <Image source={require('../res/images/homeIcon.png')} style={style.homeicon}/>
+                    <Image source={require('../res/images/learnIcon.png')} style={style.learnicon}/>
+                    <Image source={require('../res/images/rewardsIcon.png')} style={style.rewardsicon}/>
+                    <Image source={require('../res/images/connectIcon.png')} style={style.connecticon}/>
+                    </View>
+                </View>
+
+                
         </View>
 
     )
@@ -435,6 +447,39 @@ const style = StyleSheet.create({
         top: 35
     },
 
+    bottomcontainer: {
+        position: 'absolute',
+        
+    },
+
+    test: {
+        width: 382,
+        height: 63,
+        backgroundColor: '#FFFEF6',
+        left: 5,
+        top: 685,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+        elevation: 15,
+    },
+
+    homeicon: {
+        
+    },
+
+    learnicon: {
+        
+    },
+
+    rewardsicon: {
+        
+    },
+
+    connecticon: {
+        
+    },
 
 })
 
