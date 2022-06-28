@@ -4,7 +4,7 @@ import {
     View,
     Image
 } from 'react-native';
-import React from 'react';
+import React , { useState } from 'react';
 import OrangeButton from "../components/OrangeButton";
 
 const ThreeTopics = (props) => {

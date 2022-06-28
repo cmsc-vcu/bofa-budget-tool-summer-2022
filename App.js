@@ -9,6 +9,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
 import FirstPageMiddle from './src/screens/FirstPageMiddle';
 import CardIntro from './src/screens/CardIntro';
 import TermsConditions from './src/screens/TermsConditions';
@@ -20,6 +22,7 @@ import HomePage from './src/screens/HomePage';
 import ThreeTopics from './src/screens/ThreeTopics';
 import DailyFinancialTip from './src/screens/DailyFinancialTip';
 import FinancialLiteracyCategories from './src/screens/FinancialLiteracyCategories';
+import FinancialLiteracyModules from './src/screens/FinancialLiteracyModules';
 
  
  
@@ -58,6 +61,7 @@ import FinancialLiteracyCategories from './src/screens/FinancialLiteracyCategori
            <Stack.Screen name='HomePage' component={HomePage} />
            <Stack.Screen name='DailyFinancialTip' component={DailyFinancialTip} />
            <Stack.Screen name='FinancialLiteracyCategories' component={FinancialLiteracyCategories} />
+           <Stack.Screen name='FinancialLiteracyModules' component={FinancialLiteracyModules} />
          </Stack.Navigator>
        </NavigationContainer>
    )
