@@ -8,10 +8,10 @@ import {
     Button
 } from 'react-native';
 import React from 'react';
-import OrangeButton from "../components/OrangeButton";
 import figmaColors from '../res/figmaColors';
 import LinearGradient from 'react-native-linear-gradient';
 import OrangeButtonTiny from '../components/OrangeButtonTiny';
+import SelectionButtons from '../components/SelectionButtons';
 
 const ThreeTopics = (props) => {
     return (
@@ -32,30 +32,99 @@ const ThreeTopics = (props) => {
             <View style={style.container}>
                 <Image
                     source={require('../res/images/Vector_bottom.png')}
-                    style={{ bottom: '5%' }}
+                    style={{ bottom: "-220%" }}
                 />
                 <Image
-                    source={require('../res/images/Frame_52.png')}
-                    style={style.progress_1}
+                    source={require('../res/images/btn_common.png')}
+                    style={{ left: 15, bottom: -5 }}
+                    navigatepage='PigCarousel'
                 />
+            </View>
+            <View style={{
+                flex: 1,
+                top: 160,
+                left: -70
+            }}>
+                <SelectionButtons
+                    text={'Building Credit'}
+                />
+            </View>
+
+            <View style={{
+                flex: 1,
+                top: 105,
+                left: 90
+            }}>
+                <SelectionButtons
+                    text={'Tax'}
+                />
+            </View>
+
+            <View style={{ flex: 1, top: 120, left: -80 }}>
+                <SelectionButtons
+                    text={'Budgeting'}
+                />
+            </View>
+
+            <View style={{ flex: 1, top: 65, left: 95 }}>
+                <SelectionButtons
+                    text={'Retirement'}
+                />
+            </View>
+
+            <View style={{ flex: 1, top: 80, left: -5 }}>
+                <SelectionButtons
+                    text={'Appeciation of Assets'}
+                />
+            </View>
+
+            <View style={{ flex: 1, top: 92, left: -90 }}>
+                <SelectionButtons
+                    text={'Real Estate'}
+                />
+            </View>
+
+
+            <View style={{ flex: 1, top: 40, left: 80 }}>
+                <SelectionButtons
+                    text={'Investing'}
+                />
+            </View>
+
+            <View style={{ flex: 1, top: 53, left: -80 }}>
+                <SelectionButtons
+                    text={'Loans'}
+                />
+            </View>
+
+            <View style={{ flex: 1, top: -1, left: 70 }}>
+                <SelectionButtons
+                    text={'Banking'}
+                />
+            </View>
+
+            <View style={{ flex: 1, top: 12, left: -110 }}>
+                <SelectionButtons
+                    text={'Saving'}
+                />
+            </View>
+
+            <View style={{ flex: 1, top: -40, left: 70 }}>
+                <SelectionButtons
+                    text={'Cryptocurrencies'}
+                />
+            </View>
+
+            <View style={style.container_2}>
+                <Text style={style.bodyText}>
+                    Don't see your interests?{"\n"}Suggest it here
+                </Text>
             </View>
             <View style={style.container_1}>
                 <OrangeButtonTiny
                     text={'Next'}
                     navigatepage='PigCarousel'
                 />
-
-                <Image
-                    source={require('../res/images/btn_common.png')}
-                    style={{ left: -70, bottom: '26%' }}
-                    navigatepage='PigCarousel'
-                />
-            </View>
-
-            <View style={style.container}>
-                <Text style={style.bodyText}>
-                    Don't see your interests?{"\n"}Suggest it here
-                </Text>
             </View>
         </LinearGradient>
     )
@@ -68,8 +137,13 @@ const style = StyleSheet.create({
 
     container_1: {
         flex: 1,
-        top: 310,
-        left: 100,
+        top: -30,
+        left: 90,
+    },
+
+    container_2: {
+        flex: 1,
+        top: -25,
     },
 
     progress: {
@@ -107,15 +181,23 @@ const style = StyleSheet.create({
     },
 
     bodyText: {
-
         fontFamily: 'Roboto',
         fontStyle: 'normal',
         fontSize: 16,
         fontWeight: '400',
         textAlign: 'center',
-        paddingTop: 50,
         color: "#605F58"
     },
+
+    textstyle: {
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: 'bold',
+        fontSize: 18,
+        textTransform: 'uppercase',
+        color: figmaColors.primaryOffBlack
+    },
+
     imageSize: {
         width: 1250.41,
         height: 955.81,
