@@ -23,6 +23,8 @@ import ThreeTopics from './src/screens/ThreeTopics';
 import DailyFinancialTip from './src/screens/DailyFinancialTip';
 import FinancialLiteracyCategories from './src/screens/FinancialLiteracyCategories';
 import FinancialLiteracyModules from './src/screens/FinancialLiteracyModules';
+import Rewards from './src/screens/Rewards';
+import Connect from './src/screens/Connect';
 
  
  
@@ -62,6 +64,8 @@ import FinancialLiteracyModules from './src/screens/FinancialLiteracyModules';
            <Stack.Screen name='DailyFinancialTip' component={DailyFinancialTip} />
            <Stack.Screen name='FinancialLiteracyCategories' component={FinancialLiteracyCategories} />
            <Stack.Screen name='FinancialLiteracyModules' component={FinancialLiteracyModules} />
+           <Stack.Screen name='Rewards' component={Rewards} />
+           <Stack.Screen name='Connect' component={Connect} />
          </Stack.Navigator>
        </NavigationContainer>
    )
