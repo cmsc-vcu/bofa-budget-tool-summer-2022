@@ -59,7 +59,11 @@ const CategoriesCards = (props) =>
                     </View>
                 </View>
 
-                <CircularProgress value={80}/>
+                <CircularProgress 
+                    value={80}
+                    progressValueColor={ "#EF5F82" }
+                    activeStrokeColor={ "#EF5F82" }
+                />
 
                 
             </View>
