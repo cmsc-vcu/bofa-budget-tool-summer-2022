@@ -13,8 +13,11 @@ import figmaColors from '../res/figmaColors';
 import { useNavigation } from "@react-navigation/native";
 import OrangeButton from "../components/OrangeButton";
 
+
 const HomePage = () => {
+
     const navigation = useNavigation();
+
     return (
         // Whole page view
         <View> 
@@ -117,18 +120,25 @@ const HomePage = () => {
 
                 <View style={style.bottomcontainer}> 
                     <View style={style.navbar}>
-                        <TouchableHighlight>
-                            <Image source={require('../res/images/homeIcon.png')} style={style.homeicon}/>
-                        </TouchableHighlight>
-                        <TouchableHighlight onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
-                            <Image source={require('../res/images/learnIcon.png')} style={style.learnicon}/>
-                        </TouchableHighlight>
-                        <TouchableHighlight onPress={() => navigation.navigate('Rewards')}>
+                        <View>
+                            <TouchableOpacity activeOpacity={1}>
+                                <Image source={require('../res/images/homeIcon.png')} style={style.homeicon}/>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={style.learnicon}>
+                            <TouchableOpacity onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
+                                <Image source={require('../res/images/learnIcon.png')}/>
+                            </TouchableOpacity>
+                        </View>
+                        <TouchableOpacity onPress={() => navigation.navigate('Rewards')}>
                             <Image source={require('../res/images/rewardsIcon.png')} style={style.rewardsicon}/>
-                        </TouchableHighlight>
-                        <TouchableHighlight onPress={() => navigation.navigate('Connect')}>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Connect')}>
                             <Image source={require('../res/images/connectIcon.png')} style={style.connecticon}/>
-                        </TouchableHighlight>
+                        </TouchableOpacity>
+                        <View style={style.box}>
+
+                        </View>
                     </View>
                 </View>
 
@@ -140,12 +150,20 @@ const HomePage = () => {
 
 
 const style = StyleSheet.create({
+    box: {
+        position: 'absolute',
+        height: 65,
+        width: 43,
+        backgroundColor: '#808080',
+        opacity: .5,
+        left: 1
+    }, 
     topcontainer: {
         position: 'absolute'
     },
 
     topvector: {
-        width: 393,
+        width: '50%',
         height: 90,
         left: 0,
         top: -10
@@ -473,23 +491,24 @@ const style = StyleSheet.create({
     },
 
     homeicon: {
-        left: 10,
+        left: 30,
+        top: 10,
         tintColor: '#4CB998'
     },
 
     learnicon: {
         left: 100,
-        top: -25,
+        top: -22,
     },
 
     rewardsicon: {
-        left: 175,
-        top: -50
+        left: 170,
+        top: -53
     },
 
     connecticon: {
-        left: 250,
-        top: -75
+        left: 245,
+        top: -82
     },
 
 })

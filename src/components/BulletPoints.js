@@ -5,10 +5,10 @@ import {
 import React from 'react';
 import figmaColors from '../res/figmaColors';
 
-const BulletPoints = () => {
+const BulletPoints = (props) => {
     return (
-        <View style={styles.outerCircle}>
-            <View style={styles.innerCircle}>
+        <View style={[styles.outerCircle, { backgroundColor: props.passedColor }]}>
+            <View style={[styles.innerCircle]}>
 
             </View>
         </View>
@@ -19,9 +19,9 @@ const styles = StyleSheet.create({
     outerCircle: {
         width: 17,
         height: 17,
-        backgroundColor: figmaColors.primaryOffBlack,
-        borderRadius: 22,
-        justifyContent: 'center'
+        borderRadius: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     innerCircle: {
         width: 8,

@@ -10,6 +10,7 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import figmaColors from '../res/figmaColors';
 import BulletPoints from './BulletPoints';
+import CircularProgress from 'react-native-circular-progress-indicator';
 
 
 const CategoriesCards = (props) =>
@@ -36,16 +37,31 @@ const CategoriesCards = (props) =>
                 </ImageBackground>
 
                 <View style={styles.modulesContainer}>
-                    <View>
-                        <BulletPoints>
-                            
-                        </BulletPoints>
-                        <Text>
-                            hello
-                        </Text>
+                    <View style={styles.modulesContainer}>
+                        <View style={styles.modulesTextContainer}>
+                            <BulletPoints passedColor="#EF5F82"/>
+                            <Text style={styles.modulesTextStyle}>
+                                Budgeting
+                            </Text>
+                        </View>
+                        <View style={styles.modulesTextContainer}>
+                            <BulletPoints passedColor="#EF5F82"/>
+                            <Text style={styles.modulesTextStyle}>
+                                Credit
+                            </Text>
+                        </View>
+                        <View style={styles.modulesTextContainer}>
+                            <BulletPoints passedColor="#EF5F82"/>
+                            <Text style={styles.modulesTextStyle}>
+                                Bank Accounts
+                            </Text>
+                        </View>
                     </View>
-                    
                 </View>
+
+                <CircularProgress value={80}/>
+
+                
             </View>
             
         </View>
@@ -76,8 +92,20 @@ const styles = StyleSheet.create({
     },
     modulesContainer: {
         flex: 1,
+        paddingLeft: 9,
+        justifyContent: 'center',
+        marginTop: 35,
+    },
+    modulesTextContainer: {
+        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center'
+    },
+    modulesTextStyle: {
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: '400',
+        fontSize: 18,
+        padding: 5
     },
     curvedImage: {
         position: 'absolute',
