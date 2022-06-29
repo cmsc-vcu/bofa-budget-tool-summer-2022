@@ -6,15 +6,16 @@ import {
     ScrollView,
     TouchableOpacity
 } from 'react-native';
-import React from 'react';
+import React,
+        { useState } from 'react';
 import OrangeButton from '../components/OrangeButton';
 import CategoriesCards from '../components/CategoriesCards';
 import figmaColors from '../res/figmaColors';
 
 
-
 const FinancialLiteracyCategories = () =>
 {
+
     return (
         <View style={styles.container}>
 
@@ -84,8 +85,6 @@ const FinancialLiteracyCategories = () =>
                     <Text style={styles.careerSnapshotTextStyle} >View Career Snapshot</Text>
                 </View> */}
 
-                
-
                 <View>
                     <OrangeButton
                         navigatepage='FinancialLiteracyModules'
@@ -103,6 +102,9 @@ const FinancialLiteracyCategories = () =>
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+    searchBarStyle: {
+        width: '50%'
     },
     innerScrollViewContainer: {
         flex: 1,
