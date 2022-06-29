@@ -10,6 +10,7 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import figmaColors from '../res/figmaColors';
 import BulletPoints from './BulletPoints';
+import CircularProgress from 'react-native-circular-progress-indicator';
 
 
 const CategoriesCards = (props) =>
@@ -38,31 +39,29 @@ const CategoriesCards = (props) =>
                 <View style={styles.modulesContainer}>
                     <View style={styles.modulesContainer}>
                         <View style={styles.modulesTextContainer}>
-                            <BulletPoints passedColor={ figmaColors.primaryOrange }/>
+                            <BulletPoints passedColor="#EF5F82"/>
                             <Text style={styles.modulesTextStyle}>
-                                hello
+                                Budgeting
                             </Text>
                         </View>
                         <View style={styles.modulesTextContainer}>
-                            <BulletPoints passedColor={ figmaColors.primaryOrange }/>
+                            <BulletPoints passedColor="#EF5F82"/>
                             <Text style={styles.modulesTextStyle}>
-                                hello
+                                Credit
                             </Text>
                         </View>
                         <View style={styles.modulesTextContainer}>
-                            <BulletPoints passedColor={ figmaColors.primaryOrange }/>
+                            <BulletPoints passedColor="#EF5F82"/>
                             <Text style={styles.modulesTextStyle}>
-                                hello
-                            </Text>
-                        </View>
-                        <View style={styles.modulesTextContainer}>
-                            <BulletPoints passedColor={ figmaColors.primaryOrange }/>
-                            <Text style={styles.modulesTextStyle}>
-                                hello
+                                Bank Accounts
                             </Text>
                         </View>
                     </View>
                 </View>
+
+                <CircularProgress value={80}/>
+
+                
             </View>
             
         </View>
@@ -93,9 +92,9 @@ const styles = StyleSheet.create({
     },
     modulesContainer: {
         flex: 1,
-        alignItems: 'center',
+        paddingLeft: 9,
         justifyContent: 'center',
-        marginTop: 50
+        marginTop: 35,
     },
     modulesTextContainer: {
         flexDirection: 'row',
@@ -105,7 +104,8 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto',
         fontStyle: 'normal',
         fontWeight: '400',
-        fontSize: 18
+        fontSize: 18,
+        padding: 5
     },
     curvedImage: {
         position: 'absolute',
