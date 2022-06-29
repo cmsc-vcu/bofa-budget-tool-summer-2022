@@ -4,70 +4,115 @@ import {
     View,
     Image,
     Button,
-    ImageBackground
+    ImageBackground,
 } from 'react-native';
 import React , { useState } from 'react';
 import OrangeButton from "../components/OrangeButton";
-import { RadioButton } from 'react-native-paper';
-
+import CheckBox from '@react-native-community/checkbox'
 
 // This page is for the Terms & Conditions with the Privacy Policy
 // TESTING PULL FOR ANEESH
 const TermsConditions = () => {
-    const [checked, setChecked] = useState('first');
     
+    //const [value, setValue] = useState('first');
+    //const [checked, setChecked ] = React.useState({checked2: false, checked3: false, checked4: false, checked5});
+    //const [checked2, setChecked2] = React.useState(false);
+    //const [checked3, setChecked3] = React.useState(false);
+    //const [checked4, setChecked4] = React.useState(false);
+    //const [checked5, setChecked5] = React.useState(false);
+
+    //const [checked, setChecked] = useState(false);
+
+    const [isSelected, setSelection] = useState(false);
+
+    
+
     return (
-        <View style={style.topcontainer}>
-
-            <View>
-            <ImageBackground source={require('../res/images/bubble_top.png')}>  
-                    <Image source={require('../res/images/t&c_check.png')}/> 
-                </ImageBackground>
+        <View style={style.container}>
+                
+            <View style = {style.container}>
+                <Image source={require('../res/images/bubble_top.png')}/> 
             </View>
-            
-            <OrangeButton
-                text={'ACCEPT & CONTINUE'}
-                navigatepage='UsernameScreen'
-            />
 
-            <OrangeButton
-                text={'privacy policy'}
-                navigatepage='PrivacyPolicy'
-            />
+            <View style = {style.container}>
+                <Image source={require('../res/images/t&c_check.png')}
+                style ={style.termsChecklogo} /> 
+                <Text style={style.header}>
+                    Terms and Conditions
+                </Text>
+            </View>
+
+
             
-            <View style={{ flexDirection: 'row', alignContent: 'center' }}>
-                <View style={{ flex: 4, alignSelf: 'center' }}>
-                  <Text>Agree All  </Text> 
-                  <Text>Loren epsum </Text>
+            <View style ={style.checkboxContainer}>
+                <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    style={style.checkbox}
+                 />
+                 <Text style={style.label}>Agree All</Text>
+                 
                 </View>
-                <View style={{ flex: 1 }}>
-                  <RadioButton
-                    value="first"
-                    status={checked === 'first' ? 'checked' : 'unchecked'}
-                    onPress={() => setChecked('first')}
-                  />
-                  <RadioButton
-                    value="second"
-                    status={ checked === 'second' ? 'checked' : 'unchecked' }
-                    onPress={() => setChecked('second')}
+
+
+
+                <View style ={style.checkboxContainer}>
+                <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    style={style.checkbox}
+                 />
+                 <Text style={style.label}>(Required)Lorem ipsum dolor</Text>
+                </View>
+
+
+
+                <View style ={style.checkboxContainer}>
+                <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    style={style.checkbox}
+                 />
+                 <Text style={style.label}>(Required)Lorem ipsum dolor</Text>
+                </View>
+
+
+                <View style ={style.checkboxContainer}>
+                <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    style={style.checkbox}
+                 />
+                 <Text style={style.label}>(Required)Lorem ipsum dolor</Text>
+                </View>
+
+
+
+                <View style ={style.checkboxContainer}>
+                <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    style={style.checkbox}
+                 />
+                 <Text style={style.label}>(Optional)Lorem ipsum dolor</Text>
+                </View>
+
+
+
+
+                <OrangeButton
+                    text={'ACCEPT & CONTINUE'}
+                    navigatepage='UsernameScreen'
                     
                 />
-                </View>
-            </View>
-            {/*<RadioButton
-                value='first'
-                status={ checked === 'first' ? 'checked' : 'unchecked'}
-                onPress={() => setChecked('first')}
-                
-                
 
-            />
-            <RadioButton
-                value="second"
-                status={ checked === 'second' ? 'checked' : 'unchecked' }
-                onPress={() => setChecked('second')}
-            />*/}
-
+                <OrangeButton
+                 text={'privacy policy'}
+                navigatepage='PrivacyPolicy'
+                />
+      
+    
+            
         </View>
 
 
@@ -77,40 +122,47 @@ const TermsConditions = () => {
 
 const style = StyleSheet.create({
 
-    topcontainer: {
-        top: -10
-    },
-    textcontainer: {
+    container: {
+        
+            flex: 1
+        
+      },
+      checkboxContainer: {
         flexDirection: "row",
-        alignItems: 'center',
-        flex: 4
-    },
-    radioButtonContainer: {
-        flex: 1
-    },
-    subtitle: {
-        textAlign: 'center',
-        fontFamily: 'Roboto',
-        fontSize: 24,
+        marginBottom: 20,
+      },
+      checkbox: {
+        alignSelf: "center",
+      },
+      label: {
+        margin: 8,
+      },
+      termsChecklogo:{
+        position: 'absolute',
+        width: 123,
+        height: 111,
+        left: 38,
+        top: 95,
+      },
+      header: {
+        fontFamily: "Roboto",
         fontStyle: 'normal',
-        textAlign: 'center',
-        fontWeight: '400'
+        fontSize: 37,
+        fontWeight: '800',
+        left: 15,
+        top: 50,
+        height: 200,
+        color: "#FFFEF6"
     }
-})
 
-/*function createRadioElement(name, checked) {
-    var radioHtml = '<input type="radio" name="' + name + '"';
-    if (checked){
-        radioHtml += ' checked="checked"';
-    }
-    radioHtml += '/>';
+      
+    });
 
-    var radioFragment = document.createElement('div');
-    radioFragment.innerHTML = radioHtml;
 
-    return radioFragment.firstChild;
-    
-}*/
 
 
 export default TermsConditions;
+
+
+
+
