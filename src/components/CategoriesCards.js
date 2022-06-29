@@ -36,15 +36,32 @@ const CategoriesCards = (props) =>
                 </ImageBackground>
 
                 <View style={styles.modulesContainer}>
-                    <View>
-                        <BulletPoints>
-                            
-                        </BulletPoints>
-                        <Text>
-                            hello
-                        </Text>
+                    <View style={styles.modulesContainer}>
+                        <View style={styles.modulesTextContainer}>
+                            <BulletPoints passedColor={ figmaColors.primaryOrange }/>
+                            <Text style={styles.modulesTextStyle}>
+                                hello
+                            </Text>
+                        </View>
+                        <View style={styles.modulesTextContainer}>
+                            <BulletPoints passedColor={ figmaColors.primaryOrange }/>
+                            <Text style={styles.modulesTextStyle}>
+                                hello
+                            </Text>
+                        </View>
+                        <View style={styles.modulesTextContainer}>
+                            <BulletPoints passedColor={ figmaColors.primaryOrange }/>
+                            <Text style={styles.modulesTextStyle}>
+                                hello
+                            </Text>
+                        </View>
+                        <View style={styles.modulesTextContainer}>
+                            <BulletPoints passedColor={ figmaColors.primaryOrange }/>
+                            <Text style={styles.modulesTextStyle}>
+                                hello
+                            </Text>
+                        </View>
                     </View>
-                    
                 </View>
             </View>
             
@@ -77,7 +94,18 @@ const styles = StyleSheet.create({
     modulesContainer: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: 50
+    },
+    modulesTextContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    modulesTextStyle: {
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: '400',
+        fontSize: 18
     },
     curvedImage: {
         position: 'absolute',
