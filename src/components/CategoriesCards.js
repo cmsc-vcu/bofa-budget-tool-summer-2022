@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         backgroundColor: figmaColors.primaryOffWhite,
         overflow: 'hidden',
         alignContent:'center',
-        marginBottom: 25
+        margin: 12
     },
     headerContainer: {
         position: 'absolute',

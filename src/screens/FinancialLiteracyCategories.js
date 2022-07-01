@@ -4,13 +4,19 @@ import {
     View,
     Image,
     ScrollView,
-    TouchableOpacity
+    TouchableOpacity,
+    Dimensions
 } from 'react-native';
 import React,
         { useState } from 'react';
+
 import OrangeButton from '../components/OrangeButton';
 import CategoriesCards from '../components/CategoriesCards';
 import figmaColors from '../res/figmaColors';
+import SearchBar from '../components/SearchBar';
+
+const width = Dimensions.get('screen').width;
+const height = Dimensions.get('screen').height;
 
 const categoriesCard = [
     {
@@ -66,21 +72,29 @@ const FinancialLiteracyCategories = () =>
 
             {/* ScrollView with the cards */}
             <ScrollView contentContainerStyle={styles.innerScrollViewContainer}>
-                
-                <View>
-                    <OrangeButton
-                        navigatepage='FinancialLiteracyModules'
-                        text='Modules'/>
-                </View>
 
+                {/* Search Bar */}
+                <SearchBar>
+
+                </SearchBar>
+                
+                {/* View Bookmarks Button */}
+                <TouchableOpacity>
+
+                </TouchableOpacity>
+                
+
+                {/* Category Cards */}
+                {/* Pass in the JSON formatted list */}
                 {categoriesCard.map((card) => {
                     return (
                         <CategoriesCards 
-                        cardTitle={card.categoryTitle} 
-                        cardModulesList={card.modulesTitlesList} 
-                        colorTheme={card.colorTheme}
-                        secondaryColorTheme={card.secondaryColorTheme}
-                        navigatePage={'FinancialLiteracyModules'}/>
+                            cardTitle={card.categoryTitle} 
+                            cardModulesList={card.modulesTitlesList} 
+                            colorTheme={card.colorTheme}
+                            secondaryColorTheme={card.secondaryColorTheme}
+                            navigatePage={'FinancialLiteracyModules'}
+                        />
                     )
                 })}
             </ScrollView>
@@ -119,6 +133,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 14,
         borderBottomRightRadius: 14,
     },
+
 })
 
 export default FinancialLiteracyCategories;
