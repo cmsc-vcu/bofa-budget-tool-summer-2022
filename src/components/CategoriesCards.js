@@ -3,7 +3,7 @@ import {
     View,
     Text,
     ImageBackground,
-    TouchableOpacity,
+    Pressable,
     Image
 } from 'react-native';
 import React from 'react';
@@ -15,21 +15,30 @@ import CircularProgress from 'react-native-circular-progress-indicator';
 
 const CategoriesCards = (props) =>
 {
+    const navigation = useNavigation();
+
     return(
         <View style={styles.container}>
             <View style={{flex: 1}}>
-                <ImageBackground source={require('../res/images/categoriesCardCurve.png')} resizeMode= 'stretch' style={styles.curvedImage}>
+                <ImageBackground 
+                source={require('../res/images/categoriesCardCurve.png')} 
+                resizeMode='stretch' 
+                style={styles.curvedImage} 
+                imageStyle={{ tintColor: props.colorTheme }} >
 
                 <View style={styles.headerContainer}>
 
                     <Text style={styles.title}>
-                        Spending
+                        { props.cardTitle }
                     </Text>
-                    <TouchableOpacity>
+                    <Pressable
+                        onPress={() =>{
+                            navigation.navigate(props.navigatePage)
+                        }}>
                         <Image source={require('../res/images/forwardArrow.png')} style={styles.nextArrowImage}>
 
                         </Image>
-                    </TouchableOpacity>
+                    </Pressable>
 
 
                 </View>
@@ -37,31 +46,35 @@ const CategoriesCards = (props) =>
                 </ImageBackground>
 
                 <View style={styles.modulesContainer}>
-                    <View style={styles.modulesContainer}>
-                        <View style={styles.modulesTextContainer}>
-                            <BulletPoints passedColor="#EF5F82"/>
-                            <Text style={styles.modulesTextStyle}>
-                                Budgeting
-                            </Text>
+                    <View style={styles.modulesProgressContainer}>
+                        <View>
+                            { props.cardModulesList.map((moduleTitles) => {
+                                return ( <View style={styles.modulesTextContainer}>
+                                    <BulletPoints passedColor={ props.colorTheme }/>
+                                    <Text style={styles.modulesTextStyle}>
+                                        { moduleTitles }
+                                    </Text>
+                                </View>
+                                )
+                            }) }
                         </View>
-                        <View style={styles.modulesTextContainer}>
-                            <BulletPoints passedColor="#EF5F82"/>
-                            <Text style={styles.modulesTextStyle}>
-                                Credit
-                            </Text>
-                        </View>
-                        <View style={styles.modulesTextContainer}>
-                            <BulletPoints passedColor="#EF5F82"/>
-                            <Text style={styles.modulesTextStyle}>
-                                Bank Accounts
-                            </Text>
+
+                        <View style={ styles.circularProgBar }>
+                            <CircularProgress 
+                                value={80}
+                                progressValueColor={ props.colorTheme }
+                                activeStrokeColor={ props.colorTheme }
+                                radius={36}
+                                valueSuffix={'%'}
+                                valueSuffixStyle={styles.circularValueStyle}
+                                progressValueFontSize={20}
+                                progressValueStyle={styles.circularValueStyle}
+                                inActiveStrokeWidth={5}
+                                inActiveStrokeColor={props.secondaryColorTheme}
+                            />
                         </View>
                     </View>
                 </View>
-
-                <CircularProgress value={80}/>
-
-                
             </View>
             
         </View>
@@ -71,16 +84,19 @@ const CategoriesCards = (props) =>
 const styles = StyleSheet.create({
     container: {
         width: '90%',
-        height: '40%',
+        height: '20%',
         borderRadius: 30,
         backgroundColor: figmaColors.primaryOffWhite,
         overflow: 'hidden',
         alignContent:'center',
+        margin: 12
     },
     headerContainer: {
+        position: 'absolute',
         width: '100%',
         height: '100%',
-        margin: 15,
+        marginLeft: 20,
+        marginTop: 10,
         flexDirection: 'row',
     },
     title: {
@@ -88,13 +104,14 @@ const styles = StyleSheet.create({
         fontStyle: 'normal',
         fontSize: 40,
         fontWeight: '800',
-        color: figmaColors.primaryOffWhite
+        color: figmaColors.primaryOffWhite,
+        width: '55%'
     },
     modulesContainer: {
         flex: 1,
-        paddingLeft: 9,
+        paddingLeft: 25,
         justifyContent: 'center',
-        marginTop: 35,
+        marginTop: 65,
     },
     modulesTextContainer: {
         flexDirection: 'row',
@@ -107,15 +124,28 @@ const styles = StyleSheet.create({
         fontSize: 18,
         padding: 5
     },
+    modulesProgressContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
     curvedImage: {
         position: 'absolute',
         width: '100%',
-        height: '65%'
+        height: '61%',
     },
     nextArrowImage: {
-        marginLeft: '50%',
-        marginTop: '10%',
+        marginTop: '65%',
+        left: '300%'
     },
+    circularProgBar: {
+        marginTop: '20%',
+        marginRight: '5%'
+    },
+    circularValueStyle: {
+        alignSelf: 'center',
+        paddingRight: 0,
+        fontSize: 20
+    }
 })
 
 export default CategoriesCards;
