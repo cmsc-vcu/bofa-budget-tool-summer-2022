@@ -3,6 +3,7 @@ import {
     StyleSheet,
     View,
     Image,
+    Dimensions
 } from 'react-native';
 import React, 
         {useCallback,
@@ -13,6 +14,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import OrangeButton from "../components/OrangeButton";
 import Carousel from 'react-native-snap-carousel/src/carousel/Carousel';
 import { Pagination } from 'react-native-snap-carousel';
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 const pigItem = [
     {
@@ -116,7 +120,7 @@ const styles = StyleSheet.create({
     // This is the main container that controls the WHOLE screen
     container: {
         flex: 1,
-        paddingTop: 30,
+        paddingTop: height * 0.04,
     },
     // Be care of adding left and bottom attributes when pulling from figma
     // This acts as the card container
@@ -126,7 +130,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         flexDirection: 'row',
         justifyContent: 'space-around',
-        height: 380,
+        height: height * 0.5,
         marginBottom: 10,
         shadowColor: '#000000',
         shadowOffset: {width: 0, height: 2},
@@ -136,7 +140,7 @@ const styles = StyleSheet.create({
     },
     header: {
         alignItems: 'center',
-        paddingBottom: 30
+        paddingBottom: height * 0.04
     },
     // This refers to the main title of the Pig Carousel
     title: {
@@ -157,13 +161,12 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     imageSize: {
-        width: 250,
-        height: 250,
+        width: width * 0.65,
         resizeMode: 'contain' // Adding resizeMode with contain will resize the image without having the image clipped
     },
     activeDotStyle: {
-        width: 15,
-        height: 15,
+        width: width * 0.04,
+        height: height * 0.02,
         borderRadius: 10,
         marginHorizontal: 3,
         marginBottom: 15, // This will push/add margins between the dots and other elements
