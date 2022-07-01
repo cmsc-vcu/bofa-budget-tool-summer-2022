@@ -104,7 +104,8 @@ const styles = StyleSheet.create({
         fontStyle: 'normal',
         fontSize: 40,
         fontWeight: '800',
-        color: figmaColors.primaryOffWhite
+        color: figmaColors.primaryOffWhite,
+        width: '55%'
     },
     modulesContainer: {
         flex: 1,
@@ -133,8 +134,8 @@ const styles = StyleSheet.create({
         height: '61%',
     },
     nextArrowImage: {
-        left: '490%',
-        top: '13%'
+        marginTop: '65%',
+        left: '300%'
     },
     circularProgBar: {
         marginTop: '20%',

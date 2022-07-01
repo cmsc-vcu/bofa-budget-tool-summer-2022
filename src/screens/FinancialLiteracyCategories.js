@@ -54,18 +54,19 @@ const FinancialLiteracyCategories = () =>
 
 
             {/* Top app bar with the white background and title Learn */}
+            <View style={styles.topAppBar}>
+                <View style={styles.topAppContainer}>
+                        <Text style={styles.topAppTitle}>
+                            Learn
+                        </Text>
+                </View>
+             </View>
             
             
 
             {/* ScrollView with the cards */}
             <ScrollView contentContainerStyle={styles.innerScrollViewContainer}>
-                <View style={styles.topAppBar}>
-                        <View style={styles.topAppContainer}>
-                            <Text style={styles.topAppTitle}>
-                                Learn
-                            </Text>
-                        </View>
-                    </View>
+                
                 <View>
                     <OrangeButton
                         navigatepage='FinancialLiteracyModules'
@@ -90,6 +91,7 @@ const FinancialLiteracyCategories = () =>
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#CCDBBF'
     },
     innerScrollViewContainer: {
         alignItems: 'center',
@@ -102,6 +104,7 @@ const styles = StyleSheet.create({
         fontStyle: 'normal',
         fontWeight: '800',
         color: figmaColors.primaryOffBlack,
+        flexGrow: 1,
     },
     topAppContainer: {
         flex: 1,
@@ -111,7 +114,7 @@ const styles = StyleSheet.create({
     },
     topAppBar: {
         width: '100%',
-        height: '4.5%',
+        height: '7%',
         backgroundColor: figmaColors.primaryOffWhite,
         borderBottomLeftRadius: 14,
         borderBottomRightRadius: 14,
