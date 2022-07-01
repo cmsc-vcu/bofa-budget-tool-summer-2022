@@ -89,7 +89,12 @@ const styles = StyleSheet.create({
         backgroundColor: figmaColors.primaryOffWhite,
         overflow: 'hidden',
         alignContent:'center',
-        margin: 12
+        margin: 12,
+        shadowColor: '#000000',
+        shadowOffset: {width: 0, height: 4},
+        shadowRadius: 4,
+        shadowOpacity: 1,
+        elevation: 5,
     },
     headerContainer: {
         position: 'absolute',
