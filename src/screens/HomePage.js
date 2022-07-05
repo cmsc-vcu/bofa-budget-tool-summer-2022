@@ -10,6 +10,7 @@ import {
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import figmaColors from '../res/figmaColors';
+import fonts from '../res/fonts';
 import { useNavigation } from "@react-navigation/native";
 import OrangeButton from "../components/OrangeButton";
 
@@ -111,7 +112,9 @@ const HomePage = () => {
 
 
                 <View style={style.topcontainer}> 
-                    <Image source={require('../res/images/HPtopvector.png')} style={style.topvector}/> 
+                    <View style={style.topvector}>
+
+                    </View>
                     <Image source={require('../res/images/Settings.png')} style={style.settings}/>
                     <Text style={[style.home]}>
                         Home
@@ -159,48 +162,48 @@ const style = StyleSheet.create({
         left: 1
     }, 
     topcontainer: {
-        position: 'absolute'
+        position: 'absolute',
+        width: '100%'
     },
 
     topvector: {
-        width: '50%',
-        height: 90,
-        left: 0,
-        top: -10
-
+        height: '300%',
+        backgroundColor: '#FFFEF6',
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
     },
 
     home: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontSize: 24,
         fontStyle: 'normal',
         fontWeight: '800',
         lineHeight: 28,
         position: 'absolute',
-        left: 20,
-        top: 35,
+        left: '8%',
+        top: '150%',
         color: '#2E2E2E'
     },
 
     settings: {
         textAlign: 'center',
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontSize: 24,
         fontStyle: 'normal',
         textAlign: 'center',
         fontWeight: '400',
-        left: 350,
-        top: -55,
+        left: '85%',
+        top: '-150%',
     },
 
     toppage: {
         height: 570,
         width: '100%',
-        top: -20,
+        top: '-1%',
     },
 
     toptext: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '800',
         fontSize: 32,
@@ -209,7 +212,7 @@ const style = StyleSheet.create({
         alignItems: 'center',
         textAlign: 'center',
         color: '#FFFEF6',
-        top: 140
+        top: '24%'
     },
 
     level: {
@@ -223,7 +226,7 @@ const style = StyleSheet.create({
     },
 
     exp: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '400',
         fontSize: 14,
@@ -250,7 +253,7 @@ const style = StyleSheet.create({
     },
 
     careertext: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '800',
         fontSize: 18,
@@ -274,7 +277,7 @@ const style = StyleSheet.create({
     },
 
     moduletext: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '800',
         fontSize: 18,
@@ -326,7 +329,7 @@ const style = StyleSheet.create({
         fontWeight: '800',
         fontSize: 24,
         color: '#2E2E2E',
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
     },
 
     learningscroll: {
@@ -335,7 +338,7 @@ const style = StyleSheet.create({
     },
 
     subheadertwo: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '800',
         fontSize: 24,
@@ -375,7 +378,7 @@ const style = StyleSheet.create({
     },
 
     subheaderthree: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '800',
         fontSize: 24,
@@ -388,7 +391,7 @@ const style = StyleSheet.create({
     },
 
     rewardspage: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '700',
         fontSize: 18,
@@ -411,7 +414,7 @@ const style = StyleSheet.create({
     },
 
     subheaderfour: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '800',
         fontSize: 24,
@@ -424,7 +427,7 @@ const style = StyleSheet.create({
     },
 
     connectpage: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '700',
         fontSize: 18,
@@ -460,7 +463,7 @@ const style = StyleSheet.create({
     },
 
     connecttext: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '700',
         fontSize: 18,

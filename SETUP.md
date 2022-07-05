@@ -41,10 +41,11 @@ If you're comfy from a windows command prompt, cut and paste this powershell scr
     choco install -y make
     choco install -y grep
     choco install -y vscode
-    choco install -y git.install
+    choco install -y git.install --params "/GitAndUnitToolsOnPath /Editor:VisualStudioCode"
     choco install -y nodejs-lts
     choco install -y openjdk11
     choco install -y androidstudio
+    choco install -y jq
 
 After installing, open android studio and walk through the completion screens.  Make sure that the Android SDK is installed.  Visit the site <https://reactnative.dev/docs/environment-setup> for more instructions on properly installing Android SDK.
 
@@ -73,7 +74,7 @@ To install one of these extensions:
     git config --global user.name "John Leonard"
     git config --global core.editor "code --wait"
 
-## Fix odd npm error
+## Fix ugly npm error
 
 When running a fresh install of react-native I regularly got an error that noted a deprecated --local sort of function.  This is the code that fixes the issue.  I expect that in future npm deployments this will be fixed.
 
@@ -83,3 +84,19 @@ From an administrator terminal, run:
     npm install --global --production npm-windows-upgrade;
     npm-windows-upgrade --npm-version latest;
     ;
+
+## Windows terminal
+
+Rather than open a terminal within Visual Studio Code, I regularly open a free-standing windows terminal.  The height and width can be adjusted from the settings screen, but the initial position must be modified by directly editing the configuration file.
+
+Open the windows terminal configuration file with visual studio code.  It's a JSON file, and yes, it's a pretty ugly location.
+
+    code %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+
+Look for the section with one or more of these variables. The "initialPosition" is usually missing and needs to be added.
+
+    "initialCols": 120,
+    "initialPosition": "300,100",
+    "initialRows": 40,
+
+Initial position is codes "X,Y" in pixels.  You'll want to play with it to get it right for your machine.

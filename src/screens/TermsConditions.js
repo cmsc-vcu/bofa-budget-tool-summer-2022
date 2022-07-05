@@ -9,6 +9,7 @@ import {
 import React , { useState } from 'react';
 import OrangeButton from "../components/OrangeButton";
 import CheckBox from '@react-native-community/checkbox'
+import fonts from '../res/fonts';
 
 // This page is for the Terms & Conditions with the Privacy Policy
 // TESTING PULL FOR ANEESH
@@ -146,7 +147,7 @@ const style = StyleSheet.create({
         top: -90,
       },
       header: {
-        fontFamily: "Roboto",
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 37,
         fontWeight: '800',

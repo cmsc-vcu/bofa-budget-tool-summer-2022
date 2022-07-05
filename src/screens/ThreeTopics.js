@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import figmaColors from '../res/figmaColors';
+import fonts from '../res/fonts';
 import LinearGradient from 'react-native-linear-gradient';
 import OrangeButtonTiny from '../components/OrangeButtonTiny';
 import SelectionButtons from '../components/SelectionButtons';
@@ -159,7 +160,7 @@ const style = StyleSheet.create({
     },
 
     header: {
-        fontFamily: "Roboto",
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 37,
         fontWeight: '800',
@@ -170,7 +171,7 @@ const style = StyleSheet.create({
     },
 
     subtitle: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 22,
         fontWeight: '400',
@@ -181,7 +182,7 @@ const style = StyleSheet.create({
     },
 
     bodyText: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 16,
         fontWeight: '400',
@@ -190,7 +191,7 @@ const style = StyleSheet.create({
     },
 
     textstyle: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: 'bold',
         fontSize: 18,
