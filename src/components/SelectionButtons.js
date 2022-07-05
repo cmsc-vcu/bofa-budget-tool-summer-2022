@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import figmaColors from '../res/figmaColors';
+import fonts from '../res/fonts';
 
 export default class App extends Component {
   constructor(props) {
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
   },
 
   textstyle: {
-    fontFamily: 'Roboto',
+    fontFamily: fonts.mainFont,
     fontStyle: 'normal',
     fontWeight: 'bold',
     fontSize: 18,

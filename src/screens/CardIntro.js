@@ -11,6 +11,7 @@ import {
     Dimensions
 } from 'react-native'
 import figmaColors from "../res/figmaColors";
+import fonts from "../res/fonts";
 import OrangeButton from "../components/OrangeButton";
 import { useNavigation } from "@react-navigation/native";
 import Carousel from 'react-native-snap-carousel';
@@ -129,7 +130,7 @@ const styles = StyleSheet.create({
     },
     // This refers to the main title of the cards
     title: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 40,
         fontWeight: '800',
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
     },
     // This refers to the subtitle of the card
     subtitle: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 18,
         fontWeight: '400',

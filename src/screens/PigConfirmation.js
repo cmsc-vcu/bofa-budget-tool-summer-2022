@@ -13,6 +13,7 @@ import React,
 import OrangeButton from "../components/OrangeButton";
 import GrayButton from '../components/GrayButton';
 import figmaColors from '../res/figmaColors';
+import fonts from '../res/fonts';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     title: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 40,
         fontWeight: '800',
@@ -124,7 +125,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     subtitle: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '400',
         fontSize: 18,

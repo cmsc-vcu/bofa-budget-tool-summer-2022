@@ -10,6 +10,7 @@ import React,
         useRef,
         useState} from 'react';
 import figmaColors from '../res/figmaColors';
+import fonts from '../res/fonts';
 import LinearGradient from 'react-native-linear-gradient';
 import OrangeButton from "../components/OrangeButton";
 import Carousel from 'react-native-snap-carousel/src/carousel/Carousel';
@@ -144,7 +145,7 @@ const styles = StyleSheet.create({
     },
     // This refers to the main title of the Pig Carousel
     title: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 40,
         fontWeight: '800',
@@ -153,7 +154,7 @@ const styles = StyleSheet.create({
     },
     // This refers to the subtitle of the card
     subtitle: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 18,
         fontWeight: '400',

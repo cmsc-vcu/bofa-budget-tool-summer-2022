@@ -17,6 +17,7 @@ import Svg, {
 import OrangeButton from '../components/OrangeButton';
 import CategoriesCards from '../components/CategoriesCards';
 import figmaColors from '../res/figmaColors';
+import fonts from '../res/fonts';
 import SearchBar from '../components/SearchBar';
 import InactiveBookmarkCategories from '../res/svg/InactiveBookmarkCategories.svg'
 
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     topAppTitle: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontSize: 24,
         fontStyle: 'normal',
         fontWeight: '800',
@@ -164,7 +165,7 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 14,
     },
     bookmarksTextStyle: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '700',
         fontSize: 18,
@@ -312,7 +313,7 @@ export default FinancialLiteracyCategories;
 // },
 // topNavTextStyle:{
 //     color: figmaColors.primaryOffWhite,
-//     fontFamily: 'Roboto',
+//     fontFamily: fonts.mainFont,
 //     fontSize: 18,
 //     lineHeight: 21,
 // },
