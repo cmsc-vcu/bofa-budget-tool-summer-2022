@@ -38,7 +38,7 @@ const TermsConditions = () => {
                 <Image source={require('../res/images/t&c_check.png')}
                 style ={style.termsChecklogo} /> 
                 <Text style={style.header}>
-                    Terms and Conditions
+                    Terms and{"\n"}Conditions
                 </Text>
             </View>
 
@@ -124,7 +124,8 @@ const style = StyleSheet.create({
 
     container: {
         
-            flex: 1
+            flex: 1,
+            top: -10
         
       },
       checkboxContainer: {
@@ -141,8 +142,8 @@ const style = StyleSheet.create({
         position: 'absolute',
         width: 123,
         height: 111,
-        left: 38,
-        top: 95,
+        left: 30,
+        top: -90,
       },
       header: {
         fontFamily: "Roboto",
