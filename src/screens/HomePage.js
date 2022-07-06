@@ -12,6 +12,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import figmaColors from '../res/figmaColors';
 import { useNavigation } from "@react-navigation/native";
 import OrangeButton from "../components/OrangeButton";
+import CircularProgress from 'react-native-circular-progress-indicator';
 
 
 const HomePage = () => {
@@ -21,7 +22,6 @@ const HomePage = () => {
     return (
         // Whole page view
         <View> 
-
             <ScrollView style={style.scrollcontainer}>
                 <LinearGradient 
                 style={style.toppage}
@@ -29,7 +29,18 @@ const HomePage = () => {
                     <Text style={style.toptext}>
                         Welcome back, Alex!
                     </Text>
-                    <Image source={require('../res/images/userLevel.png')} style={style.level}/>
+                    <View style={style.level}>
+                        <CircularProgress 
+                        value={80} 
+                        radius={101}
+                        activeStrokeColor={'#FFFEF6'}
+                        inActiveStrokeColor={'#E0EDCC'}
+                        inActiveStrokeOpacity={.5}
+                        >
+
+                        </CircularProgress>
+                    </View>
+                    {/* <Image source={require('../res/images/userLevel.png')} style={style.level}/> */}
                     <Image source={require('../res/images/characterIcon.png')} style={style.character}/>
                     <Text style={style.exp}>
                         Level 1: 200/250 EXP
@@ -48,103 +59,96 @@ const HomePage = () => {
                     </View>
                 </LinearGradient>
 
-                    <View style={style.bottompage}>
-                        <Text style={[style.subheaderone]}>
-                            CONTINUE LEARNING
-                        </Text>
-                        <View>
-                            <ScrollView 
-                            style={style.learningscroll}
-                            horizontal= {true}>
-                            <Image source={require('../res/images/learningScrollOne.png')}/>
-                            <Image source={require('../res/images/learningScrollTwo.png')}/>
-                            </ScrollView>
-                        </View>
-                        <Text style={style.subheadertwo}>
-                            DAILY FINANCIAL TIP
-                        </Text>
-                        <View style={style.tips}>
-                            <TouchableOpacity 
-                            style={style.tiptouchable}
-                            onPress={() => navigation.navigate('DailyFinancialTip')}>
-                                <Text style={style.tiptext}>
-                                    Check to see if your credit card has any deals on gas to save money as gas prices rise.
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                        <Text style={style.subheaderthree}>
-                            REWARDS
-                        </Text>
-                        <Text 
-                        style={style.rewardspage}
-                        onPress={() => navigation.navigate('Rewards')}>
-                            View More
-                        </Text>
-                        <View>
-                            <ScrollView 
-                            style={style.rewardscroll}
-                            horizontal= {true}>
+                <View style={style.bottompage}>
+                    <Text style={[style.subheaderone]}>
+                        CONTINUE LEARNING
+                    </Text>
+                    <View>
+                        <ScrollView 
+                        style={style.learningscroll}
+                        horizontal= {true}>
+                        <Image source={require('../res/images/learningScrollOne.png')}/>
+                        <Image source={require('../res/images/learningScrollTwo.png')}/>
+                        </ScrollView>
+                    </View>
+                    <Text style={style.subheadertwo}>
+                        DAILY FINANCIAL TIP
+                    </Text>
+                    <View style={style.tips}>
+                        <TouchableOpacity 
+                        style={style.tiptouchable}
+                        onPress={() => navigation.navigate('DailyFinancialTip')}>
+                            <Text style={style.tiptext}>
+                                Check to see if your credit card has any deals on gas to save money as gas prices rise.
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <Text style={style.subheaderthree}>
+                        REWARDS
+                    </Text>
+                    <Text 
+                    style={style.rewardspage}
+                    onPress={() => navigation.navigate('Rewards')}>
+                        View More
+                    </Text>
+                    <View>
+                        <ScrollView 
+                        style={style.rewardscroll}
+                        horizontal= {true}>
                             <Image source={require('../res/images/rewardsCFA.png')}/>
                             <Image source={require('../res/images/rewardsVCUDine.png')} style={style.rewardstwo}/>
-                            </ScrollView>
-                        </View>
-                        <Text style={style.subheaderfour}>
-                            CONNECT
-                        </Text>
-                        <Text 
-                        style={style.connectpage}
-                        onPress={() => navigation.navigate('Connect')}>
-                            View More
-                        </Text>
-                        <View style={style.connect}>
-                            <TouchableOpacity 
-                            style={style.connecttouchable}
-                            onPress={() => navigation.navigate('Connect')}>
-                                <Image source={require('../res/images/friendIcon.png')} style={style.friendicon}/>
-                                <Text style={style.connecttext}>
-                                    Add Friend
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
+                        </ScrollView>
                     </View>
-                </ScrollView>
-
-
-                <View style={style.topcontainer}> 
-                    <View style={style.topvector}>
-
-                    </View>
-                    <Image source={require('../res/images/Settings.png')} style={style.settings}/>
-                    <Text style={[style.home]}>
-                        Home
+                    <Text style={style.subheaderfour}>
+                        CONNECT
                     </Text>
-                </View>
-
-                <View style={style.bottomcontainer}> 
-                    <View style={style.navbar}>
-                        <View>
-                            <TouchableOpacity activeOpacity={1}>
-                                <Image source={require('../res/images/homeIcon.png')} style={style.homeicon}/>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={style.learnicon}>
-                            <TouchableOpacity onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
-                                <Image source={require('../res/images/learnIcon.png')}/>
-                            </TouchableOpacity>
-                        </View>
-                        <TouchableOpacity onPress={() => navigation.navigate('Rewards')}>
-                            <Image source={require('../res/images/rewardsIcon.png')} style={style.rewardsicon}/>
+                    <Text 
+                    style={style.connectpage}
+                    onPress={() => navigation.navigate('Connect')}>
+                        View More
+                    </Text>
+                    <View style={style.connect}>
+                        <TouchableOpacity 
+                        style={style.connecttouchable}
+                        onPress={() => navigation.navigate('Connect')}>
+                            <Image source={require('../res/images/friendIcon.png')} style={style.friendicon}/>
+                            <Text style={style.connecttext}>
+                                Add Friend
+                            </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('Connect')}>
-                            <Image source={require('../res/images/connectIcon.png')} style={style.connecticon}/>
-                        </TouchableOpacity>
-                        <View style={style.box}>
-
-                        </View>
                     </View>
                 </View>
+            </ScrollView>
 
-                
+            <View style={style.topcontainer}> 
+                <View style={style.topvector}/>
+                <Image source={require('../res/images/Settings.png')} style={style.settings}/>
+                <Text style={[style.home]}>
+                    Home
+                </Text>
+            </View>
+
+            <View style={style.bottomcontainer}> 
+                <View style={style.navbar}>
+                    <View>
+                        <TouchableOpacity activeOpacity={1}>
+                            <Image source={require('../res/images/homeIcon.png')} style={style.homeicon}/>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={style.learnicon}>
+                        <TouchableOpacity onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
+                            <Image source={require('../res/images/learnIcon.png')}/>
+                        </TouchableOpacity>
+                    </View>
+                    <TouchableOpacity onPress={() => navigation.navigate('Rewards')}>
+                        <Image source={require('../res/images/rewardsIcon.png')} style={style.rewardsicon}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('Connect')}>
+                        <Image source={require('../res/images/connectIcon.png')} style={style.connecticon}/>
+                    </TouchableOpacity>
+                    <View style={style.box}/>
+                </View>
+            </View>
         </View>
 
     )
@@ -215,13 +219,13 @@ const style = StyleSheet.create({
     },
 
     level: {
-        top: 170,
-        left: 85
+        top: '29.5%',
+        left: '22.5%'
     },
 
     character: {
-        top: -10,
-        left: 108
+        top: '-1.5%',
+        left: '27.5%'
     },
 
     exp: {
@@ -233,14 +237,14 @@ const style = StyleSheet.create({
         textAlign: 'center',
         alignContent: 'center',
         color: '#FFFEF6',
-        top: 20
+        top: '3%'
     },
 
     career: {
         width: 216,
         height: 46,
-        left: 10,
-        top: 40,
+        left: '3%',
+        top: '7%',
         backgroundColor: '#FFFEF6',
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
@@ -258,14 +262,14 @@ const style = StyleSheet.create({
         fontSize: 18,
         lineHeight: 21,
         textAlign: 'center',
-        top: 12,
+        top: '30%',
         color: '#605F58'
     },
 
     module: {
         width: 141,
         height: 46,
-        left: 240,
+        left: '61%',
         top: -6,
         backgroundColor: '#EB7723',
         borderBottomLeftRadius: 20,
@@ -315,7 +319,7 @@ const style = StyleSheet.create({
         width: '100%',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        top: -40,
+        top: '-2%',
         backgroundColor: '#FFFEF6',
         textShadowColor: 'rgba(0, 0, 0, 0.25)',
         textShadowOffset: {width: 2, height: 2},
