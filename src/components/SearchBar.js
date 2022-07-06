@@ -24,7 +24,6 @@ const SearchBar = () =>
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         backgroundColor: figmaColors.primaryOffWhite,
         width: width * 0.88,
         height: height * 0.05,

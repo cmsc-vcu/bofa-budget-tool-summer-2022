@@ -9,6 +9,7 @@ import {
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import figmaColors from '../res/figmaColors';
+import fonts from '../res/fonts';
 import BulletPoints from './BulletPoints';
 import CircularProgress from 'react-native-circular-progress-indicator';
 
@@ -89,7 +90,12 @@ const styles = StyleSheet.create({
         backgroundColor: figmaColors.primaryOffWhite,
         overflow: 'hidden',
         alignContent:'center',
-        margin: 12
+        margin: 12,
+        shadowColor: '#000000',
+        shadowOffset: {width: 0, height: 4},
+        shadowRadius: 4,
+        shadowOpacity: 1,
+        elevation: 5,
     },
     headerContainer: {
         position: 'absolute',
@@ -100,7 +106,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     title: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 40,
         fontWeight: '800',
@@ -118,7 +124,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     modulesTextStyle: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '400',
         fontSize: 18,

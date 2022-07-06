@@ -9,6 +9,7 @@ import {
 import React , { useState } from 'react';
 import OrangeButton from "../components/OrangeButton";
 import CheckBox from '@react-native-community/checkbox'
+import fonts from '../res/fonts';
 
 // This page is for the Terms & Conditions with the Privacy Policy
 // TESTING PULL FOR ANEESH
@@ -38,7 +39,7 @@ const TermsConditions = () => {
                 <Image source={require('../res/images/t&c_check.png')}
                 style ={style.termsChecklogo} /> 
                 <Text style={style.header}>
-                    Terms and Conditions
+                    Terms and{"\n"}Conditions
                 </Text>
             </View>
 
@@ -124,7 +125,8 @@ const style = StyleSheet.create({
 
     container: {
         
-            flex: 1
+            flex: 1,
+            top: -10
         
       },
       checkboxContainer: {
@@ -141,11 +143,11 @@ const style = StyleSheet.create({
         position: 'absolute',
         width: 123,
         height: 111,
-        left: 38,
-        top: 95,
+        left: 30,
+        top: -90,
       },
       header: {
-        fontFamily: "Roboto",
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 37,
         fontWeight: '800',

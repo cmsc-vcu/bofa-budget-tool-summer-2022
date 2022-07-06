@@ -5,15 +5,21 @@ import {
     Image,
     ScrollView,
     TouchableOpacity,
-    Dimensions
+    Dimensions,
+    Pressable
 } from 'react-native';
 import React,
         { useState } from 'react';
+import Svg, {
+    Circle,
+} from 'react-native-svg';
 
 import OrangeButton from '../components/OrangeButton';
 import CategoriesCards from '../components/CategoriesCards';
 import figmaColors from '../res/figmaColors';
+import fonts from '../res/fonts';
 import SearchBar from '../components/SearchBar';
+import InactiveBookmarkCategories from '../res/svg/InactiveBookmarkCategories.svg'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -74,14 +80,23 @@ const FinancialLiteracyCategories = () =>
             <ScrollView contentContainerStyle={styles.innerScrollViewContainer}>
 
                 {/* Search Bar */}
-                <SearchBar>
+                <View>
+                    <SearchBar>
 
-                </SearchBar>
+                    </SearchBar>
+                    {/* View Bookmarks Button */}
+                    <Pressable>
+                        <View style={styles.bookmarksContainer}>
+                            <Text style={styles.bookmarksTextStyle}>
+                                View Bookmarks
+                            </Text>
+                            <InactiveBookmarkCategories width={18} height={18} />
+                        </View>
+                    </Pressable>
+                </View>
                 
-                {/* View Bookmarks Button */}
-                <TouchableOpacity>
+    
 
-                </TouchableOpacity>
                 
 
                 {/* Category Cards */}
@@ -112,8 +127,24 @@ const styles = StyleSheet.create({
         backgroundColor: '#CCDBBF',
         paddingBottom: 250
     },
+    bookmarksContainer: {
+        padding: 5,
+        paddingLeft: 18,
+        paddingRight: 10,
+        flexDirection: 'row',
+        alignSelf: 'flex-end',
+        alignItems: 'center',
+        backgroundColor: figmaColors.primaryOffWhite,
+        borderRadius: 18,
+        marginRight: '3%',
+        shadowColor: '#000000',
+        shadowOffset: {width: 0, height: 4},
+        shadowRadius: 4,
+        shadowOpacity: 1,
+        elevation: 5,
+    },
     topAppTitle: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontSize: 24,
         fontStyle: 'normal',
         fontWeight: '800',
@@ -133,7 +164,17 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 14,
         borderBottomRightRadius: 14,
     },
-
+    bookmarksTextStyle: {
+        fontFamily: fonts.mainFont,
+        fontStyle: 'normal',
+        fontWeight: '700',
+        fontSize: 18,
+        color: figmaColors.primaryGray,   
+        marginRight: 10
+    },
+    bookmarkImageStyle: {
+        tintColor: figmaColors.primaryGray,
+    }
 })
 
 export default FinancialLiteracyCategories;
@@ -272,7 +313,7 @@ export default FinancialLiteracyCategories;
 // },
 // topNavTextStyle:{
 //     color: figmaColors.primaryOffWhite,
-//     fontFamily: 'Roboto',
+//     fontFamily: fonts.mainFont,
 //     fontSize: 18,
 //     lineHeight: 21,
 // },

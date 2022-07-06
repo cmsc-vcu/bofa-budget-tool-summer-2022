@@ -10,6 +10,7 @@ import {
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import figmaColors from '../res/figmaColors';
+import fonts from '../res/fonts';
 import { useNavigation } from "@react-navigation/native";
 import OrangeButton from "../components/OrangeButton";
 import CircularProgress from 'react-native-circular-progress-indicator';
@@ -177,7 +178,7 @@ const style = StyleSheet.create({
     },
 
     home: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontSize: 24,
         fontStyle: 'normal',
         fontWeight: '800',
@@ -190,7 +191,7 @@ const style = StyleSheet.create({
 
     settings: {
         textAlign: 'center',
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontSize: 24,
         fontStyle: 'normal',
         textAlign: 'center',
@@ -206,7 +207,7 @@ const style = StyleSheet.create({
     },
 
     toptext: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '800',
         fontSize: 32,
@@ -229,7 +230,7 @@ const style = StyleSheet.create({
     },
 
     exp: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '400',
         fontSize: 14,
@@ -256,7 +257,7 @@ const style = StyleSheet.create({
     },
 
     careertext: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '800',
         fontSize: 18,
@@ -280,7 +281,7 @@ const style = StyleSheet.create({
     },
 
     moduletext: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '800',
         fontSize: 18,
@@ -332,7 +333,7 @@ const style = StyleSheet.create({
         fontWeight: '800',
         fontSize: 24,
         color: '#2E2E2E',
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
     },
 
     learningscroll: {
@@ -341,7 +342,7 @@ const style = StyleSheet.create({
     },
 
     subheadertwo: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '800',
         fontSize: 24,
@@ -381,7 +382,7 @@ const style = StyleSheet.create({
     },
 
     subheaderthree: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '800',
         fontSize: 24,
@@ -394,7 +395,7 @@ const style = StyleSheet.create({
     },
 
     rewardspage: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '700',
         fontSize: 18,
@@ -417,7 +418,7 @@ const style = StyleSheet.create({
     },
 
     subheaderfour: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '800',
         fontSize: 24,
@@ -430,7 +431,7 @@ const style = StyleSheet.create({
     },
 
     connectpage: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '700',
         fontSize: 18,
@@ -466,7 +467,7 @@ const style = StyleSheet.create({
     },
 
     connecttext: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '700',
         fontSize: 18,

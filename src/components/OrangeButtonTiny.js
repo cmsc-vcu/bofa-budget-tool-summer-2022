@@ -7,6 +7,7 @@ import {
 import React from 'react';
 import { useNavigation } from "@react-navigation/native";
 import figmaColors from '../res/figmaColors';
+import fonts from '../res/fonts';
 
 
 {/* This is the OrangeButton component where it will be reused */}
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     textstyle: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: 'bold',
         fontSize: 18,
