@@ -12,8 +12,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
 import { useNavigation } from "@react-navigation/native";
-import OrangeButton from "../components/OrangeButton";
 import CircularProgress from 'react-native-circular-progress-indicator';
+import ContinueLearningCards from "../components/ContinueLearningCards";
 
 
 const HomePage = () => {
@@ -41,7 +41,6 @@ const HomePage = () => {
 
                         </CircularProgress>
                     </View>
-                    {/* <Image source={require('../res/images/userLevel.png')} style={style.level}/> */}
                     <Image source={require('../res/images/characterIcon.png')} style={style.character}/>
                     <Text style={style.exp}>
                         Level 1: 200/250 EXP
@@ -68,8 +67,16 @@ const HomePage = () => {
                         <ScrollView 
                         style={style.learningscroll}
                         horizontal= {true}>
-                        <Image source={require('../res/images/learningScrollOne.png')}/>
-                        <Image source={require('../res/images/learningScrollTwo.png')}/>
+                            <ContinueLearningCards
+                            moduleTitle={'Credit'}
+                            units={'7/14'}
+                            progress={50}
+                            image={require('../res/images/test.png')}
+                            moduleTheme={'#EF5F82'}
+                            />
+
+                        {/* <Image source={require('../res/images/learningScrollOne.png')}/>
+                        <Image source={require('../res/images/learningScrollTwo.png')}/> */}
                         </ScrollView>
                     </View>
                     <Text style={style.subheadertwo}>
