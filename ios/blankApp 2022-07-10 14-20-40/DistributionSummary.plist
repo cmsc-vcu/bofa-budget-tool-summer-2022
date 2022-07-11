@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>blankApp.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>6BF4D0787D8F399A593EBD49DBC8BAFA8C60D0CC</string>
+				<key>dateExpires</key>
+				<string>7/6/23</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>YMY522QWXA.com.lowkeylabs.bankapptest1</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>YMY522QWXA</string>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>blankApp.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>756718d0-8ce8-4303-85ef-f2b8e73980eb</string>
+				<key>dateExpires</key>
+				<string>7/9/23</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: com.lowkeylabs.bankapptest1</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>YMY522QWXA</string>
+				<key>name</key>
+				<string>John Leonard</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>0.1.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>
