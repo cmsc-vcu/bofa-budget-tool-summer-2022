@@ -1,6 +1,5 @@
 const fonts = {
-  //  mainFont:"Roboto", // changed to System 
-  mainFont: 'System',
+    mainFont:"Roboto",
   }
   
   export default fonts

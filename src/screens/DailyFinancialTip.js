@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import figmaColors from '../res/figmaColors';
-import fonts from '../res/fonts';
 import { useNavigation } from '@react-navigation/native';
 
 // This page is for the Daily Financial Tip
@@ -119,7 +118,7 @@ const styles = StyleSheet.create({
         paddingLeft: 225
     },
     title: {
-        fontFamily: fonts.mainFont,
+        fontFamily: 'Roboto',
         fontWeight: '700',
         fontSize: 24,
         alignItems: 'center',
@@ -128,21 +127,21 @@ const styles = StyleSheet.create({
         padding: 20
     },
     subtext: {
-        fontFamily: fonts.mainFont,
+        fontFamily: 'Roboto',
         fontWeight: '400',
         fontSize: 18,
         padding: 30,
         color: figmaColors.primaryOffBlack
     },
     whiteTextStyle: {
-        fontFamily: fonts.mainFont,
+        fontFamily: 'Roboto',
         fontStyle: 'normal',
         fontWeight: '400',
         fontSize: 18,
         color: figmaColors.primaryOffWhite
     },
     dateStyle: {
-        fontFamily: fonts.mainFont,
+        fontFamily: 'Roboto',
         fontStyle: 'normal',
         fontWeight: '400',
         fontSize: 12,

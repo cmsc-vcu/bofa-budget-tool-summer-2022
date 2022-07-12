@@ -4,7 +4,6 @@ import {
     View,
     Image,
     ImageBackground,
-    Dimensions
 } from 'react-native';
 import React, 
         {useCallback,
@@ -13,10 +12,7 @@ import React,
 import OrangeButton from "../components/OrangeButton";
 import GrayButton from '../components/GrayButton';
 import figmaColors from '../res/figmaColors';
-import fonts from '../res/fonts';
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
 
 function PigConfirmation (props) {
 
@@ -91,33 +87,33 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     midContainer: {
-        paddingTop: height * 0.05, // This pushes the middle portion of the screen towards the bottom because it adds padding to the top
+        paddingTop: 40, // This pushes the middle portion of the screen towards the bottom because it adds padding to the top
         alignItems: 'center'
     },
     bottomContainer: {
-        paddingTop: height * 0.05, // This will push the two background images at the bottom downward to match the figma more
+        paddingTop: 50, // This will push the two background images at the bottom downward to match the figma more
         alignContent: 'flex-end'
     },
     topBar: {
         alignItems: 'center',
-        paddingTop: height * 0.05,
-        width: width,
-        height: height * 0.21
+        paddingTop: 35,
+        width: 400,
+        height: 154
     },
     bottomBar: {
         alignItems: 'center',
         alignContent: 'stretch',
-        width: width,
-        paddingTop: height * 0.03,
-        height: height * 0.4
+        width: 400,
+        paddingTop: 75,
+        height: 319
     },
     imageSize: {
-        width: width * 0.65,
-        height: height * 0.3,
+        width: 200,
+        height: 200,
         resizeMode: 'contain'
     },
     title: {
-        fontFamily: fonts.mainFont,
+        fontFamily: 'Roboto',
         fontStyle: 'normal',
         fontSize: 40,
         fontWeight: '800',
@@ -125,11 +121,10 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     subtitle: {
-        fontFamily: fonts.mainFont,
+        fontFamily: 'Roboto',
         fontStyle: 'normal',
         fontWeight: '400',
         fontSize: 18,
-        marginBottom: height * 0.02
     },
     spaceBetweenButtons: {
         height: 15
