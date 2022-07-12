@@ -5,7 +5,6 @@ import {
     Image,
     ScrollView,
     TouchableOpacity,
-    TouchableHighlight
 } from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
@@ -13,7 +12,8 @@ import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
 import { useNavigation } from "@react-navigation/native";
 import CircularProgress from 'react-native-circular-progress-indicator';
-import ContinueLearningCards from "../components/ContinueLearningCards";
+import ContinueLearningCards from '../components/ContinueLearningCards';
+
 
 
 const HomePage = () => {
@@ -67,16 +67,10 @@ const HomePage = () => {
                         <ScrollView 
                         style={style.learningscroll}
                         horizontal= {true}>
-                            <ContinueLearningCards
-                            moduleTitle={'Credit'}
-                            units={'7/14'}
-                            progress={50}
-                            image={require('../res/images/test.png')}
-                            moduleTheme={'#EF5F82'}
-                            />
+                            
 
-                        {/* <Image source={require('../res/images/learningScrollOne.png')}/>
-                        <Image source={require('../res/images/learningScrollTwo.png')}/> */}
+                        <Image source={require('../res/images/learningScrollOne.png')}/>
+                        <Image source={require('../res/images/learningScrollTwo.png')}/>
                         </ScrollView>
                     </View>
                     <Text style={style.subheadertwo}>
@@ -86,6 +80,7 @@ const HomePage = () => {
                         <TouchableOpacity 
                         style={style.tiptouchable}
                         onPress={() => navigation.navigate('DailyFinancialTip')}>
+                            {/* Text needs to be dynamically aligned to center */}
                             <Text style={style.tiptext}>
                                 Check to see if your credit card has any deals on gas to save money as gas prices rise.
                             </Text>
@@ -233,7 +228,7 @@ const style = StyleSheet.create({
 
     character: {
         top: '-1.5%',
-        left: '27.5%'
+        left: '26.8%'
     },
 
     exp: {
@@ -278,7 +273,7 @@ const style = StyleSheet.create({
         width: 141,
         height: 46,
         left: '61%',
-        top: -6,
+        top: '-1%',
         backgroundColor: '#EB7723',
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
@@ -294,11 +289,12 @@ const style = StyleSheet.create({
         fontSize: 18,
         lineHeight: 21,
         textAlign: 'center',
-        top: 12,
+        top: '63%',
         color: '#FFFEF6'
     },
 
     scrollcontainer: {
+
     },
 
     pigheader: {
@@ -321,7 +317,6 @@ const style = StyleSheet.create({
         textShadowRadius: 4
     },
 
-
     bottompage: {
         height: 1150,
         width: '100%',
@@ -335,8 +330,8 @@ const style = StyleSheet.create({
     },
 
     subheaderone: {
-        left: 31,
-        top: 30,
+        left: '7%',
+        top: '2.6%',
         fontWeight: '800',
         fontSize: 24,
         color: '#2E2E2E',
@@ -344,8 +339,8 @@ const style = StyleSheet.create({
     },
 
     learningscroll: {
-        top: 50,
-        left: 10
+        top: '11%',
+        left: '7%'
     },
 
     subheadertwo: {
@@ -357,8 +352,8 @@ const style = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         color: '#2E2E2E',
-        top: 100,
-        left: 28
+        top: '6.5%',
+        left: '7%'
     },
 
     tips: {
@@ -368,8 +363,8 @@ const style = StyleSheet.create({
         borderTopRightRadius: 20,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-        top: 125,
-        left: 20,
+        top: '8.3%',
+        left: '5%',
         backgroundColor: '#2E2E2E',
     },
 
@@ -385,7 +380,7 @@ const style = StyleSheet.create({
         textAlign: 'center',
         fontStyle: 'italic',
         lineHeight: 28,
-        top: 30
+        top: '20%'
     },
 
     subheaderthree: {
@@ -397,7 +392,7 @@ const style = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         color: '#2E2E2E',
-        top: 180,
+        top: '11.1%',
         left: 35
     },
 
@@ -411,12 +406,12 @@ const style = StyleSheet.create({
         alignItems: 'center',
         textAlign: 'right',
         color: '#E08734',
-        top: 157,
+        top: '9%',
         right: 30
     },
 
     rewardscroll: {
-        top: 180,
+        top: '31%',
         left: 25
     },
 

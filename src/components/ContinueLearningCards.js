@@ -2,17 +2,13 @@ import {
     StyleSheet, 
     View,
     Text,
-    ImageBackground,
     Pressable,
     Image
 } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import figmaColors from '../res/figmaColors';
-import BulletPoints from './BulletPoints';
 import CircularProgress from 'react-native-circular-progress-indicator';
-import { JumpingTransition } from 'react-native-reanimated';
-
 
 const ContinueLearningCards = (props) =>
 {
@@ -20,31 +16,28 @@ const ContinueLearningCards = (props) =>
 
     return(
         <View style={styles.container}>
-            <Pressable>
-                <View 
-                style={styles.left}
-                backgroundColor={props.moduleTheme}
-                >
-                    <Image 
-                    source={props.image}
-                    style={styles.image}/>
+            <View 
+            style={styles.left}
+            backgroundColor={props.moduleTheme}
+            >
+                <Image 
+                source={props.image}
+                style={styles.image}/>
+            </View>
+            <View style={styles.right}>
+                <View style={styles.progress}>
+                    <CircularProgress
+                    value={props.progress}
+                    radius={25}
+                    />
                 </View>
-                <View style={styles.right}>
-                    <View style={styles.progress}>
-                        <CircularProgress
-                        value={props.progress}
-                        radius={25}
-                        />
-                    </View>
-                    <Text style={styles.title}>
-                        {props.moduleTitle}
-                    </Text>
-                    <Text>
-                        {props.units} Units Done
-                    </Text>
-                </View>
-            </Pressable>
-            
+                <Text style={styles.title}>
+                    {props.moduleTitle}
+                </Text>
+                <Text>
+                    {props.units} Units Done
+                </Text>
+            </View>
         </View>
     );
 }
