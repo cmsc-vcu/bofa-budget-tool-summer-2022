@@ -61,6 +61,8 @@ const categoriesCard = [
 const FinancialLiteracyCategories = () =>
 {
 
+    // Reset Current Branch to Jleonard's Commit HARD RESET
+
     return (
         <View style={styles.container}>
 
