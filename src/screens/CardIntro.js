@@ -7,13 +7,18 @@ import {
     Text,
     StyleSheet,
     View,
-    Image
+    Image,
+    Dimensions
 } from 'react-native'
 import figmaColors from "../res/figmaColors";
+import fonts from "../res/fonts";
 import OrangeButton from "../components/OrangeButton";
 import { useNavigation } from "@react-navigation/native";
 import Carousel from 'react-native-snap-carousel';
 import { Pagination } from "react-native-snap-carousel";
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 
 // This acts as the cards on the figma onboarding process, where the user
@@ -74,8 +79,8 @@ function CardIntro (props) {
                     layout="default"
                     ref={ref}
                     data={carouselItems}
-                    sliderWidth={385}
-                    itemWidth={350}
+                    sliderWidth={width * 0.98}
+                    itemWidth={width * 0.9}
                     renderItem={renderCardItem}
                     onSnapToItem={(index) => setActiveIndex(index)}
                     paddingRight={100}
@@ -113,8 +118,8 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
         borderRadius: 30,
         backgroundColor: figmaColors.primaryGreen,
-        width: 360,
-        height: 541,
+        width: width * 0.9,
+        height: height * 0.9,
         paddingLeft: 35,
         paddingTop: 15,
         shadowColor: '#000000',
@@ -125,7 +130,7 @@ const styles = StyleSheet.create({
     },
     // This refers to the main title of the cards
     title: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 40,
         fontWeight: '800',
@@ -135,7 +140,7 @@ const styles = StyleSheet.create({
     },
     // This refers to the subtitle of the card
     subtitle: {
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontSize: 18,
         fontWeight: '400',

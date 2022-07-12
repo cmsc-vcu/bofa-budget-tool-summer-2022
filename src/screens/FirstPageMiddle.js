@@ -7,6 +7,7 @@ import {
     Image
 } from 'react-native'
 import OrangeButton from "../components/OrangeButton";
+import fonts from '../res/fonts';
 
 const FirstPageMiddle = () => {
     return (
@@ -74,7 +75,7 @@ const newStyle = StyleSheet.create({
     /* This is the style for any header text */
     title: {
         textAlign: "center",
-        fontFamily: "Roboto",
+        fontFamily: fonts.mainFont,
         fontSize: 48,
         fontStyle: "normal",
         fontWeight: '800',
@@ -83,7 +84,7 @@ const newStyle = StyleSheet.create({
     /* This is the style for any subheader text */
     subtitle: {
         textAlign: 'center',
-        fontFamily: 'Roboto',
+        fontFamily: fonts.mainFont,
         fontSize: 24,
         fontStyle: 'normal',
         textAlign: 'center',
