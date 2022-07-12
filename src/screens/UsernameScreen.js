@@ -10,7 +10,6 @@ import {
 import React from 'react';
 import OrangeButton from "../components/OrangeButton";
 import figmaColors from '../res/figmaColors';
-import fonts from '../res/fonts';
 import LinearGradient from 'react-native-linear-gradient';
 
 /*<ImageBackground source={require('background image path')} style={{width: '100%', height: '100%'}}>
@@ -106,7 +105,7 @@ const styles = StyleSheet.create({
     },
     input: {
         width: '100%',
-        fontFamily: fonts.mainFont,
+        fontFamily: 'Roboto',
         fontStyle: 'normal',
         fontSize: 36,
         fontWeight: '800',
@@ -139,7 +138,7 @@ const styles = StyleSheet.create({
     },
     // This refers to the main title of the Pig Carousel
     title: {
-        fontFamily: fonts.mainFont,
+        fontFamily: 'Roboto',
         fontStyle: 'normal',
         fontSize: 40,
         fontWeight: '800',
@@ -148,7 +147,7 @@ const styles = StyleSheet.create({
     },
     // This refers to the subtitle of the card
     subtitle: {
-        fontFamily: fonts.mainFont,
+        fontFamily: 'Roboto',
         fontStyle: 'normal',
         fontSize: 18,
         fontWeight: '700',

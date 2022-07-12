@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import React from 'react';
 import { useNavigation } from "@react-navigation/native";
-import fonts from '../res/fonts';
 
 // This page is for the Terms & Conditions page with the Privacy Policy
 
@@ -57,6 +56,10 @@ const PrivacyPolicy = () => {
 
 
 
+
+
+
+
 const style = StyleSheet.create({
     topContainer: {
         
@@ -66,7 +69,7 @@ const style = StyleSheet.create({
     header: {
         fontSize: 44,
         fontWeight: '800',
-        fontFamily: fonts.mainFont,
+        fontFamily: 'Roboto',
         width: 309,
         height: 56,
         top: -220,
@@ -79,7 +82,7 @@ const style = StyleSheet.create({
     subheader: {
         fontSize: 22,
         fontWeight: '400',
-        fontFamily: fonts.mainFont,
+        fontFamily: 'Roboto',
         width: 309,
         height: 28,
         left: 29,
@@ -122,7 +125,7 @@ const style = StyleSheet.create({
 
     statement: {
         fontSize: 16,
-        fontFamily: fonts.mainFont,
+        fontFamily: 'Roboto',
         width: 320,
         color: '#2E2E2E',
         left: 22,
