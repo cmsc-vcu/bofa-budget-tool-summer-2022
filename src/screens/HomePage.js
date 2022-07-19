@@ -4,7 +4,8 @@ import {
     View,
     Image,
     ScrollView,
-    TouchableOpacity,
+    Pressable,
+    TouchableOpacity
 } from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
@@ -133,23 +134,39 @@ const HomePage = () => {
 
             <View style={style.bottomcontainer}> 
                 <View style={style.navbar}>
-                    <View>
-                        <TouchableOpacity activeOpacity={1}>
+                    <View style={style.homerange}>
+                        {/* unrequired pressable? */}
+                        <Pressable>
                             <Image source={require('../res/images/homeIcon.png')} style={style.homeicon}/>
-                        </TouchableOpacity>
+                            <Text>
+                                Home
+                            </Text>
+                        </Pressable>
                     </View>
-                    <View style={style.learnicon}>
-                        <TouchableOpacity onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
-                            <Image source={require('../res/images/learnIcon.png')}/>
-                        </TouchableOpacity>
+                    <View style={style.learnrange}>
+                        <Pressable onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
+                            <Image source={require('../res/images/learnIcon.png')} style={style.othericons}/>
+                            <Text>
+                                Learn
+                            </Text>
+                        </Pressable>
                     </View>
-                    <TouchableOpacity onPress={() => navigation.navigate('Rewards')}>
-                        <Image source={require('../res/images/rewardsIcon.png')} style={style.rewardsicon}/>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('Connect')}>
-                        <Image source={require('../res/images/connectIcon.png')} style={style.connecticon}/>
-                    </TouchableOpacity>
-                    <View style={style.box}/>
+                    <View style={style.careerrange}>
+                        <Pressable onPress={() => navigation.navigate('Rewards')}>
+                            <Image source={require('../res/images/careerIcon.png')} style={style.othericons}/>
+                            <Text>
+                                Career
+                            </Text>
+                        </Pressable>
+                    </View>
+                    <View style={style.profilerange}>
+                        <Pressable onPress={() => navigation.navigate('Connect')}>
+                            <Image source={require('../res/images/profileIcon.png')} style={style.othericons}/>
+                            <Text>
+                                Profile
+                            </Text>
+                        </Pressable>
+                    </View>
                 </View>
             </View>
         </View>
@@ -159,14 +176,6 @@ const HomePage = () => {
 
 
 const style = StyleSheet.create({
-    box: {
-        position: 'absolute',
-        height: 65,
-        width: 43,
-        backgroundColor: '#808080',
-        opacity: .5,
-        left: 1
-    }, 
     topcontainer: {
         position: 'absolute',
         width: '100%'
@@ -318,7 +327,7 @@ const style = StyleSheet.create({
     },
 
     bottompage: {
-        height: 1150,
+        height: 1050,
         width: '100%',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
@@ -393,7 +402,7 @@ const style = StyleSheet.create({
         alignItems: 'center',
         color: '#2E2E2E',
         top: '11.1%',
-        left: 35
+        left: '7%'
     },
 
     rewardspage: {
@@ -407,12 +416,12 @@ const style = StyleSheet.create({
         textAlign: 'right',
         color: '#E08734',
         top: '9%',
-        right: 30
+        right: '7%'
     },
 
     rewardscroll: {
         top: '31%',
-        left: 25
+        left: '12%'
     },
 
     rewardstwo: {
@@ -428,8 +437,8 @@ const style = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         color: '#2E2E2E',
-        top: 225,
-        left: 35
+        top: '14%',
+        left: '7%'
     },
 
     connectpage: {
@@ -442,8 +451,8 @@ const style = StyleSheet.create({
         alignItems: 'center',
         textAlign: 'right',
         color: '#E08734',
-        top: 200,
-        right: 30
+        top: '12%',
+        right: '7%'
     },
 
     connect: {
@@ -453,8 +462,8 @@ const style = StyleSheet.create({
         borderTopRightRadius: 20,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-        top: 225,
-        left: 20,
+        top: '14%',
+        left: '5%',
         backgroundColor: 'rgba(133, 187, 78, 0.25)',
     },
 
@@ -464,8 +473,8 @@ const style = StyleSheet.create({
     },
 
     friendicon: {
-        top: 25,
-        left: 140
+        top: '15%',
+        left: '40%'
     },
 
     connecttext: {
@@ -478,7 +487,7 @@ const style = StyleSheet.create({
         alignItems: 'center',
         textAlign: 'center',
         color: '#2E2E2E',
-        top: 35
+        top: '20%'
     },
 
     bottomcontainer: {
@@ -487,10 +496,10 @@ const style = StyleSheet.create({
     },
 
     navbar: {
-        width: 382,
+        width: 365,
         height: 63,
         backgroundColor: '#FFFEF6',
-        left: 5,
+        left: '4%',
         top: 685,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
@@ -500,25 +509,54 @@ const style = StyleSheet.create({
     },
 
     homeicon: {
-        left: 30,
+        left: '33%',
         top: 10,
         tintColor: '#4CB998'
     },
 
-    learnicon: {
-        left: 100,
-        top: -22,
+    homerange: {
+        height: '100%',
+        width: '25%',
+        backgroundColor: '#808080',
+        opacity: .5
+
     },
 
-    rewardsicon: {
-        left: 170,
-        top: -53
+    othericons: {
+        left: '33%',
+        top: '10%',
     },
 
-    connecticon: {
-        left: 245,
-        top: -82
+    learnrange: {
+        position: 'absolute',
+        width: '25%',
+        height: '100%',
+        left: '25%',
+        backgroundColor: '#808080',
+        opacity: .75
     },
+
+    careerrange: {
+        position: 'absolute',
+        width: '25%',
+        height: '100%',
+        left: '50%',
+        backgroundColor: '#808080',
+        opacity: .5
+    },
+
+    profilerange: {
+        position: 'absolute',
+        width: '25%',
+        height: '100%',
+        left: '75%',
+        backgroundColor: '#808080',
+        opacity: .75
+    },
+
+
+
+
 
 })
 
