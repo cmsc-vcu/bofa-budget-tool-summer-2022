@@ -64,15 +64,17 @@ const newStyle = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-evenly',
     },
-    // When I add the style at the 2nd ImageBackground, this children that are in it are manipulated
-    // In this example, I am adding padding to the left of the children. The children is the image
-    // paddingTop refers to adding space to the top of the container
-    // In addition, paddingTop messes with the bottom left image
-    // paddingLeft refers to adding space to the left of the container
+    /*************************************************************************************************
+     * When I add the style at the 2nd ImageBackground, this children that are in it are manipulated
+     * In this example, I am adding padding to the left of the children. The children is the image
+     * paddingTop refers to adding space to the top of the container
+     * In addition, paddingTop messes with the bottom left image
+     * paddingLeft refers to adding space to the left of the container
+    *************************************************************************************************/
     bottomcontainer: {
         paddingLeft: 30,
     },
-    /* This is the style for any header text */
+    // This is the style for any header text
     title: {
         textAlign: "center",
         fontFamily: fonts.mainFont,
