@@ -8,18 +8,20 @@ import {
     ImageBackground,
 } from 'react-native';
 import React, { useState } from 'react';
+
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
 import { useNavigation } from '@react-navigation/native';
 
 // This page is for the Daily Financial Tip
 
-
-// The reason why there are screen and window is due to Android
-// Android devices may have a bottom menubar on their screen
-// Screen are the dimensions without the menubar
-// Window are the dimensions with the menubar
-// Screen will be bigger than Window
+/*************************************************************************************************
+ * The reason why there are screen and window is due to Android
+ * Android devices may have a bottom menubar on their screen
+ * Screen are the dimensions without the menubar
+ * Window are the dimensions with the menubar
+ * Screen will be bigger than Window
+*************************************************************************************************/
 
 // Create two constants to hold the image
 // Create a 

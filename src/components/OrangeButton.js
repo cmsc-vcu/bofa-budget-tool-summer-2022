@@ -6,14 +6,16 @@ import {
 } from 'react-native';
 import React from 'react';
 import { useNavigation } from "@react-navigation/native";
+
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
 
+// This is the OrangeButton component where it will be reused
 
-{/* This is the OrangeButton component where it will be reused */}
-{/* Function: Create a Pressable element given the navigation page where the User wants to go.
-    In addition, text that are passed into the OrangeButton will be used as the text for the button.
-*/}
+/*************************************************************************************************
+ * Function: Create a Pressable element given the navigation page where the User wants to go.
+ * In addition, text that are passed into the OrangeButton will be used as the text for the button.
+*************************************************************************************************/    
 function OrangeButton (props) {
     const navigation = useNavigation();
 

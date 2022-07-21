@@ -10,16 +10,14 @@ import {
 } from 'react-native';
 import React,
         { useState } from 'react';
-import Svg, {
-    Circle,
-} from 'react-native-svg';
 
 import OrangeButton from '../components/OrangeButton';
 import CategoriesCards from '../components/CategoriesCards';
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
 import SearchBar from '../components/SearchBar';
-import InactiveBookmarkCategories from '../res/svg/InactiveBookmarkCategories.svg'
+import InactiveBookmarkCategories from '../res/svg/InactiveBookmarkCategories.svg';
+import TopAppBar from '../components/TopAppBar';
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -66,17 +64,10 @@ const FinancialLiteracyCategories = () =>
 
 
             {/* Top app bar with the white background and title Learn */}
-            <View style={styles.topAppBar}>
-                <View style={styles.topAppContainer}>
-                        <Text style={styles.topAppTitle}>
-                            Learn
-                        </Text>
-                </View>
-             </View>
-            
-            
+            <TopAppBar title='Learn'>
 
-            {/* ScrollView with the cards */}
+            </TopAppBar>
+            
             <ScrollView contentContainerStyle={styles.innerScrollViewContainer}>
 
                 {/* Search Bar */}
