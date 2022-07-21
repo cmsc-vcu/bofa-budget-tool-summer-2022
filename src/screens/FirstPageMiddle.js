@@ -11,8 +11,10 @@ import fonts from '../res/fonts';
 
 const FirstPageMiddle = () => {
     return (
-        // This view is given a style of the container
-        // All the children within this view will have the styles.container applied to them
+        /*************************************************************************************************
+         * This view is given a style of the container
+         * All the children within this view will have the styles.container applied to them
+        *************************************************************************************************/
         <View style={newStyle.topcontainer}>
             {/* This view will handle the header*/}
             <View>
@@ -46,18 +48,23 @@ const FirstPageMiddle = () => {
 }
 
 const newStyle = StyleSheet.create({
-    // This refers to all of the children in the container
-    // space-between means spacing the children within the view between each other
-    // This means that the first view, the financialhubgradienttext, and the second view
-    // are spaced between each other
+    
+    /*************************************************************************************************
+     * This refers to all of the children in the container
+     * space-between means spacing the children within the view between each other
+     * This means that the first view, the financialhubgradienttext, and the second view
+     * are spaced between each other
+    *************************************************************************************************/
     topcontainer: {
         flex: 1,
         justifyContent:'space-between'
-    },
-    // PaddingTop messes with the two financialhubgradient text
-    // PaddingBottom messes with the bottom button
-    // Reasoning? Probably due to the button being at the very bottom of the container
-    // Which means adding padding to the top doesn't affect the button because it's at the bottom
+    }, 
+    /*************************************************************************************************
+     * PaddingTop messes with the two financialhubgradient text
+     * PaddingBottom messes with the bottom button
+     * Reasoning? Probably due to the button being at the very bottom of the container
+     * Which means adding padding to the top doesn't affect the button because it's at the bottom
+    *************************************************************************************************/
     midcontainer: {
         flex: 1,
         paddingTop: 25,
@@ -83,7 +90,7 @@ const newStyle = StyleSheet.create({
         fontWeight: '800',
         alignItems: 'center'
     },
-    /* This is the style for any subheader text */
+    // This is the style for any subheader text
     subtitle: {
         textAlign: 'center',
         fontFamily: fonts.mainFont,
