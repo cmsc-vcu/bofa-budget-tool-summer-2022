@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import OrangeButton from "../components/OrangeButton";
-import fonts from '../res/fonts';
+import fonts from "../res/fonts";
 
 const FirstPageMiddle = () => {
     return (
