@@ -8,6 +8,8 @@ import React from 'react';
 import { useNavigation } from "@react-navigation/native";
 import ContinueLearningCards from '../components/ContinueLearningCards';
 import NavBar from '../components/NavBar';
+import HomepageCards from '../components/HomepageCards';
+import fonts from '../res/fonts';
 
 const Connect = (props) => {
     const navigation = useNavigation();
@@ -16,6 +18,10 @@ const Connect = (props) => {
             <NavBar>
                 
             </NavBar>
+
+            <HomepageCards>
+
+            </HomepageCards>
 
         </View>
     );
@@ -29,10 +35,7 @@ const Connect = (props) => {
 
 
 const styles = StyleSheet.create({
-    ok: {
-        top: -10,
-        left: 8
-    }
+    
 })
 
 export default Connect;
