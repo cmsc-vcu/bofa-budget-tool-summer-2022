@@ -5,7 +5,8 @@ import {
     StyleSheet,
     ImageBackground,
     Image
-} from 'react-native'
+} from 'react-native';
+
 import OrangeButton from "../components/OrangeButton";
 import fonts from '../res/fonts';
 

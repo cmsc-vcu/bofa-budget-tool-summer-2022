@@ -10,9 +10,6 @@ import {
 } from 'react-native';
 import React,
         { useState } from 'react';
-import Svg, {
-    Circle,
-} from 'react-native-svg';
 
 import OrangeButton from '../components/OrangeButton';
 import CategoriesCards from '../components/CategoriesCards';
