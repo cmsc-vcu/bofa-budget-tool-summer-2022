@@ -64,7 +64,7 @@ const FinancialLiteracyCategories = () =>
 
 
             {/* Top app bar with the white background and title Learn */}
-            <TopAppBar>
+            <TopAppBar title='Learn'>
 
             </TopAppBar>
             

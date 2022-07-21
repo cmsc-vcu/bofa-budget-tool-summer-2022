@@ -7,13 +7,13 @@ import {
 import fonts from "../res/fonts";
 import figmaColors from "../res/figmaColors";
 
-const TopAppBar = () =>
+const TopAppBar = (props) =>
 {
     return (
         <View style={styles.topAppBar}>
                 <View style={styles.topAppContainer}>
                         <Text style={styles.topAppTitle}>
-                            Learn
+                            {props.title}
                         </Text>
                 </View>
         </View>
