@@ -20,10 +20,23 @@ const BudgetingToolScreen = () =>
 
     return(
         <View style={styles.container}> 
-            <Pressable onPress={() => setPressablePressed(!pressablePressed)} 
-                        style={[{backgroundColor: pressablePressed ? figmaColors.primaryTeal : figmaColors.primaryOffBlack}, styles.buttonStyle]}>
-                <Text style={styles.textStyle}>Overview</Text>
-            </Pressable>
+            <View style={styles.topBudgetingBarContainer}>
+                <Pressable onPress={() => setPressablePressed(1)} 
+                            style={[{backgroundColor: pressablePressed === 1? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
+                    <Text style={styles.textStyle}>Overview</Text>
+                </Pressable>
+                <Pressable onPress={() => setPressablePressed(2)} 
+                            style={[{backgroundColor: pressablePressed === 2? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
+                    <Text style={styles.textStyle}>Spending</Text>
+                </Pressable>
+                <Pressable onPress={() => setPressablePressed(3)} 
+                            style={[{backgroundColor: pressablePressed === 3? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
+                    <Text style={styles.textStyle}>Income</Text>
+                </Pressable>
+            </View>
+            <View>
+
+            </View>
         </View>
     );
 };
@@ -36,14 +49,27 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,
     },
+    topBudgetingBarContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignContent: 'space-between',
+        paddingTop: 20
+    },
     buttonStyle: {
-        width: width * 0.2,
-        height:height * 0.03,
+        width: width * 0.3,
+        height:height * 0.05,
         borderRadius: 30,
+        alignItems: 'center',
+        marginLeft: 5,
+        marginRight: 5,
+        paddingTop: 3
     },
     textStyle: {
         fontFamily: fonts.mainFont,
-        color: figmaColors.primaryOffWhite
+        color: figmaColors.primaryOffWhite,
+        fontWeight: '700',
+        fontSize: 20
     }
 });
 
