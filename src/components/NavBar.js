@@ -8,45 +8,44 @@ import {
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import figmaColors from '../res/figmaColors';
-import CircularProgress from 'react-native-circular-progress-indicator';
+import { fonts } from '@rneui/base';
 
-const NavBar = (props) =>
+const NavBar = () =>
 {
     const navigation = useNavigation();
 
     return(
         <View style={styles.container}> 
                 <View style={styles.navbar}>
-                    <View style={styles.homerange}>
-                        {/* unrequired pressable? */}
-                        <Pressable>
-                            <Image source={require('../res/images/homeIcon.png')} style={styles.othericons}/>
+                    <View style={styles.rangeone}>
+                        <Pressable onPress={() => navigation.navigate('HomePage')}>
+                            <Image source={require('../res/images/homeIcon.png')} style={styles.homeicon}/>
                             <Text style={styles.texts}>
                                 Home
                             </Text>
                         </Pressable>
                     </View>
-                    <View style={styles.learnrange}>
+                    <View style={styles.rangetwo}>
                         <Pressable onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
-                            <Image source={require('../res/images/learnIcon.png')} style={styles.othericons}/>
+                            <Image source={require('../res/images/budgetIcon.png')} style={styles.budgeticon}/>
+                            <Text style={styles.texts}>
+                                Budget
+                            </Text>
+                        </Pressable>
+                    </View>
+                    <View style={styles.rangethree}>
+                        <Pressable onPress={() => navigation.navigate('Rewards')}>
+                            <Image source={require('../res/images/what-ifIcon.png')} style={styles.whatificon}/>
+                            <Text style={styles.texts}>
+                                What-if
+                            </Text>
+                        </Pressable>
+                    </View>
+                    <View style={styles.rangefour}>
+                        <Pressable onPress={() => navigation.navigate('Connect')}>
+                            <Image source={require('../res/images/learnIcon.png')} style={styles.learnicon}/>
                             <Text style={styles.texts}>
                                 Learn
-                            </Text>
-                        </Pressable>
-                    </View>
-                    <View style={styles.careerrange}>
-                        <Pressable onPress={() => navigation.navigate('Rewards')}>
-                            <Image source={require('../res/images/careerIcon.png')} style={styles.othericons}/>
-                            <Text style={styles.texts}>
-                                Career
-                            </Text>
-                        </Pressable>
-                    </View>
-                    <View style={styles.profilerange}>
-                        <Pressable onPress={() => navigation.navigate('Connect')}>
-                            <Image source={require('../res/images/profileIcon.png')} style={styles.othericons}/>
-                            <Text style={styles.texts}>
-                                Profile
                             </Text>
                         </Pressable>
                     </View>
@@ -58,7 +57,6 @@ const NavBar = (props) =>
 const styles = StyleSheet.create({
     container: {
         position: 'absolute',
-        
     },
 
     navbar: {
@@ -67,64 +65,67 @@ const styles = StyleSheet.create({
         backgroundColor: figmaColors.primaryOffWhite,
         left: '4%',
         top: 685,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20,
-        elevation: 15,
+        borderRadius: 20,
+        elevation: 3,
     },
 
     homeicon: {
-        left: '33%',
-        top: 10,
-        tintColor: '#4CB998'
+        position: 'absolute', 
+        left: '32%',
+        top: '40%'
     },
 
-    homerange: {
+    budgeticon: {
+        position: 'absolute', 
+        left: '35%',
+        top: '60%'
+    },
+
+    whatificon: {
+        position: 'absolute', 
+        left: '33%',
+        top: '40%'
+    },
+    
+    learnicon: {
+        position: 'absolute', 
+        left: '33%',
+        top: '45%'
+    },
+
+    rangeone: {
         position: 'absolute',
         height: '100%',
         width: '25%',
-        backgroundColor: '#808080',
-        opacity: .5
-
     },
 
-    othericons: {
-        position: 'absolute', 
-        left: '33%', 
-        top: '35%'
-    },
-
-    learnrange: {
+    rangetwo: {
         position: 'absolute',
         width: '25%',
         height: '100%',
         left: '25%',
-        backgroundColor: '#808080',
-        opacity: .75
     },
 
-    careerrange: {
+    rangethree: {
         position: 'absolute',
         width: '25%',
         height: '100%',
         left: '50%',
-        backgroundColor: '#808080',
-        opacity: .5
     },
 
-    profilerange: {
+    rangefour: {
         position: 'absolute',
         width: '25%',
         height: '100%',
         left: '75%',
-        backgroundColor: '#808080',
-        opacity: .75
     },
 
     texts: {
         top: '195%',
-        left: '30%'
+        textAlign: 'center',
+        fontFamily: fonts.mainFont,
+        fontWeight: '700'
+
     }
 
 })

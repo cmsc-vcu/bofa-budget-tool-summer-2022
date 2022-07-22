@@ -14,6 +14,7 @@ import fonts from '../res/fonts';
 import { useNavigation } from "@react-navigation/native";
 import CircularProgress from 'react-native-circular-progress-indicator';
 import ContinueLearningCards from '../components/ContinueLearningCards';
+import NavBar from '../components/NavBar';
 
 
 
@@ -22,7 +23,6 @@ const HomePage = () => {
     const navigation = useNavigation();
 
     return (
-        // Whole page view
         <View> 
             <ScrollView style={style.scrollcontainer}>
                 <LinearGradient 
@@ -133,41 +133,8 @@ const HomePage = () => {
             </View>
 
             <View style={style.bottomcontainer}> 
-                <View style={style.navbar}>
-                    <View style={style.homerange}>
-                        {/* unrequired pressable? */}
-                        <Pressable>
-                            <Image source={require('../res/images/homeIcon.png')} style={style.homeicon}/>
-                            <Text>
-                                Home
-                            </Text>
-                        </Pressable>
-                    </View>
-                    <View style={style.learnrange}>
-                        <Pressable onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
-                            <Image source={require('../res/images/learnIcon.png')} style={style.othericons}/>
-                            <Text>
-                                Learn
-                            </Text>
-                        </Pressable>
-                    </View>
-                    <View style={style.careerrange}>
-                        <Pressable onPress={() => navigation.navigate('Rewards')}>
-                            <Image source={require('../res/images/careerIcon.png')} style={style.othericons}/>
-                            <Text>
-                                Career
-                            </Text>
-                        </Pressable>
-                    </View>
-                    <View style={style.profilerange}>
-                        <Pressable onPress={() => navigation.navigate('Connect')}>
-                            <Image source={require('../res/images/profileIcon.png')} style={style.othericons}/>
-                            <Text>
-                                Profile
-                            </Text>
-                        </Pressable>
-                    </View>
-                </View>
+                <NavBar>
+                </NavBar>
             </View>
         </View>
 
