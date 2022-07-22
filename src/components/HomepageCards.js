@@ -30,7 +30,7 @@ const HomepageCards = (props) =>
 
 const styles = StyleSheet.create({
     container: {
-        width: 386,
+        width: 365,
         height: 109,
         borderRadius: 11,
         elevation: 5,
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     },
 
     line: {
-        width: 345,
+        width: 332,
         height: 4,
         borderRadius: 10,
         backgroundColor: '#7AC032',
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
         fontWeight: '800',
         fontSize: 24,
         color: '#2E2E2E',
-        left: '10%',
+        left: '8%',
         top: '25%'
     },
 
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         fontSize: 16,
         color: '#605F58',
-        left: '10%',
+        left: '8%',
         top: '25%'
     }
     
