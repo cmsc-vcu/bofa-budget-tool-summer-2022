@@ -103,6 +103,10 @@ function CardIntro (props) {
                     text={'I\'m ready!'}
                     navigatepage='TermsConditions'
                 />
+                <OrangeButton
+                    text={'budgetingtool'}
+                    navigatepage='BudgetingToolScreen'
+                />
         </View>
     )
 }
