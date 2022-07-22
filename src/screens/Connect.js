@@ -10,18 +10,29 @@ import ContinueLearningCards from '../components/ContinueLearningCards';
 import NavBar from '../components/NavBar';
 import HomepageCards from '../components/HomepageCards';
 import fonts from '../res/fonts';
+import TopAppBar from '../components/TopAppBar';
 
 const Connect = (props) => {
     const navigation = useNavigation();
     return (
         <View>
+            <View>
+                <TopAppBar
+                title='Home'/>
+            </View>
+            
+
+            <View style={styles.test}>
+            <HomepageCards/>
+            <HomepageCards/>
+            <HomepageCards/>
+            </View>
+            
+            
+
             <NavBar>
                 
             </NavBar>
-
-            <HomepageCards>
-
-            </HomepageCards>
 
         </View>
     );
@@ -35,7 +46,9 @@ const Connect = (props) => {
 
 
 const styles = StyleSheet.create({
-    
+    test: {
+        left: '3.5%'
+    }
 })
 
 export default Connect;

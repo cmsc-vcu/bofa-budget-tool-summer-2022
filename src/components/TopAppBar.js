@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
         fontWeight: '800',
         color: figmaColors.primaryOffBlack,
         flexGrow: 1,
+        top: '30%'
     },
     topAppContainer: {
         flex: 1,
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     },
     topAppBar: {
         width: '100%',
-        height: '7%',
+        height: '25%',
         backgroundColor: figmaColors.primaryOffWhite,
         borderBottomLeftRadius: 14,
         borderBottomRightRadius: 14,
