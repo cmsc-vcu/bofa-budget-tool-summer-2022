@@ -10,7 +10,6 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-
 import FirstPageMiddle from './src/screens/FirstPageMiddle';
 import CardIntro from './src/screens/CardIntro';
 import TermsConditions from './src/screens/TermsConditions';
@@ -25,17 +24,16 @@ import FinancialLiteracyCategories from './src/screens/FinancialLiteracyCategori
 import FinancialLiteracyModules from './src/screens/FinancialLiteracyModules';
 import Rewards from './src/screens/Rewards';
 import Connect from './src/screens/Connect';
-
+import BudgetingToolScreen from './src/screens/BudgetingToolScreen';
  
- 
- /**
+/**
   * Idea: Create a function component (screens.js example) that will return
   * a React element
   * A React element is a JavaScript object containing at least a type and props
   * 
   * @returns a Screen for the users to view
-  */
-  const Stack = createNativeStackNavigator();
+*/
+const Stack = createNativeStackNavigator();
 
  const OnboardingStart = ({ navigation }) => {
    // I want to return a view
@@ -50,6 +48,8 @@ import Connect from './src/screens/Connect';
          */}
 
          {/* DON'T FORGET TO IMPORT THE SCREEN/COMPONENT */}
+         {/* component is the name of the file */}
+         {/* name is the name to be used as referenced/navigation direction */}
 
          <Stack.Navigator initialRouteName='OnboardingHome' screenOptions={{headerShown: false}}>
            <Stack.Screen name='OnboardingHome' component={FirstPageMiddle} />
@@ -66,6 +66,7 @@ import Connect from './src/screens/Connect';
            <Stack.Screen name='FinancialLiteracyModules' component={FinancialLiteracyModules} />
            <Stack.Screen name='Rewards' component={Rewards} />
            <Stack.Screen name='Connect' component={Connect} />
+           <Stack.Screen name='BudgetingToolScreen' component={BudgetingToolScreen} />
          </Stack.Navigator>
        </NavigationContainer>
    )
