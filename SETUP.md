@@ -41,7 +41,7 @@ If you're comfy from a windows command prompt, cut and paste this powershell scr
     choco install -y make
     choco install -y grep
     choco install -y vscode
-    choco install -y git.install --params "/GitAndUnitToolsOnPath /Editor:VisualStudioCode"
+    choco install -y git.install --params "/GitAndUnixToolsOnPath /Editor:VisualStudioCode"
     choco install -y nodejs-lts
     choco install -y openjdk11
     choco install -y androidstudio
