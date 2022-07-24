@@ -67,16 +67,18 @@ function CardIntro(props) {
     const ref = useRef(null);
 
     // This acts as a template for the cards
-    const renderCardItem = useCallback(({ item, index }) => (
-        <View style={styles.subcontainer}>
-            <Image style={styles.imageSize} source={item.ImagePath} />
-            <View>
-                <Text style={[styles.title, { paddingTop: 0, paddingBottom: 20 }]}>{item.Title}</Text>
-                <Text style={styles.subtitle}>{item.subtitle}</Text>
-            </View>
-        </View>
-    ), []);
     if (activeIndex == 2) {
+
+        const renderCardItem = useCallback(({ item, index }) => (
+            <View style={styles.subcontainer}>
+                <Image style={styles.imageSize} source={item.ImagePath} />
+                <View>
+                    <Text style={[styles.title2, { paddingTop: 0, paddingBottom: 20 }]}>{item.Title}</Text>
+                    <Text style={styles.subtitle}>{item.subtitle}</Text>
+                </View>
+            </View>
+        ), []);
+
         return (
             <View style={styles.container}>
                 <CircularBackground style={styles.circularBackgroundStyle} />
@@ -90,15 +92,7 @@ function CardIntro(props) {
                     onSnapToItem={(index) => setActiveIndex(index)}
                     paddingRight={100}
                 />
-                <Pagination
-                    dotsLength={cardItems.length}
-                    carouselRef={ref}
-                    activeDotIndex={activeIndex}
-                    dotStyle={styles.activeDotStyle}
-                    inactiveDotStyle={styles.inactiveDotStyle}
-                    inactiveDotOpacity={0.5}
-                    inactiveDotScale={1}
-                />
+
                 <OrangeButton
                     text={'I\'m ready!'}
                     navigatepage='TermsConditions'
@@ -107,6 +101,15 @@ function CardIntro(props) {
         )
     }
     if (activeIndex == 0) {
+        const renderCardItem = useCallback(({ item, index }) => (
+            <View style={styles.subcontainer}>
+                <Image style={styles.imageSize} source={item.ImagePath} />
+                <View>
+                    <Text style={[styles.title, { paddingTop: 0, paddingBottom: 20 }]}>{item.Title}</Text>
+                    <Text style={styles.subtitle}>{item.subtitle}</Text>
+                </View>
+            </View>
+        ), []);
         return (
             <View style={styles.container}>
                 <CircularBackground style={styles.circularBackgroundStyle} />
@@ -139,6 +142,15 @@ function CardIntro(props) {
     }
 
     else {
+        const renderCardItem = useCallback(({ item, index }) => (
+            <View style={styles.subcontainer}>
+                <Image style={styles.imageSize} source={item.ImagePath} />
+                <View>
+                    <Text style={[styles.title, { paddingTop: 0, paddingBottom: 20 }]}>{item.Title}</Text>
+                    <Text style={styles.subtitle}>{item.subtitle}</Text>
+                </View>
+            </View>
+        ), []);
         return (
             <View style={styles.container}>
                 <CircularBackground style={styles.circularBackgroundStyle} />
@@ -188,7 +200,15 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: fonts.mainFont,
         fontStyle: 'normal',
-        fontSize: 40,
+        fontSize: 48,
+        fontWeight: '800',
+        color: figmaColors.primaryOffWhite,
+    },
+
+    title2: {
+        fontFamily: fonts.mainFont,
+        fontStyle: 'normal',
+        fontSize: 48,
         fontWeight: '800',
         color: figmaColors.primaryOffWhite,
     },
