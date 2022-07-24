@@ -1,14 +1,14 @@
 import React, {
     useState,
     useRef,
-    useCallback
+    useCallback,
 } from "react";
 import {
     Text,
     StyleSheet,
     View,
-    Image,
     ImageBackground,
+    Image,
     Dimensions
 } from 'react-native'
 import figmaColors from "../res/figmaColors";
@@ -44,7 +44,7 @@ const cardItems = [
     }
 ]
 
-function CardIntro (props) {
+function CardIntro(props) {
     const navigation = useNavigation();
 
 
@@ -67,19 +67,19 @@ function CardIntro (props) {
     const ref = useRef(null);
 
     // This acts as a template for the cards
-    const renderCardItem = useCallback(({item, index}) => (
+    const renderCardItem = useCallback(({ item, index }) => (
         <View style={styles.subcontainer}>
-            <Image style={styles.imageSize} source={ item.ImagePath }/>
+            <Image style={styles.imageSize} source={item.ImagePath} />
             <View>
                 <Text style={[styles.title, { paddingTop: 0, paddingBottom: 20 }]}>{item.Title}</Text>
                 <Text style={styles.subtitle}>{item.subtitle}</Text>
             </View>
         </View>
     ), []);
-
-    return (
-        <View style={styles.container}>
-            <CircularBackground style={styles.circularBackgroundStyle}/>
+    if (activeIndex == 2) {
+        return (
+            <View style={styles.container}>
+                <CircularBackground style={styles.circularBackgroundStyle} />
                 <Carousel
                     layout="default"
                     ref={ref}
@@ -90,7 +90,7 @@ function CardIntro (props) {
                     onSnapToItem={(index) => setActiveIndex(index)}
                     paddingRight={100}
                 />
-                <Pagination 
+                <Pagination
                     dotsLength={cardItems.length}
                     carouselRef={ref}
                     activeDotIndex={activeIndex}
@@ -103,12 +103,73 @@ function CardIntro (props) {
                     text={'I\'m ready!'}
                     navigatepage='TermsConditions'
                 />
-                <OrangeButton
-                    text={'budgetingtool'}
-                    navigatepage='BudgetingToolScreen'
+            </View>
+        )
+    }
+    if (activeIndex == 0) {
+        return (
+            <View style={styles.container}>
+                <CircularBackground style={styles.circularBackgroundStyle} />
+                <Carousel
+                    layout="default"
+                    ref={ref}
+                    data={carouselItems}
+                    sliderWidth={width * 1}
+                    itemWidth={width * 1}
+                    renderItem={renderCardItem}
+                    onSnapToItem={(index) => setActiveIndex(index)}
+                    paddingRight={100}
                 />
-        </View>
-    )
+                <Pagination
+                    dotsLength={cardItems.length}
+                    carouselRef={ref}
+                    activeDotIndex={activeIndex}
+                    dotStyle={styles.activeDotStyle}
+                    inactiveDotStyle={styles.inactiveDotStyle}
+                    inactiveDotOpacity={0.5}
+                    inactiveDotScale={1}
+                />
+                <Image
+                    source={require('../res/images/frontArrow.png')}
+                    style={{ top: "-7.5%", left: "75%" }}
+                    navigatepage="card"
+                />
+            </View>
+        )
+    }
+
+    else {
+        return (
+            <View style={styles.container}>
+                <CircularBackground style={styles.circularBackgroundStyle} />
+                <Carousel
+                    layout="default"
+                    ref={ref}
+                    data={carouselItems}
+                    sliderWidth={width * 1}
+                    itemWidth={width * 1}
+                    renderItem={renderCardItem}
+                    onSnapToItem={(index) => setActiveIndex(index)}
+                    paddingRight={100}
+                />
+                <Pagination
+                    dotsLength={cardItems.length}
+                    carouselRef={ref}
+                    activeDotIndex={activeIndex}
+                    dotStyle={styles.activeDotStyle}
+                    inactiveDotStyle={styles.inactiveDotStyle}
+                    inactiveDotOpacity={0.5}
+                    inactiveDotScale={1}
+                />
+
+                <Image
+                    source={require('../res/images/bothArrows.png')}
+                    style={{ top: "-7.5%", left: "15%" }}
+                    navigatepage="card"
+                />
+            </View>
+        )
+    }
 }
 const styles = StyleSheet.create({
     // This is the main container that controls the WHOLE screen
@@ -141,8 +202,8 @@ const styles = StyleSheet.create({
         lineHeight: 27,
     },
     activeDotStyle: {
-        width:20,
-        height:20,
+        width: 20,
+        height: 20,
         borderRadius: 10,
         marginHorizontal: 8,
         backgroundColor: figmaColors.primaryOffWhite
