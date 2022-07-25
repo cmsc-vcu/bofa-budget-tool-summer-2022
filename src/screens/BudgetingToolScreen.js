@@ -9,8 +9,9 @@ import {
 
 import figmaColors from "../res/figmaColors";
 import fonts from "../res/fonts";
-import PencilSVG from '../res/svg/pencil.svg'
-import ArrowDropdown from '../res/svg/arrowDownwards.svg'
+import PencilSVG from '../res/svg/pencil.svg';
+import ArrowDropdown from '../res/svg/arrowDownwards.svg';
+import VerticalSeparator from '../res/svg/budgetingToolSeparatorVertical.svg'
 import appText from "../res/appText";
 
 const width = Dimensions.get('window').width;;
@@ -21,7 +22,8 @@ const BudgetingToolScreen = () =>
 
     let currentBudgetingMonth = 'July';
     let currentBudgetingYear = 2022;
-    let userMoneyRemaining = 200
+    let userMoneyRemaining = 200;
+    let remainingDaysInMonth = 15;
     const [pressablePressed, setPressablePressed] = useState(1);
 
     return(
@@ -63,9 +65,10 @@ const BudgetingToolScreen = () =>
                         {appText.BudgetingToolTextScreen.moneyRemaining}
                     </Text>
                 </View>
+                <VerticalSeparator/>
                 <View>
                     <Text style={styles.moneyTextStyle}>
-                            {'$' + userMoneyRemaining}
+                            { remainingDaysInMonth }
                     </Text>
                     <Text style={styles.subTextStyle}>
                         {appText.BudgetingToolTextScreen.moneyRemaining}
@@ -161,7 +164,7 @@ const styles = StyleSheet.create({
         color: figmaColors.primaryOffWhite,
         fontWeight: '400',
         fontSize: 16
-    }
+    },
 });
 
 export default BudgetingToolScreen;
