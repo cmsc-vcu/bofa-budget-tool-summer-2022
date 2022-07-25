@@ -11,7 +11,8 @@ import figmaColors from "../res/figmaColors";
 import fonts from "../res/fonts";
 import PencilSVG from '../res/svg/pencil.svg';
 import ArrowDropdown from '../res/svg/arrowDownwards.svg';
-import VerticalSeparator from '../res/svg/budgetingToolSeparatorVertical.svg'
+import VerticalSeparator from '../res/svg/budgetingToolSeparatorVertical.svg';
+import HorizontalSeparator from '../res/svg/budgetingToolSeparatorHorizontal.svg';
 import appText from "../res/appText";
 
 const width = Dimensions.get('window').width;;
@@ -75,6 +76,7 @@ const BudgetingToolScreen = () =>
                     </Text>
                 </View>
             </View>
+            <HorizontalSeparator/>
             <View>
                 <View>
                     <Text style={styles.monthlySpendingGoalStyle}>
