@@ -124,15 +124,19 @@ const Connect = (props) => {
             <HomepageButtons 
             header='Budget'
             subheader='Manage your spendings and savings.'
-            themeColor='#7AC032'/>
+            themeColor='#7AC032'
+            navigatePage='BudgetingToolScreen'/>
             <HomepageButtons
             header='What if'
             subheader='Create simulations for your future.'
-            themeColor='#5B93D6'/>
+            themeColor='#5B93D6'
+            navigatePage='HomePage'
+            />
             <HomepageButtons
             header='Learn'
             subheader='Expand your financial knowledge.'
-            themeColor='#E08734'/>
+            themeColor='#E08734'
+            navigatePage='FinancialLiteracyCategories'/>
             </View>
             
             
@@ -221,8 +225,7 @@ const styles = StyleSheet.create({
 
     pageView: {
         left: '-37%',
-        backgroundColor: '#808080',
-        marginRight: 5
+
         
     },
 

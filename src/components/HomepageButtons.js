@@ -16,14 +16,17 @@ const HomepageButtons = (props) =>
 
     return(
         <View style={styles.container}>
-            <View style={styles.line} backgroundColor={props.themeColor}/>
-            <Text style={styles.header}>
-                {props.header}
-            </Text>
-            <Text style={styles.subheader}>
-                {props.subheader}
-            </Text>
-            
+            <Pressable 
+            style={styles.press}
+            onPress={() => { navigation.navigate(props.navigatePage)}}>
+                <View style={styles.line} backgroundColor={props.themeColor}/>
+                <Text style={styles.header}>
+                    {props.header}
+                </Text>
+                <Text style={styles.subheader}>
+                    {props.subheader}
+                </Text>
+            </Pressable>
         </View>
     );
 }
@@ -36,6 +39,11 @@ const styles = StyleSheet.create({
         backgroundColor: figmaColors.primaryOffWhite,
         elevation: 2.5,
         marginBottom: 7
+    },
+
+    press: {
+        height: '100%',
+        width: '100%'
     },
 
     line: {
