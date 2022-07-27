@@ -26,6 +26,8 @@ import Rewards from './src/screens/Rewards';
 import Connect from './src/screens/Connect';
 import BudgetingToolScreen from './src/screens/BudgetingToolScreen';
 import LastOnboarding from './src/screens/LastOnboarding'
+import Budget_Income from './src/screens/Budget_Income'
+ 
  
 /**
   * Idea: Create a function component (screens.js example) that will return
@@ -69,6 +71,7 @@ const Stack = createNativeStackNavigator();
            <Stack.Screen name='Connect' component={Connect} />
            <Stack.Screen name='BudgetingToolScreen' component={BudgetingToolScreen} />
            <Stack.Screen name='LastOnboarding' component={LastOnboarding} />
+           <Stack.Screen name='Budget_Income' component={Budget_Income} />
          </Stack.Navigator>
        </NavigationContainer>
    )
