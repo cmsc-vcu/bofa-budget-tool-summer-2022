@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     },
     topAppBar: {
         width: '100%',
-        height: '25%',
+        height: '10%',
         backgroundColor: figmaColors.primaryOffWhite,
         borderBottomLeftRadius: 14,
         borderBottomRightRadius: 14,

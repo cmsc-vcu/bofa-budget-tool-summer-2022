@@ -10,18 +10,18 @@ import { useNavigation } from '@react-navigation/native';
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
 
-const HomepageCards = (props) =>
+const HomepageButtons = (props) =>
 {
     const navigation = useNavigation();
 
     return(
         <View style={styles.container}>
-            <View style={styles.line}/>
+            <View style={styles.line} backgroundColor={props.themeColor}/>
             <Text style={styles.header}>
-                Budget
+                {props.header}
             </Text>
             <Text style={styles.subheader}>
-                Manage your spendings and savings.
+                {props.subheader}
             </Text>
             
         </View>
@@ -31,23 +31,17 @@ const HomepageCards = (props) =>
 const styles = StyleSheet.create({
     container: {
         width: 365,
-        height: 109,
+        height: 100,
         borderRadius: 11,
-        elevation: 5,
         backgroundColor: figmaColors.primaryOffWhite,
-        shadowColor: 'rgba(96, 95, 88, 0.25)',
-        shadowOffset: {width: 0, height: 4},
-        shadowRadius: 4,
-        shadowOpacity: 1,
-        elevation: 5,
-        top: 50
+        elevation: 2.5,
+        marginBottom: 7
     },
 
     line: {
         width: 332,
         height: 4,
         borderRadius: 10,
-        backgroundColor: '#7AC032',
         left: '5%',
         top: '10%',
 
@@ -74,4 +68,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default HomepageCards;
+export default HomepageButtons;
