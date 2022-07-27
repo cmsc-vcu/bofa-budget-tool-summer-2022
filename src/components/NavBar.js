@@ -26,7 +26,7 @@ const NavBar = () =>
                         </Pressable>
                     </View>
                     <View style={styles.rangetwo}>
-                        <Pressable onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
+                        <Pressable onPress={() => navigation.navigate('BudgetingToolScreen')}>
                             <Image source={require('../res/images/budgetIcon.png')} style={styles.homeicon}/>
                             <Text style={styles.texts}>
                                 Budget
@@ -42,7 +42,7 @@ const NavBar = () =>
                         </Pressable>
                     </View>
                     <View style={styles.rangefour}>
-                        <Pressable onPress={() => navigation.navigate('Connect')}>
+                        <Pressable onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
                             <Image source={require('../res/images/learnIcon.png')} style={styles.homeicon}/>
                             <Text style={styles.texts}>
                                 Learn
