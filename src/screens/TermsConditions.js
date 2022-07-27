@@ -112,7 +112,10 @@ const TermsConditions = () => {
                 navigatepage='PrivacyPolicy'
                 />
       
-    
+      <OrangeButton
+                    text={'budgetingtool'}
+                    navigatepage='BudgetingToolScreen'
+                />
             
         </View>
 

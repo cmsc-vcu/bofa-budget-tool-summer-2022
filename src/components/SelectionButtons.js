@@ -9,15 +9,15 @@ export default class App extends Component {
   }
   state = {
     backgroundColor: '#D9D9D9',
-    backgroundColor2: '#D9D9D9',
+    backgroundColor2: figmaColors.primaryOrange,
     pressed: false,
   };
 
   changeColor() {
     if (!this.state.pressed) {
-      this.setState({ pressed: true, backgroundColor: '#D9D9D9', backgroundColor2: figmaColors.primaryOrange });
+      this.setState({ pressed: true, backgroundColor: figmaColors.primaryOrange, backgroundColor2: '#D9D9D9' });
     } else {
-      this.setState({ pressed: false, backgroundColor: figmaColors.primaryOrange, backgroundColor2: '#D9D9D9' });
+      this.setState({ pressed: false, backgroundColor: '#D9D9D9', backgroundColor2: figmaColors.primaryOrange });
     }
   }
 
