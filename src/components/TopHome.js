@@ -15,7 +15,7 @@ const TopHome = (props) =>
             <Text style={styles.text}>
                 {props.header}
             </Text>
-            {/* <Image source={require('../res/images/settings.png')} style={styles.settings}/> */}
+            <Image source={require('../res/images/settings.png')} style={styles.settings}/>
         </View>
     );
 }
