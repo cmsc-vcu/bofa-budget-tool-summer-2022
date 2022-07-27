@@ -26,7 +26,7 @@ const SegmentedProgressGoalBar = (props) =>
             <View style={styles.firstBarContainer}>
 
             </View>
-            <View>
+            <View style={styles.legendKeyContainer}>
                 <View>
                     <View style={styles.rowContainer}>
                         <Text>Spending</Text>
@@ -54,6 +54,9 @@ const styles = StyleSheet.create({
     },
     rowContainer: {
         flexDirection: 'row'
+    },
+    legendKeyContainer: {
+        paddingTop: height * 0.03,
     },
     firstBarContainer: {
         position: 'absolute',
