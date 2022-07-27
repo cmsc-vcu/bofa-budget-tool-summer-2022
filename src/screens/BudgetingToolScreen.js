@@ -16,6 +16,7 @@ import HorizontalSeparator from '../res/svg/budgetingToolSeparatorHorizontal.svg
 import SegmentedProgressGoalBar from "../components/SegmentedProgressGoalBar";
 import appText from "../res/appText";
 import BudgetingToolIncomeScreen from "./BudgetingToolIncomeScreen";
+import NavBar from "../components/NavBar";
 
 const width = Dimensions.get('window').width;;
 const height = Dimensions.get('window').height;
@@ -107,6 +108,7 @@ const BudgetingToolScreen = () =>
                     </Text>
                     <SegmentedProgressGoalBar userSpending={ userSpending } userSavings = { userSavings } userBills = { userBills }/>
                 </View>
+                <NavBar/>
             </View>
             
         );
