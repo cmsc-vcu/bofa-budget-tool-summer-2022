@@ -13,7 +13,9 @@ import PencilSVG from '../res/svg/pencil.svg';
 import ArrowDropdown from '../res/svg/arrowDownwards.svg';
 import VerticalSeparator from '../res/svg/budgetingToolSeparatorVertical.svg';
 import HorizontalSeparator from '../res/svg/budgetingToolSeparatorHorizontal.svg';
+import SegmentedProgressGoalBar from "../components/SegmentedProgressGoalBar";
 import appText from "../res/appText";
+import BudgetingToolIncomeScreen from "./BudgetingToolIncomeScreen";
 
 const width = Dimensions.get('window').width;;
 const height = Dimensions.get('window').height;
@@ -27,77 +29,94 @@ const BudgetingToolScreen = () =>
     let remainingDaysInMonth = 15;
     let userMonthlyGoal = 1500;
     let userTotalSpent = 1200;
+    let userSpending = 1000;
+    let userSavings = 100;
+    let userBills = 100;
+
 
     const [pressablePressed, setPressablePressed] = useState(1);
 
-    return(
-        <View>
-            <View style={styles.container}>
-                <View style={styles.topDateEditBarContainer}>
-                    <Pressable>
-                        <View style={styles.topDateDropdownContainer}>
-                            <Text style={styles.dateStyle}>
-                                { currentBudgetingMonth + ' ' + currentBudgetingYear }
+
+    if(pressablePressed === 1)
+    {
+        return(
+            <View>
+                <View style={styles.container}>
+                    <View style={styles.topDateEditBarContainer}>
+                        <Pressable>
+                            <View style={styles.topDateDropdownContainer}>
+                                <Text style={styles.dateStyle}>
+                                    { currentBudgetingMonth + ' ' + currentBudgetingYear }
+                                </Text>
+                                <View style={{width: 10}}/>
+                                <ArrowDropdown/>
+                            </View>
+                        </Pressable>
+                        <Pressable style={styles.pencilEditStyle}>
+                            <PencilSVG/>
+                        </Pressable>
+                    </View>
+                    <View style={styles.topBudgetingBarContainer}>
+                        <Pressable onPress={() => setPressablePressed(1)} 
+                                    style={[{backgroundColor: pressablePressed === 1? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
+                            <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab1} </Text>
+                        </Pressable>
+                        <Pressable onPress={() => setPressablePressed(2)} 
+                                    style={[{backgroundColor: pressablePressed === 2? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
+                            <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab2} </Text>
+                        </Pressable>
+                        <Pressable onPress={() => setPressablePressed(3)} 
+                                    style={[{backgroundColor: pressablePressed === 3? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
+                            <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab3} </Text>
+                        </Pressable>
+                    </View>
+                    <View style={styles.moneyDaysContainer}>
+                        <View style={{marginLeft: width * 0.1}}>
+                            <Text style={styles.moneyTextStyle}>
+                                {'$' + userMoneyRemaining}
                             </Text>
-                            <View style={{width: 10}}/>
-                            <ArrowDropdown/>
+                            <Text style={styles.subTextStyle}>
+                                {appText.BudgetingToolTextScreen.moneyRemaining}
+                            </Text>
                         </View>
-                    </Pressable>
-                    <Pressable style={styles.pencilEditStyle}>
-                        <PencilSVG/>
-                    </Pressable>
-                </View>
-                <View style={styles.topBudgetingBarContainer}>
-                    <Pressable onPress={() => setPressablePressed(1)} 
-                                style={[{backgroundColor: pressablePressed === 1? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
-                        <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab1} </Text>
-                    </Pressable>
-                    <Pressable onPress={() => setPressablePressed(2)} 
-                                style={[{backgroundColor: pressablePressed === 2? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
-                        <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab2} </Text>
-                    </Pressable>
-                    <Pressable onPress={() => setPressablePressed(3)} 
-                                style={[{backgroundColor: pressablePressed === 3? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
-                        <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab3} </Text>
-                    </Pressable>
-                </View>
-                <View style={styles.moneyDaysContainer}>
-                    <View style={{marginLeft: width * 0.1}}>
-                        <Text style={styles.moneyTextStyle}>
-                            {'$' + userMoneyRemaining}
-                        </Text>
-                        <Text style={styles.subTextStyle}>
-                            {appText.BudgetingToolTextScreen.moneyRemaining}
-                        </Text>
+                        <VerticalSeparator style={styles.verticalSeparatorStyle}/>
+                        <View style={{marginTop: height * 0.01}}>
+                            <Text style={styles.daysLeftNumberStyle}>
+                                    { remainingDaysInMonth }
+                            </Text>
+                            <Text style={styles.daysLeftStyle}>
+                                {appText.BudgetingToolTextScreen.daysLeft}
+                            </Text>
+                        </View>
                     </View>
-                    <VerticalSeparator style={styles.verticalSeparatorStyle}/>
-                    <View style={{marginTop: height * 0.01}}>
-                        <Text style={styles.daysLeftNumberStyle}>
-                                { remainingDaysInMonth }
-                        </Text>
-                        <Text style={styles.daysLeftStyle}>
-                            {appText.BudgetingToolTextScreen.daysLeft}
+                    <HorizontalSeparator style={styles.horizontalSeparatorStyle}/>
+                    <View style={styles.totalSpentGoalContainer}>
+                        <View>
+                            <Text style={styles.monthlySpendingGoalStyle}>
+                                {appText.BudgetingToolTextScreen.monthlySpendingGoal + '$' + userMonthlyGoal}
+                            </Text>
+                        </View>
+                        <Text style={styles.totalSpentStyle}>
+                            {appText.BudgetingToolTextScreen.totalSpent + '$' + userTotalSpent}
                         </Text>
                     </View>
                 </View>
-                <HorizontalSeparator style={styles.horizontalSeparatorStyle}/>
-                <View style={styles.totalSpentGoalContainer}>
-                    <View>
-                        <Text style={styles.monthlySpendingGoalStyle}>
-                            {appText.BudgetingToolTextScreen.monthlySpendingGoal + '$' + userMonthlyGoal}
-                        </Text>
-                    </View>
-                    <Text style={styles.totalSpentStyle}>
-                        {appText.BudgetingToolTextScreen.totalSpent + '$' + userTotalSpent}
+                <View style={{ marginLeft: width * 0.06, paddingTop: height * 0.01}}>
+                    <Text style={styles.goalTrackTextStyle}>
+                        Goal Track
                     </Text>
+                    <SegmentedProgressGoalBar userSpending={ userSpending } userSavings = { userSavings } userBills = { userBills }/>
                 </View>
             </View>
-            <Text style={styles.goalTrackTextStyle}>
-                Goal Track
-            </Text>
-        </View>
-        
-    );
+            
+        );
+    }
+    else if(pressablePressed === 3)
+    {
+        return(
+            <BudgetingToolIncomeScreen/>
+        );
+    }
 };
 
 const styles = StyleSheet.create({
@@ -207,7 +226,8 @@ const styles = StyleSheet.create({
         fontFamily: fonts.mainFont,
         color: figmaColors.primaryOffBlack,
         fontWeight: '800',
-        fontSize: 24
+        fontSize: 24,
+        paddingBottom: height * 0.01
     }
 });
 
