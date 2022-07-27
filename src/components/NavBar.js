@@ -10,13 +10,16 @@ import { useNavigation } from '@react-navigation/native';
 import figmaColors from '../res/figmaColors';
 import { fonts } from '@rneui/base';
 
-const NavBar = () =>
+const NavBar = (props) =>
 {
     const navigation = useNavigation();
 
     return(
         <View style={styles.container}> 
-                <View style={styles.navbar}>
+                <View 
+                style={styles.navbar}
+                top = {props.topAlign}
+                left = {props.leftAlign}>
                     <View style={styles.rangeone}>
                         <Pressable onPress={() => navigation.navigate('HomePage')}>
                             <Image source={require('../res/images/homeIcon.png')} style={styles.homeicon}/>
@@ -63,8 +66,8 @@ const styles = StyleSheet.create({
         width: 365,
         height: 63,
         backgroundColor: figmaColors.primaryOffWhite,
-        left: '4%',
-        top: '1105%',
+        // 4
+        // was 1105
         borderRadius: 20,
         elevation: 3,
     },

@@ -141,7 +141,10 @@ const Connect = (props) => {
             
             
 
-            <NavBar>
+            <NavBar
+            topAlign= '1105%'
+            leftAlign= '4%'
+            >
                 
             </NavBar>
 
