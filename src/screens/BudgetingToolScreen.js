@@ -111,7 +111,7 @@ const BudgetingToolScreen = () =>
             
         );
     }
-    else if(pressablePressed === 3)
+    else if(pressablePressed === 2 || 3)
     {
         return(
             <BudgetingToolIncomeScreen/>
