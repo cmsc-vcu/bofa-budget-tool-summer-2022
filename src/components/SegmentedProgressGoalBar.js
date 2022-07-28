@@ -7,8 +7,10 @@ import {
 } from 'react-native';
 
 import figmaColors from "../res/figmaColors";
+import fonts from "../res/fonts";
+import BulletPoints from "./BulletPoints";
 
-const width = Dimensions.get('window').width;;
+const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
 const SegmentedProgressGoalBar = (props) =>
@@ -26,21 +28,23 @@ const SegmentedProgressGoalBar = (props) =>
             <View style={styles.firstBarContainer}>
 
             </View>
-            <View>
+            <View style={styles.legendKeyContainer}>
                 <View>
                     <View style={styles.rowContainer}>
-                        <Text>Spending</Text>
-                        <Text> {props.userSpending} </Text>
+                        <BulletPoints passedColor={ '#1F456E' }/>
+                        <Text style={styles.textStyle}>Spending</Text>
+                        <Text style={styles.numberStyle}> {'$' + props.userSpending} </Text>
                     </View>
                     <View style={styles.rowContainer}>
-                        <Text>Savings</Text>
-                        <Text> {props.userSavings} </Text>
+                        <BulletPoints passedColor={ '#4F97A3' }/>
+                        <Text style={styles.textStyle}>Savings</Text>
+                        <Text style={styles.numberStyle}> {'$' + props.userSavings} </Text>
                     </View>
                     <View style={styles.rowContainer}>
-                        <Text>Bills</Text>
-                        <Text> {props.userBills} </Text>
+                        <BulletPoints passedColor={ '#4CB998' }/>
+                        <Text style={styles.textStyle}>Bills</Text>
+                        <Text style={styles.numberStyle}> {'$' + props.userBills} </Text>
                     </View>
-
                 </View>
 
             </View>
@@ -53,7 +57,13 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     rowContainer: {
-        flexDirection: 'row'
+        justifyContent: 'flex-end',
+        flexDirection: 'row',
+        width: width,
+        paddingBottom: height * 0.01
+    },
+    legendKeyContainer: {
+        paddingTop: height * 0.05,
     },
     firstBarContainer: {
         position: 'absolute',
@@ -75,6 +85,21 @@ const styles = StyleSheet.create({
         width: width * 0.8,
         backgroundColor: '#4CB998',
         borderRadius: 20,
+    },
+    textStyle: {
+        paddingLeft: width * 0.03,
+        fontFamily: fonts.mainFont,
+        fontWeight: '500',
+        fontSize: 18,
+        fontStyle: 'normal',
+        color: figmaColors.primaryOffBlack
+    },
+    numberStyle: {
+        fontFamily: fonts.mainFont,
+        fontSize: 16,
+        color: figmaColors.primaryGray,
+        marginLeft: 'auto',
+        paddingRight: width * 0.2
     }
 });
 

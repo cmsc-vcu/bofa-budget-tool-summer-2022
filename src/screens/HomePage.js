@@ -126,7 +126,7 @@ const HomePage = () => {
 
             <View style={style.topcontainer}> 
                 <View style={style.topvector}/>
-                <Image source={require('../res/images/Settings.png')} style={style.settings}/>
+                <Image source={require('../res/images/settings.png')} style={style.settings}/>
                 <Text style={[style.home]}>
                     Home
                 </Text>

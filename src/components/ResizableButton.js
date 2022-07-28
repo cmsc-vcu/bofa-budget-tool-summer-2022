@@ -2,30 +2,27 @@ import {
     Pressable,
     StyleSheet,
     Text,
-    View,
-    Dimensions
+    View
 } from 'react-native';
 import React from 'react';
 import { useNavigation } from "@react-navigation/native";
+
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
+// This is the OrangeButton component where it will be reused
 
-{/* This is the OrangeButton component where it will be reused */}
-{/* Function: Create a Pressable element given the navigation page where the User wants to go.
-    In addition, text that are passed into the OrangeButton will be used as the text for the button.
-*/}
-function OrangeButtonTiny (props) {
+/*************************************************************************************************
+ * Function: Create a Pressable element given the navigation page where the User wants to go.
+ * In addition, text that are passed into the OrangeButton will be used as the text for the button.
+*************************************************************************************************/    
+function ResizableButton (props) {
     const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
             <Pressable
-                onPress={() => { navigation.navigate(props.navigatepage, {
-                    pigValue: props.pigValue,
-                })} }
+                onPress={() => { navigation.navigate(props.navigatepage)} }
                 style={styles.buttonstyle}
             >
                 <Text style={styles.textstyle}>
@@ -44,12 +41,11 @@ const styles = StyleSheet.create({
     buttonstyle: {
         justifyContent: 'center',
         textAlign: 'center',
-        backgroundColor: figmaColors.primaryOrange,
+        backgroundColor: figmaColors.primaryOffWhite,
         alignItems: 'center',
         borderRadius: 20,
         flexShrink: 3,
-        width: width * 0.33,
-        height: height * 0.040,
+        height: 41,
         shadowColor: '#000000',
         shadowOffset: {width: 0, height: 4},
         shadowRadius: 4,
@@ -59,10 +55,14 @@ const styles = StyleSheet.create({
     textstyle: {
         fontFamily: fonts.mainFont,
         fontStyle: 'normal',
-        fontWeight: '600',
-        fontSize: 14,
-        color: figmaColors.primaryOffWhite
+        fontWeight: 'bold',
+        fontSize: 16,
+        lineHeight: 19,
+        display: 'flex',
+        color: figmaColors.primaryOffBlack,
+        paddingRight: 15,
+        paddingLeft: 15
     },
 })
 
-export default OrangeButtonTiny;
+export default ResizableButton;
