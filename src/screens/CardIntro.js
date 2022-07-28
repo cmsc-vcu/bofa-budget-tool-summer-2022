@@ -95,7 +95,7 @@ function CardIntro(props) {
 
                 <OrangeButton
                     text={'I\'m ready!'}
-                    navigatepage='TermsConditions'
+                    navigatepage='LastOnboarding'
                 />
             </View>
         )
