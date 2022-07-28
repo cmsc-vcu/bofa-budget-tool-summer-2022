@@ -120,7 +120,7 @@ const BudgetingToolScreen = () =>
                         </View>
                         <Text>{'Net Worth: $' + userNetWorth}</Text>
                     </View>
-                    <BankAccountCard/>
+                    <BankAccountCard accountTotalMoney={2500} />
                 </View>
                 <NavBar/>
             </View>
