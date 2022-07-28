@@ -24,6 +24,7 @@ import FinancialLiteracyCategories from './src/screens/FinancialLiteracyCategori
 import FinancialLiteracyModules from './src/screens/FinancialLiteracyModules';
 import Rewards from './src/screens/Rewards';
 import Connect from './src/screens/Connect';
+import Transactions from './src/screens/Transactions';
 import BudgetingToolScreen from './src/screens/BudgetingToolScreen';
  
 /**
@@ -67,6 +68,7 @@ const Stack = createNativeStackNavigator();
            <Stack.Screen name='Rewards' component={Rewards} />
            <Stack.Screen name='Connect' component={Connect} />
            <Stack.Screen name='BudgetingToolScreen' component={BudgetingToolScreen} />
+           <Stack.Screen name='Transactions' component={Transactions} />
          </Stack.Navigator>
        </NavigationContainer>
    )

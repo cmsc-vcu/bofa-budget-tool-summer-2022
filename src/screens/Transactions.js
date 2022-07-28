@@ -14,12 +14,11 @@ import LinearGradient from 'react-native-linear-gradient';
 import OrangeButtonTiny from '../components/OrangeButtonTiny';
 import SelectionButtons from '../components/SelectionButtons';
 
-const BudgetingToolScreen = () =>
-{
-    return(
+function Transactions() {
+    return (
         <View></View>
     );
-};
+}
 
 const style = StyleSheet.create({
     container: {
