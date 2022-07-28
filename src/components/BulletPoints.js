@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     },
     innerCircle: {
         width: width * 0.045,
-        height: height * 0.025,
+        height: height * 0.023,
         borderRadius: 50
     }
 });

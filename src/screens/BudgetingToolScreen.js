@@ -17,8 +17,10 @@ import SegmentedProgressGoalBar from "../components/SegmentedProgressGoalBar";
 import appText from "../res/appText";
 import BudgetingToolIncomeScreen from "./BudgetingToolIncomeScreen";
 import NavBar from "../components/NavBar";
+import OrangeButtonTiny from "../components/OrangeButtonTiny";
+import BankAccountCard from "../components/BankAccountCard";
 
-const width = Dimensions.get('window').width;;
+const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
 const BudgetingToolScreen = () =>
@@ -33,6 +35,7 @@ const BudgetingToolScreen = () =>
     let userSpending = 1000;
     let userSavings = 100;
     let userBills = 100;
+    let userNetWorth = 2700;
 
 
     const [pressablePressed, setPressablePressed] = useState(1);
@@ -59,15 +62,15 @@ const BudgetingToolScreen = () =>
                     </View>
                     <View style={styles.topBudgetingBarContainer}>
                         <Pressable onPress={() => setPressablePressed(1)} 
-                                    style={[{backgroundColor: pressablePressed === 1? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
+                                    style={[{backgroundColor: pressablePressed === 1? 'rgba(96, 95, 88, 0.25)' : figmaColors.primaryTeal}, styles.buttonStyle]}>
                             <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab1} </Text>
                         </Pressable>
                         <Pressable onPress={() => setPressablePressed(2)} 
-                                    style={[{backgroundColor: pressablePressed === 2? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
+                                    style={[{backgroundColor: pressablePressed === 2? 'rgba(96, 95, 88, 0.25)' : figmaColors.primaryTeal}, styles.buttonStyle]}>
                             <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab2} </Text>
                         </Pressable>
                         <Pressable onPress={() => setPressablePressed(3)} 
-                                    style={[{backgroundColor: pressablePressed === 3? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
+                                    style={[{backgroundColor: pressablePressed === 3? 'rgba(96, 95, 88, 0.25)' : figmaColors.primaryTeal}, styles.buttonStyle]}>
                             <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab3} </Text>
                         </Pressable>
                     </View>
@@ -103,10 +106,21 @@ const BudgetingToolScreen = () =>
                     </View>
                 </View>
                 <View style={{ marginLeft: width * 0.06, paddingTop: height * 0.01}}>
-                    <Text style={styles.goalTrackTextStyle}>
+                    <Text style={styles.boldedTextStyle}>
                         Goal Track
                     </Text>
                     <SegmentedProgressGoalBar userSpending={ userSpending } userSavings = { userSavings } userBills = { userBills }/>
+                </View>
+                <HorizontalSeparator style={[styles.horizontalSeparatorStyle, { backgroundColor: figmaColors.primaryGray }]}/>
+                <View style={{paddingLeft: width * 0.05, paddingRight: width * 0.05}}>
+                    <View>
+                        <View style={{flexDirection: 'row'}}>
+                            <Text style={[styles.boldedTextStyle, { paddingBottom: 0, marginRight: 'auto'}]}>Accounts</Text>
+                            <OrangeButtonTiny text='Link Account +'/>
+                        </View>
+                        <Text>{'Net Worth: $' + userNetWorth}</Text>
+                    </View>
+                    <BankAccountCard/>
                 </View>
                 <NavBar/>
             </View>
@@ -124,7 +138,7 @@ const BudgetingToolScreen = () =>
 const styles = StyleSheet.create({
     container: {
         width: width,
-        height: height * 0.45,
+        height: height * 0.40,
         backgroundColor: figmaColors.primaryTeal,
         borderBottomLeftRadius: 30,
     },
@@ -224,13 +238,13 @@ const styles = StyleSheet.create({
         marginTop: height * 0.01,
         paddingBottom: height * 0.04
     },
-    goalTrackTextStyle: {
+    boldedTextStyle: {
         fontFamily: fonts.mainFont,
         color: figmaColors.primaryOffBlack,
         fontWeight: '800',
         fontSize: 24,
         paddingBottom: height * 0.01
-    }
+    },
 });
 
 export default BudgetingToolScreen;

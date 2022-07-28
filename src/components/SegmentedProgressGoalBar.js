@@ -45,7 +45,6 @@ const SegmentedProgressGoalBar = (props) =>
                         <Text style={styles.textStyle}>Bills</Text>
                         <Text style={styles.numberStyle}> {'$' + props.userBills} </Text>
                     </View>
-
                 </View>
 
             </View>
