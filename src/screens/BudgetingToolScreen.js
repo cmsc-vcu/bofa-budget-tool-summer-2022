@@ -61,15 +61,15 @@ const BudgetingToolScreen = () =>
                     </View>
                     <View style={styles.topBudgetingBarContainer}>
                         <Pressable onPress={() => setPressablePressed(1)} 
-                                    style={[{backgroundColor: pressablePressed === 1? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
+                                    style={[{backgroundColor: pressablePressed === 1? 'rgba(96, 95, 88, 0.25)' : figmaColors.primaryTeal}, styles.buttonStyle]}>
                             <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab1} </Text>
                         </Pressable>
                         <Pressable onPress={() => setPressablePressed(2)} 
-                                    style={[{backgroundColor: pressablePressed === 2? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
+                                    style={[{backgroundColor: pressablePressed === 2? 'rgba(96, 95, 88, 0.25)' : figmaColors.primaryTeal}, styles.buttonStyle]}>
                             <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab2} </Text>
                         </Pressable>
                         <Pressable onPress={() => setPressablePressed(3)} 
-                                    style={[{backgroundColor: pressablePressed === 3? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
+                                    style={[{backgroundColor: pressablePressed === 3? 'rgba(96, 95, 88, 0.25)' : figmaColors.primaryTeal}, styles.buttonStyle]}>
                             <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab3} </Text>
                         </Pressable>
                     </View>
