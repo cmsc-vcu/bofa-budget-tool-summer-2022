@@ -15,11 +15,11 @@ import VerticalSeparator from '../res/svg/budgetingToolSeparatorVertical.svg';
 import HorizontalSeparator from '../res/svg/budgetingToolSeparatorHorizontal.svg';
 import SegmentedProgressGoalBar from "../components/SegmentedProgressGoalBar";
 import appText from "../res/appText";
-import OrangeButton from '../components/OrangeButton';
 import BudgetingToolIncomeScreen from "./BudgetingToolIncomeScreen";
 import NavBar from "../components/NavBar";
+import OrangeButtonTiny from "../components/OrangeButtonTiny";
 
-const width = Dimensions.get('window').width;;
+const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
 const BudgetingToolScreen = () =>
@@ -34,6 +34,7 @@ const BudgetingToolScreen = () =>
     let userSpending = 1000;
     let userSavings = 100;
     let userBills = 100;
+    let userNetWorth = 2700;
 
 
     const [pressablePressed, setPressablePressed] = useState(1);
@@ -104,10 +105,20 @@ const BudgetingToolScreen = () =>
                     </View>
                 </View>
                 <View style={{ marginLeft: width * 0.06, paddingTop: height * 0.01}}>
-                    <Text style={styles.goalTrackTextStyle}>
+                    <Text style={styles.boldedTextStyle}>
                         Goal Track
                     </Text>
                     <SegmentedProgressGoalBar userSpending={ userSpending } userSavings = { userSavings } userBills = { userBills }/>
+                </View>
+                <HorizontalSeparator style={[styles.horizontalSeparatorStyle, { backgroundColor: figmaColors.primaryGray }]}/>
+                <View style={{paddingLeft: width * 0.05}}>
+                    <View>
+                        <View style={{flexDirection: 'row'}}>
+                            <Text style={[styles.boldedTextStyle, { paddingBottom: 0 }]}>Accounts</Text>
+                            <OrangeButtonTiny text='Link Account +' />
+                        </View>
+                        <Text>{'Net Worth: $' + userNetWorth}</Text>
+                    </View>
                 </View>
                 <NavBar/>
             </View>
@@ -125,7 +136,7 @@ const BudgetingToolScreen = () =>
 const styles = StyleSheet.create({
     container: {
         width: width,
-        height: height * 0.45,
+        height: height * 0.40,
         backgroundColor: figmaColors.primaryTeal,
         borderBottomLeftRadius: 30,
     },
@@ -225,13 +236,13 @@ const styles = StyleSheet.create({
         marginTop: height * 0.01,
         paddingBottom: height * 0.04
     },
-    goalTrackTextStyle: {
+    boldedTextStyle: {
         fontFamily: fonts.mainFont,
         color: figmaColors.primaryOffBlack,
         fontWeight: '800',
         fontSize: 24,
         paddingBottom: height * 0.01
-    }
+    },
 });
 
 export default BudgetingToolScreen;
