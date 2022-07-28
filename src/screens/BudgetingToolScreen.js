@@ -18,6 +18,7 @@ import appText from "../res/appText";
 import BudgetingToolIncomeScreen from "./BudgetingToolIncomeScreen";
 import NavBar from "../components/NavBar";
 import OrangeButtonTiny from "../components/OrangeButtonTiny";
+import BankAccountCard from "../components/BankAccountCard";
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -119,6 +120,7 @@ const BudgetingToolScreen = () =>
                         </View>
                         <Text>{'Net Worth: $' + userNetWorth}</Text>
                     </View>
+                    <BankAccountCard/>
                 </View>
                 <NavBar/>
             </View>
