@@ -111,11 +111,11 @@ const BudgetingToolScreen = () =>
                     <SegmentedProgressGoalBar userSpending={ userSpending } userSavings = { userSavings } userBills = { userBills }/>
                 </View>
                 <HorizontalSeparator style={[styles.horizontalSeparatorStyle, { backgroundColor: figmaColors.primaryGray }]}/>
-                <View style={{paddingLeft: width * 0.05}}>
+                <View style={{paddingLeft: width * 0.05, paddingRight: width * 0.05}}>
                     <View>
                         <View style={{flexDirection: 'row'}}>
-                            <Text style={[styles.boldedTextStyle, { paddingBottom: 0 }]}>Accounts</Text>
-                            <OrangeButtonTiny text='Link Account +' />
+                            <Text style={[styles.boldedTextStyle, { paddingBottom: 0, marginRight: 'auto'}]}>Accounts</Text>
+                            <OrangeButtonTiny text='Link Account +'/>
                         </View>
                         <Text>{'Net Worth: $' + userNetWorth}</Text>
                     </View>
