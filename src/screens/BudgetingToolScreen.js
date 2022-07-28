@@ -12,6 +12,7 @@ import fonts from "../res/fonts";
 import PencilSVG from '../res/svg/pencil.svg'
 import ArrowDropdown from '../res/svg/arrowDownwards.svg'
 import appText from "../res/appText";
+import OrangeButton from '../components/OrangeButton';
 
 const width = Dimensions.get('window').width;;
 const height = Dimensions.get('window').height;
@@ -82,6 +83,10 @@ const BudgetingToolScreen = () =>
                     {appText.BudgetingToolTextScreen.totalSpent}
                 </Text>
             </View>
+            <OrangeButton
+                    text={'Transactions'}
+                    navigatepage='Transactions'
+                />
         </View>
     );
 };
