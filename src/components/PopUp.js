@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Platform, Dimensions, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import  { useState } from 'react';
+import { Platform, Dimensions, SafeAreaView, StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { inlineStyles } from 'react-native-svg';
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
@@ -7,15 +8,14 @@ import fonts from '../res/fonts';
 
 const width = Dimensions.get('window').width;;
 const height = Dimensions.get('window').height;
-
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Text style={styles.subtitle}>
           Zelle from [sender]
         </Text>
-      </View>
+      </SafeAreaView>
     );
   }
 }
