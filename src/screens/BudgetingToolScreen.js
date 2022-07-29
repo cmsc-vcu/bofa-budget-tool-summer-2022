@@ -16,6 +16,7 @@ import HorizontalSeparator from '../res/svg/budgetingToolSeparatorHorizontal.svg
 import SegmentedProgressGoalBar from "../components/SegmentedProgressGoalBar";
 import appText from "../res/appText";
 import BudgetingToolIncomeScreen from "./BudgetingToolIncomeScreen";
+import BudgetingToolSpendingScreen from "./BudgetingToolSpendingScreen";
 import NavBar from "../components/NavBar";
 import OrangeButtonTiny from "../components/OrangeButtonTiny";
 import BankAccountCard from "../components/BankAccountCard";
@@ -135,7 +136,13 @@ const BudgetingToolScreen = () =>
             
         );
     }
-    else if(pressablePressed === 2 || 3)
+    else if(pressablePressed === 2)
+    {
+        return(
+            <BudgetingToolSpendingScreen/>
+        );
+    }
+    else if(pressablePressed === 3)
     {
         return(
             <BudgetingToolIncomeScreen/>
