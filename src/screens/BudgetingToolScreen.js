@@ -110,6 +110,10 @@ const BudgetingToolScreen = () =>
                     <SegmentedProgressGoalBar userSpending={ userSpending } userSavings = { userSavings } userBills = { userBills }/>
                 </View>
                 <NavBar/>
+                <OrangeButton
+                    text={'Next'}
+                    navigatepage='Transactions'
+                />
             </View>
             
         );

@@ -2,6 +2,7 @@ import {
     Text,
     StyleSheet,
     View,
+    Dimensions,
     ImageBackground,
     TextInput,
     Image,
@@ -10,25 +11,32 @@ import {
 import React from 'react';
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
-import LinearGradient from 'react-native-linear-gradient';
-import OrangeButtonTiny from '../components/OrangeButtonTiny';
-import SelectionButtons from '../components/SelectionButtons';
+import PopUp from '../components/PopUp';
 
+const width = Dimensions.get('window').width;;
+const height = Dimensions.get('window').height;
 function Transactions() {
     return (
-        <View></View>
+        <View style={style.container}>
+            <View style={style.container_1}>
+                <PopUp/>
+                
+            </View>
+        </View>
     );
 }
 
 const style = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: figmaColors.primaryGray
     },
 
     container_1: {
-        flex: 1,
-        top: -30,
-        left: 90,
+        width: width,
+        height: height * 0.65,
+        backgroundColor: figmaColors.primaryOffWhite,
+        top: '40%'
     },
 
     container_2: {
@@ -64,10 +72,10 @@ const style = StyleSheet.create({
         fontStyle: 'normal',
         fontSize: 22,
         fontWeight: '400',
-        textAlign: 'left',
+        textAlign: 'center',
         paddingTop: 0,
         paddingLeft: 15,
-        color: "#FFFEF6"
+        color: figmaColors.primaryOffBlack
     },
 
     bodyText: {
