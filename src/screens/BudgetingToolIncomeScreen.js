@@ -17,6 +17,7 @@ import HorizontalSeparator from '../res/svg/budgetingToolSeparatorHorizontal.svg
 import SegmentedProgressGoalBar from "../components/SegmentedProgressGoalBar";
 import appText from "../res/appText";
 import BudgetingToolScreen from "./BudgetingToolScreen";
+import OrangeButtonTiny from "../components/OrangeButtonTiny";
 
 
 
@@ -70,6 +71,20 @@ const BudgetingToolIncomeScreen = () =>
                 <Text style={styles.goalSuggestionLabel}>Goal Suggestion</Text>
                 <Image source ={require('../res/images/goalLineVector.png')}
                 style = {styles.goalLine}/>
+
+
+
+                
+                    <Text style={styles.transactionsLabel}>Transactions</Text>
+                    <Image source ={require('../res/images/CategoriesBar.png')}
+                    style = {styles.categoriesTab}/>
+
+                <View style = {styles.orangeButtoncontainer}>
+                    <OrangeButtonTiny
+                    text={'Edit My Goal'}
+                    />
+                </View>
+                
             </View>
             
         );
@@ -207,7 +222,50 @@ const styles = StyleSheet.create({
         left: 44,
         top: 150
 
-    }
+    },
+    transactionsLabel: {
+        position: 'absolute',
+        width: 141,
+        height: 22,
+        left: 28,
+        top: 550,
+        fontFamily: fonts.mainFont,
+        fontStyle: 'normal',
+        fontWeight: '800',
+        fontSize: 24,
+        color: "#2E2E2E",
+        lineHeight: 28,
+        textalign: 'center'
+
+    },
+    categoriesTab: {
+        position: 'absolute',
+        width: 141,
+        height: 22,
+        left: 50,
+        top: 570,
+    },
+    orangeButtoncontainer: {
+        position: 'absolute',
+        width: 218,
+        height: 37,
+        left: 99,
+        top: 450,
+      }
+    /*transactionsContainer: {
+        position: 'absolute',
+        width: 141,
+        height: 22,
+        left: 28,
+        top: 550,
+        fontFamily: fonts.mainFont,
+        fontStyle: 'normal',
+        fontWeight: '800',
+        fontSize: 24,
+        color: "#2E2E2E",
+        lineHeight: 28,
+        textalign: 'center'
+    }*/
 });
 
 export default BudgetingToolIncomeScreen;
