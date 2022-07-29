@@ -3,7 +3,9 @@ import {
     Text,
     Image,
     StyleSheet,
-    Dimensions
+    Dimensions,
+    FlatList,
+    SafeAreaView
 } from 'react-native';
 import React from 'react';
 
@@ -13,34 +15,76 @@ import fonts from '../res/fonts';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
+const bankAccountsList = [
+    {
+        AccountType: 'Checking',
+        MoneyAmount: 2500,
+        ImageRequire: require('../res/images/bofaIcon.png')
+    },
+    {
+        AccountType: 'Savings',
+        MoneyAmount: 500,
+        ImageRequire: require('../res/images/bofaIcon.png')
+    },
+    {
+        AccountType: 'Credit Card',
+        MoneyAmount: 500,
+        ImageRequire: require('../res/images/bofaIcon.png')
+    },
+    {
+        AccountType: 'Venmo',
+        MoneyAmount: 600,
+        ImageRequire: require('../res/images/venmoIcon.png')
+    }
+]
+
+const Item = ({  AccountType, MoneyAmount, ImagePath}) =>
+(
+    <View style={styles.container}>
+        <Image source={ ImagePath }/>
+        <View style={{flexDirection: 'column'}}>
+            <Text style={styles.accountTypeTextStyle}>{ AccountType }</Text>
+            <Text style={styles.accountMoneyTextStyle}> { '$' + MoneyAmount } </Text>
+        </View>
+    </View>
+);
+
+const Separator = () =>
+{
+    return(
+        <View style={{width: width * 0.03 }}/>
+    );
+};
+
 const BankAccountCard = (props) =>
 {
-
-    let accountTotalMoney = props.accountTotalMoney
+    const renderCard = ({ item }) => 
+    (
+        <Item AccountType={item.AccountType} MoneyAmount={item.MoneyAmount} ImagePath={item.ImageRequire}/>
+    );
 
     return(
-        <View style={styles.container}>
-            <Image source={require('../res/images/bofaIcon.png')}/>
-            <View style={{flexDirection: 'column'}}>
-                <Text style={styles.accountTypeTextStyle}>Checking</Text>
-                <Text style={styles.accountMoneyTextStyle}> {'$' + accountTotalMoney } </Text>
-            </View>
-        </View>
+        <SafeAreaView>
+            <FlatList
+                horizontal
+                data={bankAccountsList}
+                renderItem={renderCard}
+                ItemSeparatorComponent={Separator}
+                showsHorizontalScrollIndicator={false}
+            />
+        </SafeAreaView>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
+        alignItems: 'center',
         flexDirection: 'row',
-        width: width * 0.45,
+        paddingLeft: width * 0.03,
+        width: width * 0.35,
         height: height * 0.075,
-        borderRadius: 21,
+        borderRadius: 15,
         backgroundColor: figmaColors.primaryOffWhite,
-        shadowColor: '#000000',
-        shadowOffset: {width: 0, height: 4},
-        shadowRadius: 4,
-        shadowOpacity: 1,
-        elevation: 5,
     },
     accountTypeTextStyle: {
         fontFamily: fonts.mainFont,
@@ -56,6 +100,6 @@ const styles = StyleSheet.create({
         fontSize: 13,
         color: figmaColors.primaryGray
     }
-})
+});
 
 export default BankAccountCard;
