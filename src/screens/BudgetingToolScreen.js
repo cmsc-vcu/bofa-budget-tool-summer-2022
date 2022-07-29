@@ -123,7 +123,10 @@ const BudgetingToolScreen = () =>
                     </View>
                     <BankAccountCard accountTotalMoney={2500} />
                 </View>
-                <NavBar/>
+                <NavBar
+                    topAlign='1105%'
+                    leftAlign='4%'
+                />
                 <OrangeButton
                     text={'Next'}
                     navigatepage='Transactions'
