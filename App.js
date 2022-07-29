@@ -28,6 +28,7 @@ import Transactions from './src/screens/Transactions';
 import BudgetingToolScreen from './src/screens/BudgetingToolScreen';
 import LastOnboarding from './src/screens/LastOnboarding'
 import BudgetingToolIncomeScreen from './src/screens/BudgetingToolIncomeScreen';
+import BudgetingToolSpendingScreen from './src/screens/BudgetingToolSpendingScreen';
  
  
 /**
@@ -74,6 +75,7 @@ const Stack = createNativeStackNavigator();
            <Stack.Screen name='Transactions' component={Transactions} />
            <Stack.Screen name='LastOnboarding' component={LastOnboarding} />
            <Stack.Screen name='BudgetingToolIncomeScreen' component={BudgetingToolIncomeScreen} />
+           <Stack.Screen name='BudgetingToolSpendingScreen' component={BudgetingToolSpendingScreen} />
          </Stack.Navigator>
        </NavigationContainer>
    )
