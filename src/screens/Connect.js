@@ -18,8 +18,6 @@ import figmaColors from '../res/figmaColors';
 import HomepageButtons from '../components/HomepageButtons';
 import Carousel from 'react-native-snap-carousel';
 import { Pagination } from "react-native-snap-carousel";
-import OrangeButton from "../components/OrangeButton";
-import GrayButton from "../components/GrayButton";
 import ResizableButton from "../components/ResizableButton";
 
 const width = Dimensions.get('window').width;
@@ -45,7 +43,7 @@ const cardItems = [
     {
         ImagePath: require('../res/images/homeSlideThree.png'),
         Title: 'One step at a time.',
-        subtitle: 'Your journey to financial independence starts here.',
+        subtitle: 'Your journey to financial\nindependence starts here.',
         button: 'VIEW MY BUDGET'
     }
 ]
@@ -115,6 +113,7 @@ const Connect = (props) => {
                         inactiveDotStyle={styles.inactiveDotStyle}
                         inactiveDotOpacity={0.5}
                         inactiveDotScale={1}
+                        
                     />
                 </View>
             </View>
@@ -156,11 +155,12 @@ const Connect = (props) => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: figmaColors.primaryOffWhite
+
     },
 
     test: {
         left: '3.5%',
-        top: '-3%',
+        top: '-9%',
         
     },
 
@@ -169,18 +169,18 @@ const styles = StyleSheet.create({
     },
 
     carousel: {
-        height: '53.7%',
+        height: '56.7%',
         width: '100%',
         backgroundColor: '#4CB998',
 
     },
 
     imageSize: {
-        width: width * 0.8,
-        height: height * 0.35,
+        width: width * 1,
+        height: height * 0.5,
         resizeMode: 'contain',
-        left: '30%',
-        top: '-5%'
+        left: '27%',
+        top: '-12%',
     },
 
     title: {
@@ -190,13 +190,13 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         color: figmaColors.primaryOffWhite,
         top: '1%',
-        left: '7%'
+        left: '6%'
     },
 
     textContainer: {
-        width: '50%',
-        top: '-58%',
-        left: '7%'
+        width: '52%',
+        top: '-68%',
+        left: '6%'
     },
     // This refers to the subtitle of the card
     subtitle: {
@@ -206,6 +206,7 @@ const styles = StyleSheet.create({
         fontWeight: '800',
         color: figmaColors.primaryOffWhite,
         lineHeight: 37.5,
+        justifyContent: 'center'
     },
     activeDotStyle: {
         width:10,
@@ -222,20 +223,15 @@ const styles = StyleSheet.create({
 
     buttonView: {
         position: 'absolute',
-        top: '45%',
-        left: '7%',
+        top: '35%',
+        left: '6%',
     },
 
     pageView: {
-        left: '-37%',
-
-        
+        left: '-36.5%',
+        top: '-13%',
+    
     },
-
-    gap: {
-        top: '10%'
-    }
-
 
 })
 
