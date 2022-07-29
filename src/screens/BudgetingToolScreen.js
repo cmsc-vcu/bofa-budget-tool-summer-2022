@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     topDateEditBarContainer: {
         flex: 1,
         flexDirection: 'row',
-        paddingTop: height * 0.05,
+        paddingTop: height * 0.04,
         paddingLeft: 25,
         justifyContent: 'space-between'
     },
