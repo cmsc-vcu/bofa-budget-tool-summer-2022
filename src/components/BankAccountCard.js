@@ -28,7 +28,7 @@ const bankAccountsList = [
     },
     {
         AccountType: 'Credit Card',
-        MoneyAmount: 500,
+        MoneyAmount: 'N/A',
         ImageRequire: require('../res/images/bofaIcon.png')
     },
     {
@@ -41,7 +41,7 @@ const bankAccountsList = [
 const Item = ({  AccountType, MoneyAmount, ImagePath}) =>
 (
     <View style={styles.container}>
-        <Image source={ ImagePath }/>
+        <Image source={ ImagePath } style={{ resizeMode: 'contain', width: width * 0.1 , height: height * 0.05 }} />
         <View style={{flexDirection: 'column'}}>
             <Text style={styles.accountTypeTextStyle}>{ AccountType }</Text>
             <Text style={styles.accountMoneyTextStyle}> { '$' + MoneyAmount } </Text>
