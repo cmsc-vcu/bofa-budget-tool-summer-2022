@@ -20,13 +20,15 @@ const SegmentedProgressGoalBar = (props) =>
     return(
         <View style={styles.container}>
             <View style={styles.thirdBarContainer}>
-
             </View>
             <View style={styles.secondBarContainer}>
 
             </View>
             <View style={styles.firstBarContainer}>
-
+                
+            </View>
+            <View>
+                <Text style={styles.progressBarPercentage}>80%</Text>
             </View>
             <View style={styles.legendKeyContainer}>
                 <View>
@@ -45,7 +47,7 @@ const SegmentedProgressGoalBar = (props) =>
                         <Text style={styles.textStyle}>Bills</Text>
                         <Text style={styles.numberStyle}> {'$' + props.userBills} </Text>
                     </View>
-
+                    
                 </View>
 
             </View>
@@ -64,7 +66,7 @@ const styles = StyleSheet.create({
         paddingBottom: height * 0.01
     },
     legendKeyContainer: {
-        paddingTop: height * 0.05,
+        paddingTop: height * 0.02,
     },
     firstBarContainer: {
         position: 'absolute',
@@ -101,6 +103,13 @@ const styles = StyleSheet.create({
         color: figmaColors.primaryGray,
         marginLeft: 'auto',
         paddingRight: width * 0.2
+    },
+    progressBarPercentage: {
+        fontFamily: fonts.mainFont,
+        fontWeight: '600',
+        fontSize: 14,
+        color: 'rgba(96, 95, 88, 0.5)',
+        paddingLeft: width * 0.82
     }
 });
 

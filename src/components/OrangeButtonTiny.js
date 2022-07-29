@@ -2,13 +2,16 @@ import {
     Pressable,
     StyleSheet,
     Text,
-    View
+    View,
+    Dimensions
 } from 'react-native';
 import React from 'react';
 import { useNavigation } from "@react-navigation/native";
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
 
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 {/* This is the OrangeButton component where it will be reused */}
 {/* Function: Create a Pressable element given the navigation page where the User wants to go.
@@ -41,11 +44,12 @@ const styles = StyleSheet.create({
     buttonstyle: {
         justifyContent: 'center',
         textAlign: 'center',
-        backgroundColor: '#EB7723',
+        backgroundColor: figmaColors.primaryOrange,
         alignItems: 'center',
         borderRadius: 20,
-        width: 150,
-        height: 53,
+        flexShrink: 3,
+        width: width * 0.33,
+        height: height * 0.040,
         shadowColor: '#000000',
         shadowOffset: {width: 0, height: 4},
         shadowRadius: 4,
@@ -55,9 +59,8 @@ const styles = StyleSheet.create({
     textstyle: {
         fontFamily: fonts.mainFont,
         fontStyle: 'normal',
-        fontWeight: 'bold',
-        fontSize: 18,
-        textTransform: 'uppercase',
+        fontWeight: '600',
+        fontSize: 14,
         color: figmaColors.primaryOffWhite
     },
 })

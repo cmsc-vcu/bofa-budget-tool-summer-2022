@@ -26,6 +26,7 @@ const HomepageButtons = (props) =>
                 <Text style={styles.subheader}>
                     {props.subheader}
                 </Text>
+                <Image source={require('../res/images/homeButtonArrow.png')} style={styles.arrow}/>
             </Pressable>
         </View>
     );
@@ -71,6 +72,11 @@ const styles = StyleSheet.create({
         color: '#605F58',
         left: '8%',
         top: '25%'
+    },
+
+    arrow: {
+        top: '-16%',
+        left: '90%'
     }
     
 
