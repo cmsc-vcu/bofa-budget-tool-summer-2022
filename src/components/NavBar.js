@@ -3,12 +3,16 @@ import {
     View,
     Text,
     Pressable,
-    Image
+    Image,
+    Dimensions
 } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import figmaColors from '../res/figmaColors';
 import { fonts } from '@rneui/base';
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 const NavBar = (props) =>
 {
@@ -17,11 +21,9 @@ const NavBar = (props) =>
     return(
         <View style={styles.container}> 
                 <View 
-                style={styles.navbar}
-                top = {props.topAlign}
-                left = {props.leftAlign}>
+                style={styles.navbar}>
                     <View style={styles.rangeone}>
-                        <Pressable onPress={() => navigation.navigate('HomePage')}>
+                        <Pressable onPress={() => navigation.navigate('Connect')}>
                             <Image source={require('../res/images/homeIcon.png')} style={styles.homeicon}/>
                             <Text style={styles.texts}>
                                 Home
@@ -60,6 +62,8 @@ const NavBar = (props) =>
 const styles = StyleSheet.create({
     container: {
         position: 'absolute',
+        marginTop: height * 0.89,
+        marginLeft: width * 0.035
     },
 
     navbar: {
