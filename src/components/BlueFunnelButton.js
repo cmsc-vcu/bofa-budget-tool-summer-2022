@@ -3,7 +3,8 @@ import {
     Text,
     StyleSheet,
     Dimensions,
-    Pressable
+    Pressable,
+    Image
 } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
@@ -27,7 +28,7 @@ const BlueFunnelButton = (props) =>
                 navigation.navigate(props.navigatepage)
             }}>
                 <View style={styles.clickableContainer}>
-
+                    <Image source={require('../res/images/frontArrow.png')} style={styles.imageStyle}/>
                 </View>
             </Pressable>
             
@@ -50,7 +51,12 @@ const styles = StyleSheet.create({
     clickableContainer: {
         width: width * 0.06,
         height: height * 0.03,
-        backgroundColor: 'rgba(96, 95, 88, 0.5)'
+        borderRadius: 50,
+        backgroundColor: 'rgba(96, 95, 88, 0.5)',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingLeft: 3,
+        marginRight: width * 0.05
     },
     whiteTextStyle: {
         fontFamily: fonts.mainFont,
@@ -58,6 +64,12 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontStyle: 'normal',
         color: figmaColors.primaryOffWhite,
+        marginRight: 'auto',
+    },
+    imageStyle: {
+        width: width * 0.03,
+        height: height * 0.05,
+        resizeMode: 'contain'
     }
 })
 
