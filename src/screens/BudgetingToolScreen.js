@@ -21,6 +21,7 @@ import NavBar from "../components/NavBar";
 import OrangeButtonTiny from "../components/OrangeButtonTiny";
 import BankAccountCard from "../components/BankAccountCard";
 import OrangeButton from "../components/OrangeButton";
+import BlueFunnelButton from "../components/BlueFunnelButton";
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -118,19 +119,19 @@ const BudgetingToolScreen = () =>
                     <View>
                         <View style={{flexDirection: 'row'}}>
                             <Text style={[styles.boldedTextStyle, { paddingBottom: 0, marginRight: 'auto'}]}>Accounts</Text>
-                            <OrangeButtonTiny text='Link Account +'/>
+                            <OrangeButtonTiny 
+                            text='Link Account +'
+                            navigatepage='Transactions'
+                            />
                         </View>
                         <Text>{'Net Worth: $' + userNetWorth}</Text>
                     </View>
                     <BankAccountCard accountTotalMoney={2500} />
+                    <BlueFunnelButton text={'Let\'s see your future growth'} navigatepage='HomePage'/>
                 </View>
                 <NavBar
                     topAlign='1105%'
                     leftAlign='4%'
-                />
-                <OrangeButton
-                    text={'Next'}
-                    navigatepage='Transactions'
                 />
             </View>
             
