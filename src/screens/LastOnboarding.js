@@ -41,7 +41,7 @@ const LastOnboarding = () =>
             <View style = {style.orangeButtoncontainer}>
                 <OrangeButton
                     text={'Let’s get started!'}
-                    navigatepage='TermsConditions'
+                    navigatepage='Connect'
                     
                 />
             </View>

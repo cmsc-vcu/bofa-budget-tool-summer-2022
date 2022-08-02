@@ -21,6 +21,7 @@ import NavBar from "../components/NavBar";
 import OrangeButtonTiny from "../components/OrangeButtonTiny";
 import BankAccountCard from "../components/BankAccountCard";
 import OrangeButton from "../components/OrangeButton";
+import BlueFunnelButton from "../components/BlueFunnelButton";
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -48,6 +49,7 @@ const BudgetingToolScreen = () =>
         return(
             <View>
                 <View style={styles.container}>
+                    {/* DATE TAB */}
                     <View style={styles.topDateEditBarContainer}>
                         <Pressable>
                             <View style={styles.topDateDropdownContainer}>
@@ -62,6 +64,7 @@ const BudgetingToolScreen = () =>
                             <PencilSVG/>
                         </Pressable>
                     </View>
+                    {/* OVERVIEW SPENDING INCOME TAB */}
                     <View style={styles.topBudgetingBarContainer}>
                         <Pressable onPress={() => setPressablePressed(1)} 
                                     style={[{backgroundColor: pressablePressed === 1? 'rgba(96, 95, 88, 0.25)' : figmaColors.primaryTeal}, styles.buttonStyle]}>
@@ -118,19 +121,24 @@ const BudgetingToolScreen = () =>
                     <View>
                         <View style={{flexDirection: 'row'}}>
                             <Text style={[styles.boldedTextStyle, { paddingBottom: 0, marginRight: 'auto'}]}>Accounts</Text>
-                            <OrangeButtonTiny text='Link Account +'/>
+                            <OrangeButtonTiny 
+                            text='Link Account +'
+                            navigatepage='Transactions'
+                            />
                         </View>
                         <Text>{'Net Worth: $' + userNetWorth}</Text>
                     </View>
                     <BankAccountCard accountTotalMoney={2500} />
+                    <View style={styles.blueFunnelStyle}>
+                        <BlueFunnelButton 
+                        text={'Let\'s see your future growth'} 
+                        navigatepage='HomePage'/>
+                    </View>
+                    
                 </View>
                 <NavBar
                     topAlign='1105%'
                     leftAlign='4%'
-                />
-                <OrangeButton
-                    text={'Next'}
-                    navigatepage='Transactions'
                 />
             </View>
             
@@ -153,14 +161,14 @@ const BudgetingToolScreen = () =>
 const styles = StyleSheet.create({
     container: {
         width: width,
-        height: height * 0.40,
+        height: height * 0.38,
         backgroundColor: figmaColors.primaryTeal,
         borderBottomLeftRadius: 30,
     },
     topDateEditBarContainer: {
-        flex: 1,
+        flex: 2,
         flexDirection: 'row',
-        paddingTop: height * 0.04,
+        paddingTop: height * 0.02,
         paddingLeft: 25,
         justifyContent: 'space-between'
     },
@@ -176,7 +184,8 @@ const styles = StyleSheet.create({
     },
     moneyDaysContainer: {
         flex: 3,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginBottom: height * 0.03
     },
     buttonStyle: {
         width: width * 0.3,
@@ -260,6 +269,9 @@ const styles = StyleSheet.create({
         fontSize: 24,
         paddingBottom: height * 0.01
     },
+    blueFunnelStyle: {
+        marginTop: height * 0.02
+    }
 });
 
 export default BudgetingToolScreen;
