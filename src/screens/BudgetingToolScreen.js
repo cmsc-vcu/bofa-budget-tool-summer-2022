@@ -122,16 +122,16 @@ const BudgetingToolScreen = () =>
                         <View style={{flexDirection: 'row'}}>
                             <Text style={[styles.boldedTextStyle, { paddingBottom: 0, marginRight: 'auto'}]}>Accounts</Text>
                             <OrangeButtonTiny 
-                            text='Link Account +'
+                            text={appText.BudgetingToolTextScreen.linkAccount}
                             navigatepage='Transactions'
                             />
                         </View>
-                        <Text>{'Net Worth: $' + userNetWorth}</Text>
+                        <Text>{appText.BudgetingToolTextScreen.netWorth + userNetWorth}</Text>
                     </View>
                     <BankAccountCard accountTotalMoney={2500} />
                     <View style={styles.blueFunnelStyle}>
                         <BlueFunnelButton 
-                        text={'Let\'s see your future growth'} 
+                        text={appText.BudgetingToolTextScreen.blueFunnelText} 
                         navigatepage='HomePage'/>
                     </View>
                     
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     topDateEditBarContainer: {
         flex: 2,
         flexDirection: 'row',
-        paddingTop: height * 0.02,
+        paddingTop: height * 0.045,
         paddingLeft: 25,
         justifyContent: 'space-between'
     },

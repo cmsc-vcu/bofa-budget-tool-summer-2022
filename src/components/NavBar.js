@@ -20,42 +20,41 @@ const NavBar = (props) =>
 
     return(
         <View style={styles.container}> 
-                <View 
-                style={styles.navbar}>
-                    <View style={styles.rangeone}>
-                        <Pressable onPress={() => navigation.navigate('Connect')}>
-                            <Image source={require('../res/images/homeIcon.png')} style={styles.homeicon}/>
-                            <Text style={styles.texts}>
-                                Home
-                            </Text>
-                        </Pressable>
-                    </View>
-                    <View style={styles.rangetwo}>
-                        <Pressable onPress={() => navigation.navigate('BudgetingToolScreen')}>
-                            <Image source={require('../res/images/budgetIcon.png')} style={styles.homeicon}/>
-                            <Text style={styles.texts}>
-                                Budget
-                            </Text>
-                        </Pressable>
-                    </View>
-                    <View style={styles.rangethree}>
-                        <Pressable onPress={() => navigation.navigate('Rewards')}>
-                            <Image source={require('../res/images/what-ifIcon.png')} style={styles.homeicon}/>
-                            <Text style={styles.texts}>
-                                What-if
-                            </Text>
-                        </Pressable>
-                    </View>
-                    <View style={styles.rangefour}>
-                        <Pressable onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
-                            <Image source={require('../res/images/learnIcon.png')} style={styles.homeicon}/>
-                            <Text style={styles.texts}>
-                                Learn
-                            </Text>
-                        </Pressable>
-                    </View>
+            <View style={styles.navbar}>
+                <View style={styles.rangeone}>
+                    <Pressable onPress={() => navigation.navigate('Connect')}>
+                        <Image source={require('../res/images/homeIcon.png')} style={styles.homeicon}/>
+                        <Text style={styles.texts}>
+                            Home
+                        </Text>
+                    </Pressable>
+                </View>
+                <View style={styles.rangetwo}>
+                    <Pressable onPress={() => navigation.navigate('BudgetingToolScreen')}>
+                        <Image source={require('../res/images/budgetIcon.png')} style={styles.homeicon}/>
+                        <Text style={styles.texts}>
+                            Budget
+                        </Text>
+                    </Pressable>
+                </View>
+                <View style={styles.rangethree}>
+                    <Pressable onPress={() => navigation.navigate('Rewards')}>
+                        <Image source={require('../res/images/what-ifIcon.png')} style={styles.homeicon}/>
+                        <Text style={styles.texts}>
+                            What-if
+                        </Text>
+                    </Pressable>
+                </View>
+                <View style={styles.rangefour}>
+                    <Pressable onPress={() => navigation.navigate('FinancialLiteracyCategories')}>
+                        <Image source={require('../res/images/learnIcon.png')} style={styles.homeicon}/>
+                        <Text style={styles.texts}>
+                            Learn
+                        </Text>
+                    </Pressable>
                 </View>
             </View>
+        </View>
     );
 }
 
@@ -63,12 +62,12 @@ const styles = StyleSheet.create({
     container: {
         position: 'absolute',
         marginTop: height * 0.89,
-        marginLeft: width * 0.035
+        marginLeft: width * 0.035,
     },
 
     navbar: {
-        width: 365,
-        height: 63,
+        width: width * 0.9,
+        height: height * 0.09,
         backgroundColor: figmaColors.primaryOffWhite,
         // 4
         // was 1105
@@ -132,7 +131,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontFamily: fonts.mainFont,
         fontWeight: '700',
-        fontSize: 13
+        fontSize: 13,
+        paddingTop: height * 0.002
 
     }
 
