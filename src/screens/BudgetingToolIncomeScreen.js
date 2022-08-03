@@ -4,7 +4,8 @@ import {
     StyleSheet,
     Dimensions,
     Pressable,
-    Image
+    Image,
+    ScrollView
 } from 'react-native';
 import React , { useState } from 'react';
 
@@ -18,17 +19,23 @@ import SegmentedProgressGoalBar from "../components/SegmentedProgressGoalBar";
 import appText from "../res/appText";
 import BudgetingToolScreen from "./BudgetingToolScreen";
 import OrangeButtonTiny from "../components/OrangeButtonTiny";
+import BulletPoints from "../components/BulletPoints";
+import Pie from 'react-native-pie'
 
 
 
 const width = Dimensions.get('window').width;;
 const height = Dimensions.get('window').height;
 
+
+
 const BudgetingToolIncomeScreen = () =>
 {
 
     let currentBudgetingMonth = 'July';
     let currentBudgetingYear = 2022;
+    let spentAmount = 1200;
+    let goalAmount = 1300;
 
 
     const [pressablePressed, setPressablePressed] = useState(3);
@@ -36,7 +43,9 @@ const BudgetingToolIncomeScreen = () =>
     {
         return(
             <View>
+                
                 <View style={styles.container}>
+                    
                     <View style={styles.topDateEditBarContainer}>
                         <Pressable>
                             <View style={styles.topDateDropdownContainer}>
@@ -49,6 +58,8 @@ const BudgetingToolIncomeScreen = () =>
                         </Pressable>
                         <Pressable style={styles.pencilEditStyle}>
                             <PencilSVG/>
+
+                            
                         </Pressable>
                     </View>
                     <View style={styles.topBudgetingBarContainer}>
@@ -64,8 +75,31 @@ const BudgetingToolIncomeScreen = () =>
                                     style={[{backgroundColor: pressablePressed === 3? figmaColors.primaryOffBlack : figmaColors.primaryTeal}, styles.buttonStyle]}>
                             <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab3} </Text>
                         </Pressable>
+
+                        
                     </View>
+                    <View style={{alignItems: 'center', justifyContent: 'center', elevation: 3 }}>
+                        <Pie
+                            radius={80}
+                            innerRadius={45}
+                            sections={[
+                                {percentage: 15, color:'#F96666'},
+                                {percentage: 6.25, color:'#605F5840'},
+                                {percentage: 78.75, color:'#1F456E'},
+                                
+                            ]}
+                            backgroundColor='#FFFEF6'
+                        />
+                        <View style={styles.gauge}>
+                            <Text style={styles.gaugeText}>
+                                {'Total' + '\n' + '$' + spentAmount}
+                            </Text>
+                        </View>
                 </View>
+                </View>
+
+             
+
                 <Image source ={require('../res/images/incomeRectangle.png')}
                 style = {styles.goalSuggestionBox}/>
                 <Text style={styles.goalSuggestionLabel}>Goal Suggestion</Text>
@@ -76,9 +110,72 @@ const BudgetingToolIncomeScreen = () =>
 
                 
                     <Text style={styles.transactionsLabel}>Transactions</Text>
-                    <Image source ={require('../res/images/CategoriesBar.png')}
-                    style = {styles.categoriesTab}/>
-
+                <View style={[{marginLeft: '7%', flexDirection: 'row', marginBottom: '3%', marginTop: '57%'}]}>
+                    <Text style={styles.transactionsLabels}>Cat.</Text>
+                    <Text style={styles.transactionsLabels}>Date</Text>
+                    <Text style={styles.transactionsLabels}>Name</Text>
+                    <Text style={styles.transactionsLabels}>Amount</Text>
+                </View>
+                <View style={[{height: '20%'}]}>
+                    <ScrollView >
+                        <View style={[{marginLeft: '10%', flexDirection: 'row', marginBottom: '2%'}]}>
+                            <BulletPoints passedColor={ '#4CB998' }/>
+                            <Text style={styles.transactionsText}>7/20</Text>
+                            <Text style={styles.transactionsText}>Venmo</Text>
+                            <Text style={styles.transactionsText}>$100</Text>
+                            <Text style={styles.transactionsText}>Edit</Text>
+                        </View>
+                        <View style={[{marginLeft: '10%', flexDirection: 'row', marginBottom: '2%'}]}>
+                            <BulletPoints passedColor={ '#4CB998' }/>
+                            <Text style={styles.transactionsText}>7/20</Text>
+                            <Text style={styles.transactionsText}>Venmo</Text>
+                            <Text style={styles.transactionsText}>$50</Text>
+                            <Text style={styles.transactionsText}>Edit</Text>
+                        </View>
+                        <View style={[{marginLeft: '10%', flexDirection: 'row', marginBottom: '2%'}]}>
+                            <BulletPoints passedColor={ '#4CB998' }/>
+                            <Text style={styles.transactionsText}>7/20</Text>
+                            <Text style={styles.transactionsText}>Venmo</Text>
+                            <Text style={styles.transactionsText}>$50</Text>
+                            <Text style={styles.transactionsText}>Edit</Text>
+                        </View>
+                        <View style={[{marginLeft: '10%', flexDirection: 'row', marginBottom: '2%'}]}>
+                            <BulletPoints passedColor={ '#4CB998' }/>
+                            <Text style={styles.transactionsText}>7/20</Text>
+                            <Text style={styles.transactionsText}>Venmo</Text>
+                            <Text style={styles.transactionsText}>$50</Text>
+                            <Text style={styles.transactionsText}>Edit</Text>
+                        </View>
+                        <View style={[{marginLeft: '10%', flexDirection: 'row', marginBottom: '2%'}]}>
+                            <BulletPoints passedColor={ '#4CB998' }/>
+                            <Text style={styles.transactionsText}>7/20</Text>
+                            <Text style={styles.transactionsText}>Venmo</Text>
+                            <Text style={styles.transactionsText}>$50</Text>
+                            <Text style={styles.transactionsText}>Edit</Text>
+                        </View>
+                        <View style={[{marginLeft: '10%', flexDirection: 'row', marginBottom: '2%'}]}>
+                            <BulletPoints passedColor={ '#4CB998' }/>
+                            <Text style={styles.transactionsText}>7/20</Text>
+                            <Text style={styles.transactionsText}>Venmo</Text>
+                            <Text style={styles.transactionsText}>$50</Text>
+                            <Text style={styles.transactionsText}>Edit</Text>
+                        </View>
+                        <View style={[{marginLeft: '10%', flexDirection: 'row', marginBottom: '2%'}]}>
+                            <BulletPoints passedColor={ '#4CB998' }/>
+                            <Text style={styles.transactionsText}>7/20</Text>
+                            <Text style={styles.transactionsText}>Venmo</Text>
+                            <Text style={styles.transactionsText}>$50</Text>
+                            <Text style={styles.transactionsText}>Edit</Text>
+                        </View>
+                        <View style={[{marginLeft: '10%', flexDirection: 'row', marginBottom: '2%'}]}>
+                            <BulletPoints passedColor={ '#4CB998' }/>
+                            <Text style={styles.transactionsText}>7/20</Text>
+                            <Text style={styles.transactionsText}>Venmo</Text>
+                            <Text style={styles.transactionsText}>$100</Text>
+                            <Text style={styles.transactionsText}>Edit</Text>
+                        </View>
+                    </ScrollView>    
+                </View>
                 <View style = {styles.orangeButtoncontainer}>
                     <OrangeButtonTiny
                     text={'Edit My Goal'}
@@ -251,7 +348,42 @@ const styles = StyleSheet.create({
         height: 37,
         left: 99,
         top: 450,
-      }
+      },
+      transactionsLabels:{
+        fontFamily: fonts.mainFont,
+        fontStyle: 'normal',
+        fontSize: 16,
+        fontWeight: '800',
+        textAlign: 'center',
+        marginRight: '5%',
+        backgroundColor:'rgba(96, 95, 88,0.05)',
+        borderRadius: 20,
+        color: figmaColors.primaryOffBlack,
+    },
+    transactionsText:{
+        fontFamily: fonts.mainFont,
+        fontStyle: 'normal',
+        fontSize: 16,
+        fontWeight: '400',
+        textAlign: 'center',
+        marginRight: '5%',
+        marginLeft: '5%'
+    },
+    gauge: {
+        position: 'absolute',
+        width: 100,
+        height: 160,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    gaugeText: {
+        color: '#605F58',
+        fontSize: 18,
+        fontWeight: '800',
+        fontStyle: 'normal',
+        fontFamily: fonts.mainFont,
+        textAlign: 'center'
+    },
     /*transactionsContainer: {
         position: 'absolute',
         width: 141,
