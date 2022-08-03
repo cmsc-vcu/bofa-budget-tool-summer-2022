@@ -4,11 +4,15 @@ import {
     Text,
     Pressable,
     Image,
+    Dimensions
 } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 const HomepageButtons = (props) =>
 {
@@ -39,7 +43,7 @@ const styles = StyleSheet.create({
         borderRadius: 11,
         backgroundColor: figmaColors.primaryOffWhite,
         elevation: 2.5,
-        marginBottom: 7
+        marginBottom: height * 0.015
     },
 
     press: {
