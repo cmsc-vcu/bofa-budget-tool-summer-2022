@@ -32,19 +32,22 @@ const cardItems = [
         ImagePath: require('../res/images/homeSlideOne.png'),
         Title: 'Your budget is your roadmap.',
         subtitle: 'The most efficient way to reach your goals.',
-        button: 'VIEW MY BUDGET'
+        button: 'VIEW MY BUDGET',
+        navigateTo: 'BudgetingToolScreen'
     },
     {
         ImagePath: require('../res/images/homeSlideTwo.png'),
         Title: 'Daily financial tip:',
         subtitle: 'Planning when to fly can save you hundreds',
-        button: 'READ MORE'
+        button: 'READ MORE',
+        navigateTo: 'DailyFinancialTip'
     },
     {
         ImagePath: require('../res/images/homeSlideThree.png'),
         Title: 'One step at a time.',
         subtitle: 'Your journey to financial\nindependence starts here.',
-        button: 'VIEW MY BUDGET'
+        button: 'VIEW MY BUDGET',
+        navigateTo: 'BudgetingToolScreen'
     }
 ]
 
@@ -78,7 +81,11 @@ const Connect = (props) => {
                 <Text style={styles.subtitle}>{item.subtitle}</Text>
             </View>
             <View style={styles.buttonView}>
-                <ResizableButton text={item.button}/>
+                <ResizableButton 
+                text={item.button} 
+                navigatepage={item.navigateTo}
+                background={figmaColors.primaryOffWhite}
+                textcolor={figmaColors.primaryOffBlack}/>
             </View>
             
             
@@ -137,15 +144,8 @@ const Connect = (props) => {
             themeColor='#E08734'
             navigatePage='FinancialLiteracyCategories'/>
             </View>
-            
-            
 
-            <NavBar
-            topAlign= '1105%'
-            leftAlign= '4%'
-            >
-                
-            </NavBar>
+            <NavBar/>
 
         </View>
     );
@@ -161,7 +161,6 @@ const styles = StyleSheet.create({
     test: {
         left: '3.5%',
         top: '-9%',
-        
     },
 
     bar: {

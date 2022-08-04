@@ -42,7 +42,7 @@ const Item = ({  AccountType, MoneyAmount, ImagePath}) =>
 (
     <View style={styles.container}>
         <Image source={ ImagePath } style={{ resizeMode: 'contain', width: width * 0.1 , height: height * 0.05 }} />
-        <View style={{flexDirection: 'column'}}>
+        <View style={{flexDirection: 'column', paddingLeft: width * 0.03}}>
             <Text style={styles.accountTypeTextStyle}>{ AccountType }</Text>
             <Text style={styles.accountMoneyTextStyle}> { '$' + MoneyAmount } </Text>
         </View>
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         paddingLeft: width * 0.03,
-        width: width * 0.35,
+        width: width * 0.40,
         height: height * 0.075,
         borderRadius: 15,
         backgroundColor: figmaColors.primaryOffWhite,

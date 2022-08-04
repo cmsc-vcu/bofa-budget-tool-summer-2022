@@ -10,7 +10,7 @@ import { useNavigation } from "@react-navigation/native";
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
 
-// This is the OrangeButton component where it will be reused
+// This is the resizable button component where it will be reused
 
 /*************************************************************************************************
  * Function: Create a Pressable element given the navigation page where the User wants to go.
@@ -24,8 +24,12 @@ function ResizableButton (props) {
             <Pressable
                 onPress={() => { navigation.navigate(props.navigatepage)} }
                 style={styles.buttonstyle}
+                backgroundColor={props.background}
             >
-                <Text style={styles.textstyle}>
+                <Text 
+                style={styles.textstyle}
+                color={props.textcolor}
+                >
                     {props.text}
                 </Text>
             </Pressable>
@@ -41,7 +45,6 @@ const styles = StyleSheet.create({
     buttonstyle: {
         justifyContent: 'center',
         textAlign: 'center',
-        backgroundColor: figmaColors.primaryOffWhite,
         alignItems: 'center',
         borderRadius: 20,
         flexShrink: 3,
@@ -59,9 +62,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 19,
         display: 'flex',
-        color: figmaColors.primaryOffBlack,
         paddingRight: 15,
-        paddingLeft: 15
+        paddingLeft: 15,
     },
 })
 

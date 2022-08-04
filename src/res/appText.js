@@ -6,7 +6,10 @@ const appText = {
         moneyRemaining: 'Remaining',
         daysLeft: 'Days Left',
         monthlySpendingGoal: 'Monthly Spending Goal: ',
-        totalSpent: 'Total Spent: '
+        totalSpent: 'Total Spent: ',
+        linkAccount: 'Link Account +',
+        netWorth: 'Net Worth: $',
+        blueFunnelText: 'Let\'s see your future growth',
     },
 }
 
