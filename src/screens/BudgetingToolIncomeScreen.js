@@ -80,17 +80,6 @@ const BudgetingToolIncomeScreen = () =>
                             
                         </View>
                         <View style={{alignItems: 'center', justifyContent: 'center', elevation: 3 }}>
-                            <Pie
-                                radius={80}
-                                innerRadius={45}
-                                sections={[
-                                    {percentage: 15, color:'#F96666'},
-                                    {percentage: 6.25, color:'#605F5840'},
-                                    {percentage: 78.75, color:'#1F456E'},
-                                    
-                                ]}
-                                backgroundColor='#FFFEF6'
-                            />
                             <View style={styles.gauge}>
                                 <Text style={styles.gaugeText}>
                                     {'Total' + '\n' + '$' + spentAmount}
