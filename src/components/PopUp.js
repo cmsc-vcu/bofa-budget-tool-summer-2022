@@ -5,7 +5,6 @@ import { inlineStyles } from 'react-native-svg';
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
 
-
 const width = Dimensions.get('window').width;;
 const height = Dimensions.get('window').height;
 export default class App extends Component {
@@ -15,6 +14,7 @@ export default class App extends Component {
         <Text style={styles.subtitle}>
           Zelle from [sender]
         </Text>
+        
       </SafeAreaView>
     );
   }

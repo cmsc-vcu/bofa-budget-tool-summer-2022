@@ -20,7 +20,7 @@ function Transactions() {
         <View style={style.container}>
             <View style={style.container_1}>
                 <PopUp/>
-                
+                <Text>Recurring</Text>
             </View>
         </View>
     );

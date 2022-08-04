@@ -27,7 +27,8 @@ const categoriesCard = [
         categoryTitle: 'Spending',
         modulesTitlesList: ['Budgeting', 'Credit', 'Bank Accounts'],
         colorTheme: '#EF5F82',
-        secondaryColorTheme: '#FED4D4'
+        secondaryColorTheme: '#FED4D4',
+        navigatePage: 'FinancialLiteracyModules'
     },
     {
         categoryTitle: 'Growth',
