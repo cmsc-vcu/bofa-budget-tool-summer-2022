@@ -173,7 +173,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     topBudgetingBarContainer: {
-        flex: 2,
         flexDirection: 'row',
         justifyContent: 'center',
         alignContent: 'space-between',
