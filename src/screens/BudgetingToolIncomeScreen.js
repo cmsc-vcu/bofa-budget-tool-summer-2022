@@ -80,12 +80,7 @@ const BudgetingToolIncomeScreen = () =>
                             
                         </View>
                         <View style={{alignItems: 'center', justifyContent: 'center', elevation: 3 }}>
-                            <View style={styles.gauge}>
-                                <Text style={styles.gaugeText}>
-                                    {'Total' + '\n' + '$' + spentAmount}
-                                </Text>
-                            </View>
-                    </View>
+                        </View>
                     </View>
 
 
