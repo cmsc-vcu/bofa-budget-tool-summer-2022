@@ -32,15 +32,15 @@ const BudgetingToolIncomeScreen = () =>
                 <View style={{flexDirection: 'row', justifyContent: 'center', marginBottom: height * 0.01}}>
                     <View style={{flexDirection: 'row', justifyContent: 'center'}}>
                         <BulletPoints passedColor='#F96666'/>
-                        <Text style={{paddingLeft: width * 0.01, paddingRight: width * 0.1}}>{ '15% Allowance' }</Text>
+                        <Text style={[styles.legendKeyTextStyle, {paddingLeft: width * 0.01, paddingRight: width * 0.1, color: figmaColors.primaryOffWhite}]}>{ '15% Allowance' }</Text>
                         <BulletPoints passedColor='#1F456E'/>
-                        <Text style={{paddingLeft: width * 0.01}}>{ '75% Scholarships' }</Text>
+                        <Text style={[styles.legendKeyTextStyle, {paddingLeft: width * 0.01, color: figmaColors.primaryOffWhite}]}>{ '75% Scholarships' }</Text>
                     </View>
                     
                 </View>
                 <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-                    <BulletPoints passedColor={figmaColors.primaryGray}/>
-                    <Text style={{paddingLeft: width * 0.01, paddingRight: width * 0.1}}>{ '10% Other' }</Text>
+                    <BulletPoints passedColor={'#D7D6CE'}/>
+                    <Text style={[styles.legendKeyTextStyle, {paddingLeft: width * 0.01, paddingRight: width * 0.1}]}>{ '10% Other' }</Text>
                 </View>
             </View>
         );
@@ -56,7 +56,7 @@ const BudgetingToolIncomeScreen = () =>
     const userIncomeData = [
         {value: 15, color: '#F96666'}, 
         {value: 75, color: '#1F456E'},
-        {value: 10, color: figmaColors.primaryGray},
+        {value: 10, color: '#D7D6CE'},
     ];
 
     const [pressablePressed, setPressablePressed] = useState(3);
@@ -105,6 +105,7 @@ const BudgetingToolIncomeScreen = () =>
                                 textColor="black"
                                 radius={ width * 0.2 }
                                 innerCircleColor={ figmaColors.primaryOffWhite }
+                                innerRadius={ width * 0.11 }
                                 textBackgroundRadius={width * 0.04}
                                 data={userIncomeData}
                                 centerLabelComponent={() => 
@@ -146,7 +147,7 @@ const BudgetingToolIncomeScreen = () =>
                                     </View> 
                                 </View>
                                 <View style={{marginTop: height * 0.015}}>
-                                    <OrangeButtonMedium text='EDIT MY GOAL'/>
+                                    <OrangeButtonMedium text='EDIT MY GOAL' navigatepage='Transactions'/>
                                 </View>
                         </View>
                     </View>
@@ -252,6 +253,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignContent: 'space-between',
+        marginBottom: height * 0.01
     },
     topDateDropdownContainer: {
         flexDirection: 'row',
@@ -413,8 +415,16 @@ const styles = StyleSheet.create({
         fontFamily: fonts.mainFont,
         fontStyle: 'normal',
         fontWeight: '700',
+        fontSize: 18,
+        color: figmaColors.primaryGray,
+        textAlign: 'center'
+    },
+    legendKeyTextStyle: {
+        fontFamily: fonts.mainFont,
+        fontStyle: 'normal',
+        fontWeight: '600',
         fontSize: 16,
-        color: figmaColors.primaryGray
+        color: figmaColors.primaryOffWhite
     }
 });
 
