@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
     textstyle: {
         fontFamily: fonts.mainFont,
         fontStyle: 'normal',
-        fontWeight: '600',
-        fontSize: 14,
+        fontWeight: '800',
+        fontSize: 16,
         color: figmaColors.primaryOffWhite
     },
 })

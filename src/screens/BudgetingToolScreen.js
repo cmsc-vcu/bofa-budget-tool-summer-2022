@@ -166,7 +166,6 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 30,
     },
     topDateEditBarContainer: {
-        flex: 2,
         flexDirection: 'row',
         paddingTop: height * 0.045,
         paddingLeft: 25,
@@ -182,9 +181,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     moneyDaysContainer: {
-        flex: 3,
         flexDirection: 'row',
-        marginBottom: height * 0.03
     },
     buttonStyle: {
         width: width * 0.3,
@@ -193,7 +190,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft: 5,
         marginRight: 5,
-        paddingTop: 3
+        paddingTop: height * 0.005 //height * 0.005
     },
     textStyle: {
         fontFamily: fonts.mainFont,

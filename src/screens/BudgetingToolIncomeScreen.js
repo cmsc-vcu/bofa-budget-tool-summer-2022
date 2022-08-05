@@ -18,18 +18,33 @@ import BudgetingToolScreen from "./BudgetingToolScreen";
 import BudgetingToolSpendingScreen from './BudgetingToolSpendingScreen';
 import OrangeButtonMedium from '../components/OrangeButtonMedium';
 import BulletPoints from "../components/BulletPoints";
-import Pie from 'react-native-pie';
 import NavBar from '../components/NavBar';
-
-
+import { PieChart } from 'react-native-gifted-charts';
 
 const width = Dimensions.get('window').width;;
 const height = Dimensions.get('window').height;
 
-
-
 const BudgetingToolIncomeScreen = () =>
 {
+    const renderLegendComponent = () => {
+        return (
+            <View>
+                <View style={{flexDirection: 'row', justifyContent: 'center', marginBottom: height * 0.01}}>
+                    <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+                        <BulletPoints passedColor='#F96666'/>
+                        <Text style={{paddingLeft: width * 0.01, paddingRight: width * 0.1}}>{ '15% Allowance' }</Text>
+                        <BulletPoints passedColor='#1F456E'/>
+                        <Text style={{paddingLeft: width * 0.01}}>{ '75% Scholarships' }</Text>
+                    </View>
+                    
+                </View>
+                <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+                    <BulletPoints passedColor={figmaColors.primaryGray}/>
+                    <Text style={{paddingLeft: width * 0.01, paddingRight: width * 0.1}}>{ '10% Other' }</Text>
+                </View>
+            </View>
+        );
+    }
 
     let currentBudgetingMonth = 'July';
     let currentBudgetingYear = 2022;
@@ -38,6 +53,11 @@ const BudgetingToolIncomeScreen = () =>
     let userIncome = 18000;
     let userMonthlyBills = 1000;
 
+    const userIncomeData = [
+        {value: 15, color: '#F96666'}, 
+        {value: 75, color: '#1F456E'},
+        {value: 10, color: figmaColors.primaryGray},
+    ];
 
     const [pressablePressed, setPressablePressed] = useState(3);
     if(pressablePressed === 3)
@@ -58,9 +78,7 @@ const BudgetingToolIncomeScreen = () =>
                                 </View>
                             </Pressable>
                             <Pressable style={styles.pencilEditStyle}>
-                                <PencilSVG/>
-
-                                
+                                <PencilSVG/>        
                             </Pressable>
                         </View>
                         <View style={styles.topBudgetingBarContainer}>
@@ -76,11 +94,32 @@ const BudgetingToolIncomeScreen = () =>
                                         style={[{backgroundColor: pressablePressed === 3? 'rgba(96, 95, 88, 0.25)' : figmaColors.primaryTeal}, styles.buttonStyle]}>
                                 <Text style={styles.textStyle}> {appText.BudgetingToolTextScreen.headerTab3} </Text>
                             </Pressable>
+                        </View>
 
-                            
+                        {/* PIE CHART */}
+                        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                            <PieChart
+                                donut={ true }
+                                showText
+                                focusOnPress={ true }
+                                textColor="black"
+                                radius={ width * 0.2 }
+                                innerCircleColor={ figmaColors.primaryOffWhite }
+                                textBackgroundRadius={width * 0.04}
+                                data={userIncomeData}
+                                centerLabelComponent={() => 
+                                {
+                                    return (
+                                        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                                            <Text style={styles.pieChartCenterText}>
+                                                {'Total\n$' + spentAmount}
+                                            </Text>
+                                        </View>
+                                    );
+                                }}
+                            />
                         </View>
-                        <View style={{alignItems: 'center', justifyContent: 'center', elevation: 3 }}>
-                        </View>
+                        {renderLegendComponent()}
                     </View>
 
 
@@ -210,7 +249,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     topBudgetingBarContainer: {
-        flex: 4,
         flexDirection: 'row',
         justifyContent: 'center',
         alignContent: 'space-between',
@@ -230,7 +268,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft: 5,
         marginRight: 5,
-        paddingTop: 3
+        paddingTop: height * 0.005
     },
     textStyle: {
         fontFamily: fonts.mainFont,
@@ -371,21 +409,13 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginLeft: width * 0.06,
     },
-    gauge: {
-        position: 'absolute',
-        width: 100,
-        height: 160,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    gaugeText: {
-        color: '#605F58',
-        fontSize: 18,
-        fontWeight: '800',
-        fontStyle: 'normal',
+    pieChartCenterText: {
         fontFamily: fonts.mainFont,
-        textAlign: 'center'
-    },
+        fontStyle: 'normal',
+        fontWeight: '700',
+        fontSize: 16,
+        color: figmaColors.primaryGray
+    }
 });
 
 export default BudgetingToolIncomeScreen;
