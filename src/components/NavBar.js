@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
     },
 
     navbar: {
-        width: width * 0.9,
-        height: height * 0.09,
+        width: width * 0.94,
+        height: height * 0.08,
         backgroundColor: figmaColors.primaryOffWhite,
         // 4
         // was 1105

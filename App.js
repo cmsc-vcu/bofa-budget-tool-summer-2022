@@ -30,6 +30,7 @@ import LastOnboarding from './src/screens/LastOnboarding'
 import BudgetingToolIncomeScreen from './src/screens/BudgetingToolIncomeScreen';
 import BudgetingToolSpendingScreen from './src/screens/BudgetingToolSpendingScreen';
 import EditGoals from './src/screens/EditGoals'
+import BudgetingChapterOne from './src/screens/BudgetingChapterOne'
  
  
 /**
@@ -78,6 +79,7 @@ const Stack = createNativeStackNavigator();
            <Stack.Screen name='BudgetingToolIncomeScreen' component={BudgetingToolIncomeScreen} />
            <Stack.Screen name='BudgetingToolSpendingScreen' component={BudgetingToolSpendingScreen} />
            <Stack.Screen name='EditGoals' component={EditGoals} />
+           <Stack.Screen name='BudgetingChapterOne' component={BudgetingChapterOne} />
          </Stack.Navigator>
        </NavigationContainer>
    )

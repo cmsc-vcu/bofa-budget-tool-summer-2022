@@ -119,6 +119,7 @@ function FinancialLiteracyModules(props) {
             <Modules
                 text={'What is Budgeting'}
                 text2 = {'40 min'}
+                navigatepage = {'BudgetingChapterOne'}
             />
             <Modules
                 text={'Learn How to Start'}
