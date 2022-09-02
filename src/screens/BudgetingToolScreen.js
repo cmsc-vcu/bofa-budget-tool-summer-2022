@@ -20,7 +20,6 @@ import BudgetingToolSpendingScreen from "./BudgetingToolSpendingScreen";
 import NavBar from "../components/NavBar";
 import OrangeButtonTiny from "../components/OrangeButtonTiny";
 import BankAccountCard from "../components/BankAccountCard";
-import OrangeButton from "../components/OrangeButton";
 import BlueFunnelButton from "../components/BlueFunnelButton";
 
 const width = Dimensions.get('window').width;

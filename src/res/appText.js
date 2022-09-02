@@ -1,4 +1,9 @@
 const appText = {
+    FirstPageMiddleScreen: {
+        title: 'Financial\nHub',
+        subtitle: 'Did finances just become\neasier? I\'d say so',
+        orangeButtonText: 'START YOUR JOURNEY!'
+    },
     BudgetingToolTextScreen: {
         headerTab1: 'Overview',
         headerTab2: 'Spending',

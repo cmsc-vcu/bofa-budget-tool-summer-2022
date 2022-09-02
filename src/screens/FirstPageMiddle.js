@@ -1,4 +1,4 @@
-import FinancialHubGradientText from "../components/financialHubpractice";
+
 import React from "react";
 import {
     View,
@@ -6,6 +6,9 @@ import {
     ImageBackground,
     Image
 } from 'react-native';
+
+import appText from "../res/appText";
+import FinancialHubGradientText from "../components/financialHubpractice";
 
 import OrangeButton from "../components/OrangeButton";
 import fonts from "../res/fonts";
@@ -28,12 +31,12 @@ const FirstPageMiddle = () => {
             </View>
             {/* This will handle the middle of the screen*/}
             <View style={newStyle.midcontainer}>
-                <FinancialHubGradientText text={'Financial\nHub'} style={[newStyle.title]}/>
-                <FinancialHubGradientText text={'Did finances just become\neasier? I\'d say so'} style={newStyle.subtitle}/> 
+                <FinancialHubGradientText text={appText.FirstPageMiddleScreen.title} style={[newStyle.title]}/>
+                <FinancialHubGradientText text={appText.FirstPageMiddleScreen.subtitle} style={newStyle.subtitle}/> 
                 {/* The OrangeButton component is found within the src/components folder 
                 The text of the button is given, and we want to navigate to the 'CardIntro' screen*/}
                 <OrangeButton
-                text={'START YOUR JOURNEY!'}
+                text={appText.FirstPageMiddleScreen.orangeButtonText}
                 navigatepage='CardIntro'
                 />
             </View>
