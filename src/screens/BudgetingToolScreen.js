@@ -25,8 +25,17 @@ import BlueFunnelButton from "../components/BlueFunnelButton";
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
+    /*************************************************************************************************
+     * This screen functions as the main page of the budgeting tool with 2 other tabs that leads the
+     * user to the spending and income screens
+    *************************************************************************************************/
+
 const BudgetingToolScreen = () =>
 {
+
+    /*************************************************************************************************
+     * These are the variables to store all the user's information
+    *************************************************************************************************/
 
     let currentBudgetingMonth = 'July';
     let currentBudgetingYear = 2022;
@@ -143,12 +152,18 @@ const BudgetingToolScreen = () =>
             
         );
     }
+    /*************************************************************************************************
+     * If the user presses on the 2nd tab, then lead them to the spending screen
+    *************************************************************************************************/
     else if(pressablePressed === 2)
     {
         return(
             <BudgetingToolSpendingScreen/>
         );
     }
+    /*************************************************************************************************
+     * If the user presses on the 3rd tab, then lead them to the income screen
+    *************************************************************************************************/
     else if(pressablePressed === 3)
     {
         return(

@@ -12,6 +12,12 @@ import React from 'react';
 import figmaColors from '../res/figmaColors';
 import fonts from '../res/fonts';
 
+    /*************************************************************************************************
+     * The BankAccountCard.js functions as a reusuable component
+     * Ideally, pull in the user's bank account information and store them within a list
+     * Each item in the list will be generated into a card that displays the information in the item
+    *************************************************************************************************/
+
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
@@ -55,6 +61,10 @@ const Separator = () =>
         <View style={{width: width * 0.03 }}/>
     );
 };
+
+    /*************************************************************************************************
+     * BankAccountCard 
+    *************************************************************************************************/
 
 const BankAccountCard = (props) =>
 {
