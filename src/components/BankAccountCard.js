@@ -21,6 +21,12 @@ import fonts from '../res/fonts';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
+    /*************************************************************************************************
+     * bankAccountsList
+     * The acts as a list of all of the bank accounts that the user has linked to the app
+     * Each account will have the money and bank institution icon displayed
+    *************************************************************************************************/
+
 const bankAccountsList = [
     {
         AccountType: 'Checking',
@@ -44,6 +50,11 @@ const bankAccountsList = [
     }
 ]
 
+    /*************************************************************************************************
+     * Item
+     * This is the actual card styling and code of the component
+    *************************************************************************************************/
+
 const Item = ({  AccountType, MoneyAmount, ImagePath}) =>
 (
     <View style={styles.container}>
@@ -55,6 +66,11 @@ const Item = ({  AccountType, MoneyAmount, ImagePath}) =>
     </View>
 );
 
+    /*************************************************************************************************
+     * Separator 
+     * Adds spacing between each card in the Horizontal FlatList
+    *************************************************************************************************/
+
 const Separator = () =>
 {
     return(
@@ -64,6 +80,7 @@ const Separator = () =>
 
     /*************************************************************************************************
      * BankAccountCard 
+     * Components that display the bank institution icon, the amount of money, and the type of account
     *************************************************************************************************/
 
 const BankAccountCard = (props) =>

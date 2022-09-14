@@ -10,6 +10,11 @@ import figmaColors from '../res/figmaColors';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
+    /*************************************************************************************************  
+     * BulletPoints
+     * This component's function is to act as the bullet point image
+    *************************************************************************************************/
+
 const BulletPoints = (props) => {
     return (
         <View style={[styles.outerCircle]}>

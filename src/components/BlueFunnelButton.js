@@ -15,6 +15,11 @@ import fonts from '../res/fonts';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
+    /*************************************************************************************************
+     * BlueFunnelButton
+     * This component's function is to direct or push the student to another feature of the app
+    *************************************************************************************************/
+
 const BlueFunnelButton = (props) =>
 {
     const navigation = useNavigation();

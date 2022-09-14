@@ -48,9 +48,15 @@ const BudgetingToolScreen = () =>
     let userBills = 100;
     let userNetWorth = 2700;
 
+    /*************************************************************************************************
+     * By default, when the user is directed to the budgeting tool display the Overview page.
+    *************************************************************************************************/
 
     const [pressablePressed, setPressablePressed] = useState(1);
 
+    /*************************************************************************************************
+     * If the User presses on the Overview page of the budgeting tool, display this screen
+    *************************************************************************************************/
 
     if(pressablePressed === 1)
     {
@@ -152,6 +158,7 @@ const BudgetingToolScreen = () =>
             
         );
     }
+    
     /*************************************************************************************************
      * If the user presses on the 2nd tab, then lead them to the spending screen
     *************************************************************************************************/
@@ -161,6 +168,7 @@ const BudgetingToolScreen = () =>
             <BudgetingToolSpendingScreen/>
         );
     }
+
     /*************************************************************************************************
      * If the user presses on the 3rd tab, then lead them to the income screen
     *************************************************************************************************/
